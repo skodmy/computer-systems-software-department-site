@@ -1,0 +1,34 @@
+{% extends 'department/base_page.html' %}
+
+{% load staticfiles %}
+
+{% block head-meta-tags %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    {% block head-extra-meta-tags %}
+    {% endblock %}
+{% endblock %}
+
+{% block head-title %}
+    {% block head-title-content %}
+        Materialized base page
+    {% endblock %}
+    {% block head-title-extra-content %}
+    {% endblock %}
+{% endblock %}
+
+{% block head-links %}
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'materialize/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {% block head-extra-links %}
+    {% endblock %}
+{% endblock %}
+
+{% block body-scripts %}
+    <!--  Scripts-->
+    <script src="{% static 'jquery-2.2.1.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+    {% block body-extra-scripts %}
+    {% endblock %}
+{% endblock %}
