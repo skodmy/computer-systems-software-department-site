@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'department'
+    'department',
+    'partner',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,3 +126,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'static/jquery',
 ]
+
+# this is only for development, not for production!
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
