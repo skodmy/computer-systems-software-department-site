@@ -16,7 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+# this is only for development use
+from django.conf import settings
+from django.conf.urls.static import static
+# -----
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('department.urls'))
-]
+    # next url's pattern serves urls that didn't match any another
+    url(r'^', include('department.urls'))  # if something wrong with urls then don't forget to check this
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this too
