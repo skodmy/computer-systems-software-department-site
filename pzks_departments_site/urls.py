@@ -25,5 +25,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # next url's pattern serves urls that didn't match any another
     url(r'^', include('department.urls')),  # if something wrong with urls then don't forget to check this
-    url(r'^partner/', include('partner.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this too
