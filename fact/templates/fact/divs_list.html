@@ -1,0 +1,40 @@
+{% for fact in facts%}
+    {% if fact.is_percentage %}
+        <div class="row valign-wrapper interesting-fact">
+              <div class="col s4">
+                <div class="c100 p{{ fact.number }} small center-align">
+                  <span>{{ fact.number }}%</span>
+                  <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s8">
+                <span class="center-align">{{ fact.text }}</span>
+              </div>
+        </div>
+    {% endif %}
+
+    {% if fact.number != -1 and not fact.is_percentage %}
+        <div class="divider  blue lighten-4"></div>
+          <div class="row valign-wrapper interesting-fact">
+              <div class="col s4">
+                <h4 class="center-align blue-text text-darken-1">{{ fact.number }}</h4>
+              </div>
+              <div class="col s8">
+                <span class="center-align">{{ fact.text }}</span>
+              </div>
+          </div>
+    {% endif %}
+
+    {% if fact.number == -1 %}
+        <div class="divider  blue lighten-4"></div>
+          <div class="row valign-wrapper interesting-fact">
+              <div class="col s12 text-darken-1">
+                <span class="center-align">{{ fact.text }}</span>
+              </div>
+          </div>
+    {% endif %}
+{% endfor %}
