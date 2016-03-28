@@ -191,17 +191,17 @@
         <div class="col s12 m4 right-block">
             <h5>Its Interesting</h5>
             <div class="divider"></div>
-            <br>
+            <br id="facts-start">
 
 
             <h5>Advertisements</h5>
             <div class="divider"></div>
-            <br>
+            <br id="advertisements-start">
             <a class="waves-effect waves-light btn">Show all</a>
 
             <h5>Technologies</h5>
             <div class="divider"></div>
-            <br>
+            <br id="technologies-start">
         </div>
 
 
@@ -210,7 +210,7 @@
         <div class="col s12">
           <h4 class="center-align">Our partners</h4>
           <div class="divider"></div>
-          <div class="carousel">
+          <div id="carousel-items-list-container" class="carousel">
           </div>
         </div>
       </div>
@@ -257,5 +257,10 @@
 {% endblock %}
 
 {% block body-extra-scripts %}
+    <script src="{% static 'advertisement/js/advertisement.js' %}"></script>
+    <script src="{% static 'fact/js/fact.js' %}"></script>
+    <script src="{% static 'news/js/news.js' %}"></script>
+    <script src="{% static 'partner/js/partner.js' %}"></script>
+    <script src="{% static 'technology/js/technology.js' %}"></script>
     <script src="{% static 'department/js/init.js' %}"></script>
 {% endblock %}
