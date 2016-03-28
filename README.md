@@ -10,7 +10,7 @@ This README would normally document whatever steps are necessary to get your app
 
 ### How do I get set up? ###
 
-DJANGO 1.9.4 + PILLOW 3.1.1.
+PYTHON 3.5.1 + DJANGO 1.9.4 + PILLOW 3.1.1.
 
 * Summary of set up
 * Configuration
