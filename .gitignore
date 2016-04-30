@@ -54,3 +54,6 @@ docs/_build/
 
 # DB
 *.sqlite3
+
+# Local Virtual Env
+PZKS_dep_site/*
