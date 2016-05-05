@@ -1,10 +1,4 @@
 /* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
 
 .icon-block {
   padding: 0 15px;
@@ -13,56 +7,172 @@
 	font-size: inherit;
 }
 
+/* Background Colors */
+.blue-super-light {
+  background-color: #f6fbfe !important;
+}
+
+.blue-light {
+	background-color: #d9e7ef !important;
+}
+
+.simple-blue {
+	background-color: #057dc8 !important;
+}
+
+.blue-dark {
+	background-color: #063c5e !important;
+}
+
+.blue-super-dark {
+	background-color: #042e47 !important;
+}
+/* End Background Colors */
+
+/* Text Colors */
+.text-blue {
+	color: #063c5e !important;
+}
+
+.text-white {
+	color: #f7fbfd !important;
+}
+/* End Text Colors */
+
+/* NavBar css */
+nav ul li:hover {
+   background-color: #063c5e;
+}
+.dropdown-content a {
+  color: #063c5e !important;
+}
+/* end NavBar css */
+.divider {
+	height: 2px;
+}
+
+
+.container {
+    width: 90%;
+}
+
+/* Slider */
 @media only screen and (min-width: 993px) {
-  .container {
-    width: 85%;
-  }
+  	.slider {
+	    height: 525px !important;
+	}
+
+	.slider .slides {
+	    height: 525px !important;
+	}
+
+	.slider .indicators {
+	  bottom: 25px;
+	  z-index: 100;
+	}
 }
 
-.focus-card {
-	margin: 0px;
+@media only screen and (max-width: 992px) {
+	.slider {
+	    height: 400px !important;
+	}
+
+	.slider .slides {
+	    height: 400px !important;
+	}
+
+	.slider .indicators {
+	  bottom: 40px;
+	  z-index: 100;
+	}
 }
 
-input[type=search] {
-	background: rgba(255,255,255,0.3);
+.slider .indicators .indicator-item {
+  background-color: #063c5e;
+  border: 3px solid #042e47;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-.input-field input[type=search]:focus {
-	background-color: #90caf9;
+.slider .indicators .indicator-item.active {
+  background-color: #d9e7ef;
+}
+/* End Slider */
+
+
+/* Focus on css */
+.focus-on .card .card-image .card-title  {
+	width: 100%;
+	color: #063c5e;
+	background: rgba(217, 231, 239, .7);
+	padding: 5px;
 }
 
-.mobile-search-field {
-	background: rgba(255,255,255,0.3);
+.focus-on .card:hover  {
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16), 0 5px 15px 0 rgba(0, 0, 0, 0.12);
 }
 
-.logo-row{
+@media only screen and (max-width: 600px) {
+  	.focus-on .card .card-image .card-title {
+	    font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+  	.focus-on .card .card-image .card-title {
+	    font-size: 15px;
+
+	}
+}
+
+@media only screen and (min-width: 993px) {
+  	.focus-on .card .card-image .card-title {
+	    font-size: 20px;
+	}
+}
+
+/* Lates news css */
+.news-title {
+	width: 100%;
+	color: #042e47;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.news .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+	color: #057dc8;
+}
+
+.news .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+	color: #55ace2;
+}
+
+/* Interesting fact */
+.interesting-facts .row{
 	margin-bottom: 0px;
 }
 
-@media only screen and (min-width: 993px) {
-  nav a.brand-logo {
-    display: none;
-  }
+.pie-chart {
+	margin-top: 10px !important;
 }
 
-.focus-card-panel {
-	padding: 10px;
+/* Advertisments */
+.advertisment .card {
+	box-shadow: none;
+	border: 1px solid #d9e7ef;
 }
 
-.right-block {
-	background-color: #e3f2fd;
+.advertisment .card:hover {
+	background-color: #d9e7ef;
 }
 
-.interesting-fact {
-	margin-top: 5px;
-}
 
-.news-img-right {
-	float: right;
-	margin: 10px;
-}
-
-.news-img-left {
-	float: left;
-	margin: 10px;
-}
+/*
+	1. Посунути елементи управління в каруселі. - DONE
+	2. Додати кнопку "Learn more". - DONE
+	3. Поміняти фон і змінити бордери в оголошеннях. - DONE
+	4. Зробити фон в оголошеннях при наведенні. DONE
+	5. Зробити більшу тінь при наведенні focus on  - DONE
+*/
