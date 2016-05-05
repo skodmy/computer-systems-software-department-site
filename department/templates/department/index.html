@@ -147,41 +147,7 @@
           <div class="col s12">
             <h4>Lates news</h4>
             <div class="divider simple-blue"></div>
-            <div class="row">
-              <div class="col s12 news">
-                <div class="card blue-light">
-                  <div class="card-image">
-                    <img src="{% static 'department/images/ai_image.jpg' %}">
-                  </div>
-                  <div class="news-title">
-                    <span class="card-title">News with image</span>
-                  </div>
-                  <div class="card-content text-blue">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 news">
-                <div class="card blue-light">
-                  <div class="news-title">
-                    <span class="card-title">News without image</span>
-                  </div>
-                  <div class="card-content text-blue">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12">
-                <a class="waves-effect waves-light btn blue" href="index.html">Show more</a>
-              </div>
+            <div class="row" id="news-row">
             </div>
           </div>
           <!-- END LATES NEWS -->
@@ -227,38 +193,7 @@
           <!-- Advertisments -->
           <div class="col s12">
             <h4>Advertisments</h4>
-             <div class="row ">
-               <div class="col s12 news advertisment">
-                <div class="card">
-                  <div class="news-title">
-                    <span class="card-title">Advertisment</span>
-                  </div>
-                  <div class="card-content text-blue">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 news advertisment">
-                <div class="card">
-                  <div class="news-title">
-                    <span class="card-title">Advertisment</span>
-                  </div>
-                  <div class="card-content text-blue">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">This is a link</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12">
-                <a class="waves-effect waves-light btn blue" href="index.html">Show more</a>
-              </div>
+             <div class="row " id="advertisments-row">
              </div>
           </div>
           <!-- End Advertisments -->
@@ -269,12 +204,7 @@
       <div class="col s12">
         <h4>Partners</h4>
         <div class="divider simple-blue"></div>
-        <div class="carousel">
-            <a class="carousel-item" href="#one!"><img src="{% static 'department/images/partner.png' %}"></a>
-            <a class="carousel-item" href="#two!"><img src="{% static 'department/images/partner.png' %}"></a>
-            <a class="carousel-item" href="#three!"><img src="{% static 'department/images/partner.png' %}"></a>
-            <a class="carousel-item" href="#four!"><img src="{% static 'department/images/partner.png' %}"></a>
-            <a class="carousel-item" href="#five!"><img src="{% static 'department/images/partner.png' %}"></a>
+        <div class="carousel" id="partners-carousel">
         </div>
       </div>
     </div>

@@ -1,16 +1,15 @@
 {% for news in news_list %}
-    <div class="col s12">
-            <div class="card">
+    <div class="col s12 news">
+            <div class="card blue-light">
                 {% if news.image %}
                     <div class="card-image">
                         <img src="{{ news.image.url }}">
-                        <span class="card-title">{{ news.heading }}</span>
                     </div>
                 {% endif %}
-              <div class="card-content">
-                  {% if not news.image %}
-                      <span class="card-title">{{ news.heading }}</span>
-                  {% endif %}
+                <div class="news-title">
+                    <span class="card-title">{{ news.heading }}</span>
+                </div>
+              <div class="card-content text-blue">
                 <p>{{ news.short_description }}</p>
               </div>
               <div class="card-action">
@@ -19,3 +18,6 @@
             </div>
     </div>
 {% endfor %}
+<div class="col s12">
+    <a class="waves-effect waves-light btn blue" href="index.html">Show more</a>
+</div>

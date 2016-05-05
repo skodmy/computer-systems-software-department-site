@@ -1,16 +1,13 @@
 (function($){
     $(function(){
-        /*
-        ajax_cards_list_after('#advertisments-start');
-        ajax_divs_list_after('#facts-start');
-        ajax_news_cards_list_after('#news-start');
-        ajax_partner_carousel_items_list_append('#carousel-items-list-container');
-        ajax_technology_divs_list_after('#technologies-start');
-        */
+        ajax_cards_list_after('#advertisments-row');
+        //ajax_divs_list_after('#facts-start');
+        ajax_news_cards_list_append('#news-row');
+        ajax_partner_carousel_items_list_append('#partners-carousel');
+        //ajax_technology_divs_list_after('#technologies-start');
         $('.dropdown-button').dropdown();
     $('.button-collapse').sideNav();
     $('.slider').slider();
-	$('.carousel').carousel({dist: 0});
 	var ctx1 = $("#fact-chart-area1")[0].getContext('2d');
 	var data1 = {
 	    labels: [
@@ -73,5 +70,6 @@
             responsive: true
         }
 	});
+		$('.carousel').carousel({dist: 0});
     }); // end of document ready
 })(jQuery); // end of jQuery name space

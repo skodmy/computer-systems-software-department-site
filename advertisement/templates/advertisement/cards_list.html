@@ -1,13 +1,14 @@
 {% for advertisement in advertisements %}
-    <div class="col s12">
+    <div class="col s12 news advertisment">
         <div class="card">
-            <div class="card-content">
+            <div class="news-title">
                 <span class="card-title">{{ advertisement.title }}</span>
+            </div>
+            <div class="card-content text-blue">
                 <p>{{ advertisement.main_message }}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
+                <a href="#">More about this</a>
             </div>
         </div>
     </div>
