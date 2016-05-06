@@ -3,7 +3,7 @@
         ajax_cards_list_after('#advertisments-row');
         //ajax_divs_list_after('#facts-start');
         ajax_news_cards_list_append('#news-row');
-        ajax_partner_carousel_items_list_append('#partners-carousel');
+        ajax_partner_carousel_items_list_append('#partners-carousel', init_partner_carousel);
         //ajax_technology_divs_list_after('#technologies-start');
         $('.dropdown-button').dropdown();
 	    $('.button-collapse').sideNav();
@@ -72,7 +72,17 @@
 	        }
 		});
 		$('.modal-trigger').leanModal();
-		//$('.carousel').carousel({dist: 0});
+
+		//Delete this line after connect technologies models from DB
+		init_technologies_carousel();
 		
     }); // end of document ready
 })(jQuery); // end of jQuery name space
+
+function init_partner_carousel() {
+	$('#partners-carousel').carousel({dist: 0});
+}
+
+function init_technologies_carousel() {
+	$('#technologies-carousel').carousel({dist: 0});
+}
