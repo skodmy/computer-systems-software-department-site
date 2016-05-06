@@ -46,10 +46,72 @@ nav ul li:hover {
 .dropdown-content a {
   color: #063c5e !important;
 }
+
+.login-mobile-btn {
+	float: right !important;
+}
+
+.login-mobile-header {
+	background-color: #063c5e;
+}
+
+.logmob-input-container {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.logmob-input-container input[type=text], input[type=email], input[type=password] {
+	color: #042e47 !important;
+	border-bottom: 1px solid #063c5e !important;
+}
+
+.logmob-input-container input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    border-bottom: 1px solid #063c5e;
+	box-shadow: 0 1px 0 0 #063c5e;
+}
+
+.login-btn-style {
+	background-color: #063c5e !important;
+	color: #fff !important;
+}
+
+.register-btn-style {
+	background-color: #057dc8 !important;
+	color: #fff !important;
+}
+
+.login-modal {
+	width: 350px;
+	max-height: none;
+}
+
+.login-modal-content {
+	padding: 20px !important;
+}
+
+.login-modal-content input[type=text], input[type=email], input[type=password] {
+	color: #042e47 !important;
+	border-bottom: 1px solid #063c5e !important;
+}
+
+.login-modal-content input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    border-bottom: 1px solid #063c5e;
+	box-shadow: 0 1px 0 0 #063c5e;
+}
+
+
+.left-margin-10 {
+	margin-left: 10px !important; 
+}
+
+
 /* end NavBar css */
 .divider {
 	height: 2px;
 }
+
 
 
 .container {
@@ -69,7 +131,7 @@ nav ul li:hover {
 	.slider .indicators {
 	  bottom: 25px;
 	  z-index: 100;
-	}
+	} 
 }
 
 @media only screen and (max-width: 992px) {
@@ -84,7 +146,7 @@ nav ul li:hover {
 	.slider .indicators {
 	  bottom: 40px;
 	  z-index: 100;
-	}
+	} 
 }
 
 .slider .indicators .indicator-item {
@@ -97,6 +159,12 @@ nav ul li:hover {
 
 .slider .indicators .indicator-item.active {
   background-color: #d9e7ef;
+}
+
+.learn-more-btn {
+	background: rgba(4, 46, 71, .8) !important;
+	border: 3px solid #fff;
+	color: #fff;
 }
 /* End Slider */
 
@@ -149,6 +217,11 @@ nav ul li:hover {
 	color: #55ace2;
 }
 
+.show-more-button {
+	background-color: #d9e7ef !important;
+	color: #042e47;
+}
+
 /* Interesting fact */
 .interesting-facts .row{
 	margin-bottom: 0px;
@@ -168,8 +241,22 @@ nav ul li:hover {
 	background-color: #d9e7ef;
 }
 
+.technologies .carousel {
+	height: 200px;
+}
 
-/*
+.technologies .carousel .carousel-item {
+	
+}
+
+
+/* FOOTER */
+
+
+
+/* END FOOTER */
+
+/* 
 	1. Посунути елементи управління в каруселі. - DONE
 	2. Додати кнопку "Learn more". - DONE
 	3. Поміняти фон і змінити бордери в оголошеннях. - DONE

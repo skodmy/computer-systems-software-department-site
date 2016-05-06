@@ -22,7 +22,7 @@
         <li><a href="#">Link4</a></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="#">Login<i class="material-icons right">perm_identity</i></a></li>
+        <li><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -35,6 +35,25 @@
         arrow_drop_down</i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="login-mobile" class="button-collapse login-mobile-btn"><i class="material-icons">perm_identity</i></a>
+      <!-- LOGIN MOBILE -->
+      <div id="login-mobile" class="side-nav login-mobile">
+        <div class="login-mobile-header center-align"><i class="material-icons">perm_identity</i></div>
+        <div class="logmob-input-container">
+          <input placeholder="Login" id="login_mobile" type="text">
+        </div>
+        <div class="logmob-input-container">
+          <input placeholder="Password" id="password_mobile" type="password">
+        </div>
+        <div class="logmob-input-container">
+          <a class="waves-effect waves-light btn blue login-btn-style">Log in</a>
+        </div>
+        <div class="logmob-input-container">
+          <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
+        </div>
+      </div>
+
+
     </div>
   </nav>
   <ul id="dropdown1" class="dropdown-content">
@@ -51,6 +70,23 @@
   </ul>
   <!-- END NAVBAR -->
 
+  <!-- LOGIN MODAl -->
+  <!-- Modal Structure -->
+  <div id="login_modal" class="modal login-modal">
+    <div class="modal-content login-modal-content blue-dark text-white">
+      <h5>Login</h5>
+    </div>
+    <div class="modal-content login-modal-content">
+      <input placeholder="Login" id="login_modal" type="text">
+      <input placeholder="Password" id="password_modal" type="password">
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-light btn blue login-btn-style left-margin-10">Login</a>
+      <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
+    </div>
+  </div>
+  <!-- END LOGIN MODAL -->
+
   <!--  SLIDER-->
   <div class="slider">
     <ul class="slides">
@@ -59,7 +95,7 @@
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          <a class="waves-effect waves-light btn blue" href="index.html">Learn more</a>
+          <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
         </div>
       </li>
       <li>
@@ -67,7 +103,7 @@
         <div class="caption left-align">
           <h3>Left Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          <a class="waves-effect waves-light btn blue" href="index.html">Learn more</a>
+          <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
         </div>
       </li>
       <li>
@@ -75,7 +111,7 @@
         <div class="caption right-align">
           <h3>Right Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          <a class="waves-effect waves-light btn blue" href="index.html">Learn more</a>
+           <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
         </div>
       </li>
       <li>
@@ -83,7 +119,7 @@
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-          <a class="waves-effect waves-light btn blue" href="index.html">Learn more</a>
+           <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
         </div>
       </li>
     </ul>
@@ -143,11 +179,30 @@
             </div>
           </div>
           <!-- END FOCUS ON -->
+          <!-- Technologies -->
+          <div class="col s12 technologies">
+            <h4>Technologies</h4>
+            <div class="carousel">
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
+              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
+            </div>
+          </div>
+          <!-- END Technologies -->
           <!-- LATES NEWS -->
           <div class="col s12">
             <h4>Lates news</h4>
             <div class="divider simple-blue"></div>
             <div class="row" id="news-row">
+              <!-- SHOW MORE BUTTON -->
+              <div class="col s12">
+                <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+              </div>
             </div>
           </div>
           <!-- END LATES NEWS -->
@@ -194,6 +249,10 @@
           <div class="col s12">
             <h4>Advertisments</h4>
              <div class="row " id="advertisments-row">
+               <!-- SHOW MORE BUTTON -->
+                <div class="col s12">
+                  <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+                </div>
              </div>
           </div>
           <!-- End Advertisments -->
