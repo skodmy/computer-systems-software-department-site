@@ -75,6 +75,9 @@
 
 		//Delete this line after connect technologies models from DB
 		init_technologies_carousel();
+
+
+		init_up_button();
 		
     }); // end of document ready
 })(jQuery); // end of jQuery name space
@@ -85,4 +88,21 @@ function init_partner_carousel() {
 
 function init_technologies_carousel() {
 	$('#technologies-carousel').carousel({dist: 0});
+}
+
+function init_up_button() {
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('#up_button').fadeIn();
+		} else {
+			$('#up_button').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('#up_button').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
 }
