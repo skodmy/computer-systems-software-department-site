@@ -1,10 +1,10 @@
 (function($){
     $(function(){
-        ajax_cards_list_after('#advertisments-row');
+		ajax_init_section('advertisement/actual-cards-list/', '#advertisements-row', 'prepend', null);
         //ajax_divs_list_after('#facts-start');
-        ajax_news_cards_list_append('#news-row');
-        ajax_partner_carousel_items_list_append('#partners-carousel', init_partner_carousel);
-        //ajax_technology_divs_list_after('#technologies-start');
+		ajax_init_section('news/cards-list/', '#news-row', 'prepend', null);
+		ajax_init_section('partner/carousel-items-list/', '#partners-carousel', 'append', init_partner_carousel);
+		ajax_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
         $('.dropdown-button').dropdown();
 	    $('.button-collapse').sideNav();
 	    $('.slider').slider();
@@ -73,10 +73,6 @@
 		});
 		$('.modal-trigger').leanModal();
 
-		//Delete this line after connect technologies models from DB
-		init_technologies_carousel();
-
-
 		init_up_button();
 		
     }); // end of document ready
@@ -105,4 +101,27 @@ function init_up_button() {
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+}
+
+function ajax_init_section(url, selector, insertion_method_name, call_after){
+	// Initializes some section with data using ajax request
+	if(url == null || url == '') return; //TODO here all parameters must be checked
+	$.ajax(url, {
+		success: function(response_html){
+			switch(insertion_method_name){
+				case 'append':
+					$(selector).append(response_html);
+					break;
+				case 'after':
+					$(selector).after(response_html);
+					break;
+				case 'prepend':
+					$(selector).prepend(response_html);
+					break;
+				default:
+					break;
+			}
+			if(call_after != null) call_after();
+		}
+	})
 }

@@ -183,20 +183,12 @@
           <div class="col s12 technologies">
             <h4>Technologies</h4>
             <div class="carousel" id="technologies-carousel">
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/C-sharp.png' %}"></a>
-              <a class="carousel-item" href="#"><img src="{% static 'department/images/c.png' %}"></a>
             </div>
           </div>
           <!-- END Technologies -->
           <!-- LATES NEWS -->
           <div class="col s12">
-            <h4>Lates news</h4>
+            <h4>Latest news</h4>
             <div class="divider simple-blue"></div>
             <div class="row" id="news-row">
               <!-- SHOW MORE BUTTON -->
@@ -247,15 +239,16 @@
           <!-- End Interesting Facts -->
           <!-- Advertisments -->
           <div class="col s12">
-            <h4>Advertisments</h4>
-             <div class="row " id="advertisments-row">
-               <!-- SHOW MORE BUTTON -->
-                <div class="col s12">
-                  <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
-                </div>
-             </div>
+            <h4>Advertisements</h4>
+              <div class="divider simple-blue"></div>
+              <div class="row " id="advertisements-row">
+                  <!-- SHOW MORE BUTTON -->
+                  <div class="col s12">
+                      <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+                  </div>
+              </div>
           </div>
-          <!-- End Advertisments -->
+          <!-- End Advertisements -->
         </div>
       </div>
     </div>
@@ -312,11 +305,6 @@
 {% endblock %}
 
 {% block body-extra-scripts %}
-    <script src="{% static 'advertisement/js/advertisement.js' %}"></script>
-    <script src="{% static 'fact/js/fact.js' %}"></script>
-    <script src="{% static 'news/js/news.js' %}"></script>
-    <script src="{% static 'partner/js/partner.js' %}"></script>
-    <script src="{% static 'technology/js/technology.js' %}"></script>
     <script src="{% static 'department/js/Chart.bundle.min.js' %}"></script>
     <script src="{% static 'department/js/init.js' %}"></script>
 {% endblock %}

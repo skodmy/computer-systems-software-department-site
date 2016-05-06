@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
-from .views import divs_list
+from .views import carousel_items_list
 
 urlpatterns = [
-    url(r'^divs-list/', divs_list)
+    url(r'^carousel-items-list/', carousel_items_list)
 ]
