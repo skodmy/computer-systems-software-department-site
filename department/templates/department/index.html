@@ -39,18 +39,20 @@
       <!-- LOGIN MOBILE -->
       <div id="login-mobile" class="side-nav login-mobile">
         <div class="login-mobile-header center-align"><i class="material-icons">perm_identity</i></div>
-        <div class="logmob-input-container">
-          <input placeholder="Login" id="login_mobile" type="text">
-        </div>
-        <div class="logmob-input-container">
-          <input placeholder="Password" id="password_mobile" type="password">
-        </div>
-        <div class="logmob-input-container">
-          <a class="waves-effect waves-light btn blue login-btn-style">Log in</a>
-        </div>
-        <div class="logmob-input-container">
-          <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
-        </div>
+        <form action="" method="POST" id="login_mobile_form">
+          <div class="logmob-input-container">
+            <input placeholder="Login" id="login_mobile" type="text">
+          </div>
+          <div class="logmob-input-container">
+            <input placeholder="Password" id="password_mobile" type="password">
+          </div>
+          <div class="logmob-input-container">
+            <button class="waves-effect waves-light btn blue login-btn-style logmob-btn" type="submit" id="login_mobile_form_submit">Login</button>
+          </div>
+          <div class="logmob-input-container">
+            <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
+          </div>
+        </form>
       </div>
 
 
@@ -73,17 +75,19 @@
   <!-- LOGIN MODAl -->
   <!-- Modal Structure -->
   <div id="login_modal" class="modal login-modal">
-    <div class="modal-content login-modal-content blue-dark text-white">
-      <h5>Login</h5>
-    </div>
-    <div class="modal-content login-modal-content">
-      <input placeholder="Login" id="login_modal" type="text">
-      <input placeholder="Password" id="password_modal" type="password">
-    </div>
-    <div class="modal-footer">
-      <a class="waves-effect waves-light btn blue login-btn-style left-margin-10">Login</a>
-      <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
-    </div>
+    <form action="" method="POST" id="login_modal_form">
+      <div class="modal-content login-modal-content blue-dark text-white">
+        <h5>Login</h5>
+      </div>
+      <div class="modal-content login-modal-content">
+        <input placeholder="Login" id="login_modal" type="text">
+        <input placeholder="Password" id="password_modal" type="password">
+      </div>
+      <div class="modal-footer">
+        <button class="waves-effect waves-light btn blue login-btn-style left-margin-10" type="submit" id="login_modal_form_submit">Login</button>
+        <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
+      </div>
+    </form>
   </div>
   <!-- END LOGIN MODAL -->
 

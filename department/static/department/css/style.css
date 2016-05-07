@@ -62,6 +62,11 @@ nav ul li:hover {
 	padding-bottom: 5px;
 }
 
+.logmob-btn {
+	width: 100%;
+	height: 64px;
+}
+
 .logmob-input-container input[type=text], input[type=email], input[type=password] {
 	color: #042e47 !important;
 	border-bottom: 1px solid #063c5e !important;
@@ -245,10 +250,6 @@ nav ul li:hover {
 	height: 200px;
 }
 
-.technologies .carousel .carousel-item {
-	
-}
-
 .app_button {
 	text-decoration: none;
 	position:fixed;
@@ -256,18 +257,8 @@ nav ul li:hover {
 	right:40px;
 	display:none;
 }
-
-
 /* FOOTER */
 
 
 
 /* END FOOTER */
-
-/* 
-	1. Посунути елементи управління в каруселі. - DONE
-	2. Додати кнопку "Learn more". - DONE
-	3. Поміняти фон і змінити бордери в оголошеннях. - DONE
-	4. Зробити фон в оголошеннях при наведенні. DONE
-	5. Зробити більшу тінь при наведенні focus on  - DONE
-*/
