@@ -74,7 +74,11 @@
 		$('.modal-trigger').leanModal();
 
 		init_up_button();
-		
+
+		$('#login_modal_form').submit({dialog_type: 'modal desktop', trigger_selector: '#login_modal'},
+			login_form_submit_handler);
+		$('#login_mobile_form').submit({dialog_type: 'side-nav mobile', trigger_selector: '#login-mobile'},
+			login_form_submit_handler);
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
@@ -124,4 +128,30 @@ function ajax_init_section(url, selector, insertion_method_name, call_after){
 			if(call_after != null) call_after();
 		}
 	})
+}
+
+function login_form_submit_handler(event){
+	// requires dialog type and trigger selector to close login dialog after proceeding data
+	$.post('login/', $(this).serialize(),
+		function(json_response_data){
+			if(json_response_data['exists'])
+				if(json_response_data['is_active'])
+					$('a.modal-trigger').prepend('(' + json_response_data['username'] + ')');
+				else
+					alert('Your account is disabled!');
+			else
+				alert('Such account doesn\'t exist!');
+			switch(event.data['dialog_type']){
+				case 'modal desktop':
+					$(event.data['trigger_selector']).closeModal();
+					break;
+				case 'side-nav mobile':
+					$(event.data['trigger_selector']).sideNav('hide');
+					break;
+				default:
+					break;
+			}
+		}
+	);
+	event.preventDefault()
 }

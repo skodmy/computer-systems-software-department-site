@@ -23,6 +23,12 @@
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
+          {% if request.user.is_authenticated %}
+              <!-- Show indicator that the user is logged in -->
+              <!-- TODO make it more pretty and responsive if it's not -->
+            <li><a href="#">{{ request.user.username }}<i class="material-icons right">perm_identity</i></a></li>
+          {% endif %}
+        <!-- TODO logout button is needed too -->
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -40,11 +46,12 @@
       <div id="login-mobile" class="side-nav login-mobile">
         <div class="login-mobile-header center-align"><i class="material-icons">perm_identity</i></div>
         <form action="" method="POST" id="login_mobile_form">
+            {% csrf_token %}
           <div class="logmob-input-container">
-            <input placeholder="Login" id="login_mobile" type="text">
+            <input placeholder="Login" id="login_mobile" type="text" name="username">
           </div>
           <div class="logmob-input-container">
-            <input placeholder="Password" id="password_mobile" type="password">
+            <input placeholder="Password" id="password_mobile" type="password" name="password">
           </div>
           <div class="logmob-input-container">
             <button class="waves-effect waves-light btn blue login-btn-style logmob-btn" type="submit" id="login_mobile_form_submit">Login</button>
@@ -76,16 +83,17 @@
   <!-- Modal Structure -->
   <div id="login_modal" class="modal login-modal">
     <form action="" method="POST" id="login_modal_form">
+        {% csrf_token %}
       <div class="modal-content login-modal-content blue-dark text-white">
         <h5>Login</h5>
       </div>
       <div class="modal-content login-modal-content">
-        <input placeholder="Login" id="login_modal" type="text">
-        <input placeholder="Password" id="password_modal" type="password">
+        <input placeholder="Login" id="login_modal" type="text" name="username">
+        <input placeholder="Password" id="password_modal" type="password" name="password">
       </div>
       <div class="modal-footer">
         <button class="waves-effect waves-light btn blue login-btn-style left-margin-10" type="submit" id="login_modal_form_submit">Login</button>
-        <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
+        <a class="waves-effect waves-light btn blue register-btn-style" href="#link to register page">Register</a>
       </div>
     </form>
   </div>
