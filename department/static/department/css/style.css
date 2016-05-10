@@ -43,6 +43,11 @@
 nav ul li:hover {
    background-color: #063c5e;
 }
+
+nav ul li.non-hover:hover {
+   background-color: transparent;
+}
+
 .dropdown-content a {
   color: #063c5e !important;
 }
@@ -117,8 +122,6 @@ nav ul li:hover {
 	height: 2px;
 }
 
-
-
 .container {
     width: 90%;
 }
@@ -170,6 +173,10 @@ nav ul li:hover {
 	background: rgba(4, 46, 71, .8) !important;
 	border: 3px solid #fff;
 	color: #fff;
+}
+
+.learn-more-btn:hover {
+	background: rgba(4, 46, 71, 1) !important;
 }
 /* End Slider */
 
@@ -250,13 +257,41 @@ nav ul li:hover {
 	height: 200px;
 }
 
-.app_button {
+.up_button {
 	text-decoration: none;
 	position:fixed;
 	bottom:75px;
 	right:40px;
 	display:none;
 }
+
+.user-menu li a {
+	color: #fff !important;
+}
+
+.user-menu li:hover {
+	background-color: #063c5e;
+}
+
+.user-profile{
+	margin: 0px;
+	border-radius: 0px;
+	padding: 15px;
+}
+
+.user-profile-avatar {
+	margin-right: 10px;
+}
+
+.user-avatar-image {
+	border-radius: 2px;
+}
+
+.user-profile-name {
+	    font-size: 14px;
+	font-weight: 700;
+}
+
 /* FOOTER */
 
 

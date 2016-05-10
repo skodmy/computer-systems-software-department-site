@@ -5,8 +5,14 @@
 		ajax_init_section('news/cards-list/', '#news-row', 'prepend', null);
 		ajax_init_section('partner/carousel-items-list/', '#partners-carousel', 'append', init_partner_carousel);
 		ajax_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
-        $('.dropdown-button').dropdown();
-	    $('.button-collapse').sideNav();
+        $('.nav-dropdown-button').dropdown({hover: true});
+	  	$('.mobile-dropdown-button').dropdown({hover: false});
+	  	$('#user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
+	  	$('#mobile-user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
+	    $('#mobile-nav-btn').sideNav();
+	    $('#mobile-login-btn').sideNav();
+
+	    window.setInterval(carouselRoll, 3000);
 	    //$('.slider').slider();
 
 		$.get('slides/', function(response_html){
@@ -160,4 +166,8 @@ function login_form_submit_handler(event){
 		}
 	);
 	event.preventDefault()
+}
+
+function carouselRoll() {
+	$('.carousel').carousel('next');
 }
