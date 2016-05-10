@@ -7,7 +7,13 @@
 		ajax_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
         $('.dropdown-button').dropdown();
 	    $('.button-collapse').sideNav();
-	    $('.slider').slider();
+	    //$('.slider').slider();
+
+		$.get('slides/', function(response_html){
+				alert('OK');
+				$('.slides').append(response_html);
+				$('.slider').slider()
+		});
 
 		var ctx1 = $("#fact-chart-area1")[0].getContext('2d');
 		var data1 = {

@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from .models import Slide
 
 
 def index(request):
@@ -30,3 +31,8 @@ def ajax_login(request):
 def manual_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+def slides(request):
+    if request.is_ajax():
+        return render(request, 'department/slides.html', {'slides': Slide.objects.all().order_by('display_priority')})
