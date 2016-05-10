@@ -1,25 +1,29 @@
 (function($){
     $(function(){
-		ajax_init_section('advertisement/actual-cards-list/', '#advertisements-row', 'prepend', null);
+		ajax_get_init_section('advertisement/actual-cards-list/', '#advertisements-row', 'prepend', null);
         //ajax_divs_list_after('#facts-start');
-		ajax_init_section('news/cards-list/', '#news-row', 'prepend', null);
-		ajax_init_section('partner/carousel-items-list/', '#partners-carousel', 'append', init_partner_carousel);
-		ajax_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
-        $('.nav-dropdown-button').dropdown({hover: true});
+		ajax_get_init_section('news/cards-list/', '#news-row', 'prepend', null);
+		ajax_get_init_section('partner/carousel-items-list/', '#partners-carousel', 'append', init_partner_carousel);
+		ajax_get_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
+        ajax_get_init_section('slides/', '.slides', 'append', function(){$('.slider').slider()});
+		$('.nav-dropdown-button').dropdown({hover: true});
 	  	$('.mobile-dropdown-button').dropdown({hover: false});
-	  	$('#user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
-	  	$('#mobile-user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
+
+		// saving user menu button object
+		var user_menu_btn = $('#user-menu-btn');
+		// saving mobile user menu button object
+		var mobile_user_menu_btn = $('#mobile-user-menu-btn');
+		// saving login button object
+		var login_btn = $('#login_modal');
+		// saving login mobile button object
+		var login_mobile_btn = $('.login-mobile-btn');
+	  	user_menu_btn.dropdown({belowOrigin: true, constrain_width : false, hover: false});
+	  	mobile_user_menu_btn.dropdown({belowOrigin: true, constrain_width : false, hover: false});
+
 	    $('#mobile-nav-btn').sideNav();
 	    $('#mobile-login-btn').sideNav();
 
 	    window.setInterval(carouselRoll, 3000);
-	    //$('.slider').slider();
-
-		$.get('slides/', function(response_html){
-				alert('OK');
-				$('.slides').append(response_html);
-				$('.slider').slider()
-		});
 
 		var ctx1 = $("#fact-chart-area1")[0].getContext('2d');
 		var data1 = {
@@ -87,10 +91,24 @@
 
 		init_up_button();
 
-		$('#login_modal_form').submit({dialog_type: 'modal desktop', trigger_selector: '#login_modal'},
-			login_form_submit_handler);
-		$('#login_mobile_form').submit({dialog_type: 'side-nav mobile', trigger_selector: '#login-mobile'},
-			login_form_submit_handler);
+		$('#logout_a').click(function(){
+			$.get('logout/', function(response_data){
+				//TODO recommended here
+			});
+			//TODO or here to place code that removes user and add login buttons
+		});
+
+		var login_modal_form_submit_event_data = {
+			dialog_type: 'modal desktop',
+			trigger_selector: '#login_modal',
+			user_menu_btn: user_menu_btn,
+			mobile_user_menu_btn: mobile_user_menu_btn
+		};
+		var login_mobile_form_submit_event_data = jQuery.extend(true, {}, login_modal_form_submit_event_data);
+		$('#login_modal_form').submit(login_modal_form_submit_event_data, login_form_submit_handler);
+		login_mobile_form_submit_event_data['dialog_type'] = 'side-nav mobile';
+		login_mobile_form_submit_event_data['trigger_selector'] = '#login_mobile';
+		$('#login_mobile_form').submit(login_modal_form_submit_event_data, login_form_submit_handler);
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
@@ -119,11 +137,10 @@ function init_up_button() {
 	});
 }
 
-function ajax_init_section(url, selector, insertion_method_name, call_after){
+function ajax_get_init_section(url, selector, insertion_method_name, call_after){
 	// Initializes some section with data using ajax request
-	if(url == null || url == '') return; //TODO here all parameters must be checked
-	$.ajax(url, {
-		success: function(response_html){
+	if(url == null || url == '' || selector == null || selector == '') return;
+	$.get(url, function(response_html){
 			switch(insertion_method_name){
 				case 'append':
 					$(selector).append(response_html);
@@ -138,22 +155,13 @@ function ajax_init_section(url, selector, insertion_method_name, call_after){
 					break;
 			}
 			if(call_after != null) call_after();
-		}
 	})
 }
 
 function login_form_submit_handler(event){
 	// requires dialog type and trigger selector to close login dialog after proceeding data
-	$.post('login/', $(this).serialize(),
-		function(json_response_data){
-			if(json_response_data['exists'])
-				if(json_response_data['is_active'])
-					$('a.modal-trigger').prepend('(' + json_response_data['username'] + ')');
-				else
-					alert('Your account is disabled!');
-			else
-				alert('Such account doesn\'t exist!');
-			switch(event.data['dialog_type']){
+	function close_login_dialog(){
+		switch(event.data['dialog_type']){
 				case 'modal desktop':
 					$(event.data['trigger_selector']).closeModal();
 					break;
@@ -162,7 +170,22 @@ function login_form_submit_handler(event){
 					break;
 				default:
 					break;
-			}
+		}
+	}
+
+	$.post('login/', $(this).serialize(),
+		function(json_response_data){
+			if(json_response_data['exists'])
+				if(json_response_data['is_active']) {
+					// TODO add user and remove login buttons
+					close_login_dialog();
+				}
+				else
+					// TODO add form message for this
+					alert('Your account is disabled!');
+			else
+				// TODO add form message for this
+				alert('Such account doesn\'t exist!');
 		}
 	);
 	event.preventDefault()

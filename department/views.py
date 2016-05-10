@@ -30,7 +30,7 @@ def ajax_login(request):
 
 def manual_logout(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return JsonResponse({}) if request.is_ajax() else HttpResponseRedirect('/')
 
 
 def slides(request):

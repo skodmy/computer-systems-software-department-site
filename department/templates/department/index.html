@@ -22,7 +22,6 @@
         <li><a href="#">Link4</a></li>
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button nav-dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
           {% if request.user.is_authenticated %}
               <!-- USER MENU BTN -->
               <li class="non-hover">
@@ -31,9 +30,9 @@
                 </a>
               </li>
               <!-- END USER MENU BTN -->
-            <li><a href="#">{{ request.user.username }}<i class="material-icons right">perm_identity</i></a></li>
+              {% else %}
+                <li><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
           {% endif %}
-        <!-- TODO logout button is needed too -->
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -45,11 +44,14 @@
         <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      <a href="#" data-activates="login-mobile" class="button-collapse login-mobile-btn"><i class="material-icons">perm_identity</i></a>
 
-      <!-- MOBILE USER MENU BTN -->
-      <a class="button-collapse dropdown-button btn-floating btn-large waves-effect waves-light blue blue-super-dark right" data-activates="user_menu" id="mobile-user-menu-btn"><i class="material-icons">face</i></a>
-      <!-- END MOBILE USER MENU BTN -->
+    {% if request.user.is_authenticated %}
+        <!-- MOBILE USER MENU BTN -->
+        <a class="button-collapse dropdown-button btn-floating btn-large waves-effect waves-light blue blue-super-dark right" data-activates="user_menu" id="mobile-user-menu-btn"><i class="material-icons">face</i></a>
+        <!-- END MOBILE USER MENU BTN -->
+        {% else %}
+        <a href="#" data-activates="login-mobile" class="button-collapse login-mobile-btn"><i class="material-icons">perm_identity</i></a>
+    {% endif %}
 
       <!-- LOGIN MOBILE -->
       <div id="login-mobile" class="side-nav login-mobile">
@@ -82,8 +84,8 @@
               <img src="images/avatar.jpg" alt="" class="circle responsive-img user-avatar-image"> 
             </div>
             <div>
-              <div class="user-profile-name">Vasya Vasylenko</div>
-              <div>vasyavas@gmail.com</div>
+              <div class="user-profile-name">{{ request.user.username }}</div>
+              <div>{{ request.user.email }}</div>
             </div>
           </div>
         </div>
@@ -91,8 +93,8 @@
     <li><a href="#">Action1</a></li>
     <li><a href="#">Action2</a></li>
     <li class="divider"></li>
-    <li><a href="#">Logout</a></li>
-  </ul> 
+    <li><a id="logout_a">Logout</a></li>
+  </ul>
   <!-- END USER menu -->
   
   <ul id="dropdown1" class="dropdown-content">
