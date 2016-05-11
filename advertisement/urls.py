@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
-from .views import actual_cards_list
+from .views import cards_list
 
 urlpatterns = [
-    url(r'^actual-cards-list/', actual_cards_list)
+    url(r'^cards-list/', cards_list)
 ]

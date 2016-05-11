@@ -1,29 +1,26 @@
 (function($){
     $(function(){
-		ajax_get_init_section('advertisement/actual-cards-list/', '#advertisements-row', 'prepend', null);
-        //ajax_divs_list_after('#facts-start');
-		ajax_get_init_section('news/cards-list/', '#news-row', 'prepend', null);
-		ajax_get_init_section('partner/carousel-items-list/', '#partners-carousel', 'append', init_partner_carousel);
-		ajax_get_init_section('technology/carousel-items-list/', '#technologies-carousel', 'append', init_technologies_carousel);
-        ajax_get_init_section('slides/', '.slides', 'append', function(){$('.slider').slider()});
+		$.get('slides/', function(slides_html){$('.slides').append(slides_html); $('.slider').slider()});
+		// TODO place facts loading code here
+		$('#technologies-carousel').load('technology/carousel-items-list/', function(){$(this).carousel({dist: 0})});
+		$('#advertisements-row').load('advertisement/cards-list/');
+		$('#news-row').load('news/cards-list/');
+		$('#partners-carousel').load('partner/carousel-items-list/', function(){$(this).carousel({dist: 0})});
+
 		$('.nav-dropdown-button').dropdown({hover: true});
 	  	$('.mobile-dropdown-button').dropdown({hover: false});
-
-		// saving user menu button object
-		var user_menu_btn = $('#user-menu-btn');
-		// saving mobile user menu button object
-		var mobile_user_menu_btn = $('#mobile-user-menu-btn');
-		// saving login button object
-		var login_btn = $('#login_modal');
-		// saving login mobile button object
-		var login_mobile_btn = $('.login-mobile-btn');
-	  	user_menu_btn.dropdown({belowOrigin: true, constrain_width : false, hover: false});
-	  	mobile_user_menu_btn.dropdown({belowOrigin: true, constrain_width : false, hover: false});
-
+		$('#mobile-login-btn').sideNav();
 	    $('#mobile-nav-btn').sideNav();
-	    $('#mobile-login-btn').sideNav();
+		$('#user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
+	  	$('#mobile-user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
 
-	    window.setInterval(carouselRoll, 3000);
+		$('#logout-btn').click(function(){$.get('logout/', function(){location.reload()});});
+		$('#up_button').click(function(){$('html, body').animate({scrollTop:0},800);/*return false*/});
+		$(window).scroll(function(){var up_btn=$('#up_button'); $(this).scrollTop()>100?up_btn.fadeIn():up_btn.fadeOut()});
+	    window.setInterval(function(){$('.carousel').carousel('next')}, 3000);
+
+		$('#login_modal_form').submit(login_form_submit_handler);
+		$('#login_mobile_form').submit(login_form_submit_handler);
 
 		var ctx1 = $("#fact-chart-area1")[0].getContext('2d');
 		var data1 = {
@@ -88,149 +85,16 @@
 	        }
 		});
 		$('.modal-trigger').leanModal();
-
-		init_up_button();
-
-		$('#logout_a').click(function(){
-			$.get('logout/', function(response_data){
-				//TODO recommended here
-				showLoginButton();
-				hideUserMenuButton();
-			});
-			//TODO or here to place code that removes user and add login buttons
-		});
-
-		var login_modal_form_submit_event_data = {
-			dialog_type: 'modal desktop',
-			trigger_selector: '#login_modal',
-			user_menu_btn: user_menu_btn,
-			mobile_user_menu_btn: mobile_user_menu_btn
-		};
-		var login_mobile_form_submit_event_data = jQuery.extend(true, {}, login_modal_form_submit_event_data);
-		$('#login_modal_form').submit(login_modal_form_submit_event_data, login_form_submit_handler);
-		login_mobile_form_submit_event_data['dialog_type'] = 'side-nav mobile';
-		login_mobile_form_submit_event_data['trigger_selector'] = '#login_mobile';
-		$('#login_mobile_form').submit(login_modal_form_submit_event_data, login_form_submit_handler);
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-function init_partner_carousel() {
-	$('#partners-carousel').carousel({dist: 0});
-}
-
-function init_technologies_carousel() {
-	$('#technologies-carousel').carousel({dist: 0});
-}
-
-function init_up_button() {
-	//Check to see if the window is top if not then display button
-	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('#up_button').fadeIn();
-		} else {
-			$('#up_button').fadeOut();
-		}
-	});
-	
-	//Click event to scroll to top
-	$('#up_button').click(function(){
-		$('html, body').animate({scrollTop : 0},800);
-		return false;
-	});
-}
-
-function ajax_get_init_section(url, selector, insertion_method_name, call_after){
-	// Initializes some section with data using ajax request
-	if(url == null || url == '' || selector == null || selector == '') return;
-	$.get(url, function(response_html){
-			switch(insertion_method_name){
-				case 'append':
-					$(selector).append(response_html);
-					break;
-				case 'after':
-					$(selector).after(response_html);
-					break;
-				case 'prepend':
-					$(selector).prepend(response_html);
-					break;
-				default:
-					break;
-			}
-			if(call_after != null) call_after();
-	})
-}
-
 function login_form_submit_handler(event){
-	// requires dialog type and trigger selector to close login dialog after proceeding data
-	function close_login_dialog(){
-		switch(event.data['dialog_type']){
-				case 'modal desktop':
-					$(event.data['trigger_selector']).closeModal();
-					break;
-				case 'side-nav mobile':
-					$(event.data['trigger_selector']).sideNav('hide');
-					break;
-				default:
-					break;
-		}
-	}
-
 	$.post('login/', $(this).serialize(),
 		function(json_response_data){
-			if(json_response_data['exists'])
-				if(json_response_data['is_active']) {
-					// TODO add user and remove login buttons
-					showUserMenuButton();
-					hideLoginButton();
-					close_login_dialog();
-				}
-				else
-					// TODO add form message for this
-					alert('Your account is disabled!');
-			else
-				// TODO add form message for this
-				alert('Such account doesn\'t exist!');
+			if(json_response_data['exists']){
+				json_response_data['is_active']?location.reload():alert('Disabled')
+			}else{alert('No such account found')}
 		}
 	);
 	event.preventDefault()
-}
-
-function carouselRoll() {
-	$('.carousel').carousel('next');
-}
-
-function showLoginButton() {
-	$('#login-button-container').show();
-	//$('#mobile-login-btn').show();
-}
-
-function showUserMenuButton() {
-	$('#user-menu-container').show();
-	//$('#mobile-user-menu-btn').show();
-}
-
-function hideLoginButton() {
-	$('#login-button-container').hide();
-	//$('#mobile-login-btn').hide();
-}
-
-function hideUserMenuButton() {
-	$('#user-menu-container').hide();
-	//$('#mobile-user-menu-btn').hide();
-}
-
-function showMobileLoginButton() {
-	$('#mobile-login-btn').show();
-}
-
-function hideMobileLoginButton() {
-	$('#mobile-login-btn').hide();
-}
-
-function showMobileUserMenuButton() {
-	$('#mobile-user-menu-btn').show();
-}
-
-function hideMobileUserMenuButton() {
-	$('#mobile-user-menu-btn').hide();
 }
