@@ -61,10 +61,7 @@ nav ul li.non-hover:hover {
 }
 
 .logmob-input-container {
-	padding-right: 10px;
-	padding-left: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 5px 10px;
 }
 
 .logmob-btn {
@@ -236,7 +233,7 @@ nav ul li.non-hover:hover {
 
 /* Interesting fact */
 .interesting-facts .row{
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .pie-chart {
@@ -281,8 +278,8 @@ nav ul li.non-hover:hover {
 }
 
 .user-profile{
-	margin: 0px;
-	border-radius: 0px;
+	margin: 0;
+	border-radius: 0;
 	padding: 15px;
 }
 
