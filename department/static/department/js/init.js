@@ -94,6 +94,8 @@
 		$('#logout_a').click(function(){
 			$.get('logout/', function(response_data){
 				//TODO recommended here
+				showLoginButton();
+				hideUserMenuButton();
 			});
 			//TODO or here to place code that removes user and add login buttons
 		});
@@ -178,6 +180,8 @@ function login_form_submit_handler(event){
 			if(json_response_data['exists'])
 				if(json_response_data['is_active']) {
 					// TODO add user and remove login buttons
+					showUserMenuButton();
+					hideLoginButton();
 					close_login_dialog();
 				}
 				else
@@ -193,4 +197,40 @@ function login_form_submit_handler(event){
 
 function carouselRoll() {
 	$('.carousel').carousel('next');
+}
+
+function showLoginButton() {
+	$('#login-button-container').show();
+	//$('#mobile-login-btn').show();
+}
+
+function showUserMenuButton() {
+	$('#user-menu-container').show();
+	//$('#mobile-user-menu-btn').show();
+}
+
+function hideLoginButton() {
+	$('#login-button-container').hide();
+	//$('#mobile-login-btn').hide();
+}
+
+function hideUserMenuButton() {
+	$('#user-menu-container').hide();
+	//$('#mobile-user-menu-btn').hide();
+}
+
+function showMobileLoginButton() {
+	$('#mobile-login-btn').show();
+}
+
+function hideMobileLoginButton() {
+	$('#mobile-login-btn').hide();
+}
+
+function showMobileUserMenuButton() {
+	$('#mobile-user-menu-btn').show();
+}
+
+function hideMobileUserMenuButton() {
+	$('#mobile-user-menu-btn').hide();
 }
