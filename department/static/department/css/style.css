@@ -56,65 +56,31 @@ nav ul li.non-hover:hover {
 	float: right !important;
 }
 
-.login-mobile-header {
-	background-color: #063c5e;
-}
-
-.logmob-input-container {
-	padding: 5px 10px;
-}
-
-.logmob-btn {
-	width: 100%;
-	height: 64px;
-}
-
-.logmob-input-container input[type=text], input[type=email], input[type=password] {
-	color: #042e47 !important;
-	border-bottom: 1px solid #063c5e !important;
-}
-
-.logmob-input-container input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-    border-bottom: 1px solid #063c5e;
-	box-shadow: 0 1px 0 0 #063c5e;
-}
-
-.login-btn-style {
-	background-color: #063c5e !important;
-	color: #fff !important;
-}
-
-.register-btn-style {
-	background-color: #057dc8 !important;
-	color: #fff !important;
-}
-
-.login-modal {
-	width: 350px;
-	max-height: none;
-}
-
-.login-modal-content {
-	padding: 20px !important;
-}
-
-.login-modal-content input[type=text], input[type=email], input[type=password] {
-	color: #042e47 !important;
-	border-bottom: 1px solid #063c5e !important;
-}
-
-.login-modal-content input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-    border-bottom: 1px solid #063c5e;
-	box-shadow: 0 1px 0 0 #063c5e;
-}
-
-
 .left-margin-10 {
 	margin-left: 10px !important; 
 }
 
 
 /* end NavBar css */
+
+/* MOBILE SIDE-NAV */
+.mobile-nav.side-nav a {
+	color: #fff;
+}
+
+.mobile-nav.side-nav li {
+	padding: 0px;
+}
+
+.mobile-nav.side-nav li:hover, .mobile-nav.side-nav li.active {
+  background-color: #063c5e;
+}
+
+.mobile-nav .dropdown-content li:hover {
+	background-color: #d9e7ef;
+}
+/* END MOBILE SIDE-NAV*/
+ 
 .divider {
 	height: 2px;
 }
@@ -233,7 +199,7 @@ nav ul li.non-hover:hover {
 
 /* Interesting fact */
 .interesting-facts .row{
-	margin-bottom: 0;
+	margin-bottom: 0px;
 }
 
 .pie-chart {
@@ -278,8 +244,8 @@ nav ul li.non-hover:hover {
 }
 
 .user-profile{
-	margin: 0;
-	border-radius: 0;
+	margin: 0px;
+	border-radius: 0px;
 	padding: 15px;
 }
 
@@ -292,7 +258,7 @@ nav ul li.non-hover:hover {
 }
 
 .user-profile-name {
-	    font-size: 14px;
+	font-size: 14px;
 	font-weight: 700;
 }
 

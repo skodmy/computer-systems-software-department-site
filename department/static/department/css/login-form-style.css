@@ -1,0 +1,226 @@
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: 0;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #28d;
+}
+
+.login-header {
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  padding: 12px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  margin: 0px;
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-bottom: none !important;
+  border-color: #888;
+}
+
+.login input[type="checkbox"] + label:before {
+  border: 2px solid #0d8bda;
+}
+
+.login input[type="checkbox"]:checked + label:before {
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #2ab952;
+    border-bottom: 2px solid #2ab952;
+}
+
+.login input[type="submit"] {
+  display: inline-block;
+  width: 80%;
+  background: #057dc8;
+  border-radius: 2px;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #0d8bda;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+.login .registration-btn {
+  border-radius: 2px;
+  float: right;
+  height: 52px;
+}
+
+
+.forget-password {
+  padding: 24px;
+  padding-top: 0px; 
+  padding-bottom: 12px;
+  width: 100%;
+}
+
+.error-alert-container {
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 0px;
+}
+
+.error-alert {
+  padding: 5px;
+  border-radius: 2px;
+}
+
+/* MOBILE LOGIN */
+.mobile-login {
+  line-height: 32px;
+}
+
+.mobile-login .login-container {
+  padding: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.mobile-login-header {
+  line-height: 64px;
+  background-color: #042e47;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.mobile-login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.mobile-login input[type="text"],
+.mobile-login input[type="password"] {
+  margin: 0px;
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.mobile-login input[type="text"]:focus,
+.mobile-login input[type="password"]:focus {
+  border-bottom: none !important;
+  border-color: #888;
+}
+
+.mobile-login input[type="checkbox"] + label:before {
+  border: 2px solid #0d8bda;
+}
+
+.mobile-login input[type="checkbox"]:checked + label:before {
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #2ab952;
+    border-bottom: 2px solid #2ab952;
+}
+
+.mobile-login input[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  background: #057dc8;
+  border-radius: 2px;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobile-login input[type="submit"]:hover {
+  background: #0d8bda;
+}
+
+/* Buttons' focus effect */
+.mobile-login input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+.mobile-login .registration-btn {
+  border-radius: 2px;
+  float: right;
+}
+
+.mobile-login .forget-password {
+  padding: 12px;
+  padding-top: 0px; 
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+.mobile-login .error-alert-container {
+  padding: 12px;
+  padding-bottom: 0px;
+}
+
+.mobile-login .error-alert {
+  border-radius: 2px;
+}
+
+.mobile-login.side-nav a {
+  height: 32px !important;
+  line-height: 32px !important;
+  padding: 0px !important;
+  color: #039be5;
+}

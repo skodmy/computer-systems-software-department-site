@@ -8,6 +8,7 @@
 
 {% block head-extra-links %}
     <link href="{% static 'department/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'department/css/login-form-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
 {% block body-content %}
@@ -26,7 +27,7 @@
         <!-- USER MENU BTN -->
         <li class="non-hover" id="user-menu-btn-container">
             <a class="btn-floating dropdown-button btn-large waves-effect waves-light blue blue-super-dark" id="user-menu-btn" data-activates="user_menu">
-                <i class="material-icons">face</i>
+                <i class="material-icons">person</i>
             </a>
         </li>
         <!-- END USER MENU BTN -->
@@ -35,7 +36,7 @@
         {% endif %}
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
+      <ul id="nav-mobile" class="side-nav blue-super-dark mobile-nav">
         <li><a href="#">Mobile Link1</a></li>
         <li><a href="#">Mobile Link2</a></li>
         <li><a href="#">Mobile Link3</a></li>
@@ -47,31 +48,40 @@
 
     {% if request.user.is_authenticated %}
       <!-- MOBILE USER MENU BTN -->
-      <a class="button-collapse dropdown-button btn-floating btn-large waves-effect waves-light blue blue-super-dark right" data-activates="user_menu" id="mobile-user-menu-btn"><i class="material-icons">face</i></a>
+      <a class="button-collapse dropdown-button btn-floating btn-large waves-effect waves-light blue blue-super-dark right" data-activates="user_menu" id="mobile-user-menu-btn"><i class="material-icons">person</i></a>
       <!-- END MOBILE USER MENU BTN -->
     {% else %}
       <a href="#" id="mobile-login-btn" data-activates="login-mobile" class="button-collapse login-mobile-btn"><i class="material-icons">perm_identity</i></a>
     {% endif %}
 
       <!-- LOGIN MOBILE -->
-      <div id="login-mobile" class="side-nav login-mobile">
-        <div class="login-mobile-header center-align"><i class="material-icons">perm_identity</i></div>
-        <form action="" method="POST" id="login_mobile_form">
-            {% csrf_token %}
-          <div class="logmob-input-container">
-            <input placeholder="Login" id="login_mobile" type="text" name="username">
+      <div id="login-mobile" class="side-nav mobile-login blue-dark">
+        <div class="mobile-login-header center-align">Log in</div>
+        <div class="error-alert-container blue-dark">
+          <div class="error-alert red darken-2 white-text" id="login_modal_error_alert"> 
+            Wrong usename or password!
           </div>
-          <div class="logmob-input-container">
-            <input placeholder="Password" id="password_mobile" type="password" name="password">
-          </div>
-          <div class="logmob-input-container">
-            <button class="waves-effect waves-light btn blue login-btn-style logmob-btn" type="submit" id="login_mobile_form_submit">Login</button>
-          </div>
-          <div class="logmob-input-container">
-            <a class="waves-effect waves-light btn blue register-btn-style">Register</a>
-          </div>
+        </div>
+        <form class="login-container blue-dark" method="POST" id="login_mobile_form">
+          {% csrf_token %}
+          <p>
+            <input type="text" placeholder="Email" id="login_mobile" name="username">
+          </p>
+          <p>
+            <input id="password_mobile" type="password" name="password" placeholder="Password">
+          </p>
+          <p>
+            <input type="checkbox" id="remember_me_mobile" />
+            <label for="remember_me_mobile" class="white-text">Remember me?</label>
+          </p>
+          <p>
+            <input type="submit" value="Log in" id="login_mobile_form_submit">
+          </p>
         </form>
+        <div class="forget-password blue-dark"><a href="#" >Create account</a></div>
+        <div class="forget-password blue-dark"><a href="#" >Forget Password?</a></div>
       </div>
+      <!-- END LOGIN MOBILE -->
     </div>
   </nav>
 
@@ -113,21 +123,33 @@
 
   <!-- LOGIN MODAl -->
   <!-- Modal Structure -->
-  <div id="login_modal" class="modal login-modal">
-    <form action="" method="POST" id="login_modal_form">
-        {% csrf_token %}
-      <div class="modal-content login-modal-content blue-dark text-white">
-        <h5>Login</h5>
+  <div  id="login_modal" class="modal login blue-super-dark">   
+    <h2 class="login-header">Log in</h2>
+    <div class="error-alert-container blue-dark">
+      <div class="error-alert red darken-2 white-text" id="login_modal_error_alert"> 
+        Wrong usename or password!
       </div>
-      <div class="modal-content login-modal-content">
-        <input placeholder="Login" id="login_modal" type="text" name="username">
-        <input placeholder="Password" id="password_modal" type="password" name="password">
-      </div>
-      <div class="modal-footer">
-        <button class="waves-effect waves-light btn blue login-btn-style left-margin-10" type="submit" id="login_modal_form_submit">Login</button>
-        <a class="waves-effect waves-light btn blue register-btn-style" href="#link to register page">Register</a>
-      </div>
+    </div>
+    <form class="login-container blue-dark" action="" method="POST" id="login_modal_form">
+      {% csrf_token %}
+      <p>
+        <input type="text" placeholder="Email" id="login_modal" name="username">
+      </p>
+      <p>
+        <input id="password_modal" type="password" name="password" placeholder="Password">
+      </p>
+      <p>
+        <input type="checkbox" id="remember_me" />
+        <label for="remember_me" class="white-text">Remember me?</label>
+      </p>
+      <p>
+        <input type="submit" value="Log in" id="login_modal_form_submit">
+        <a class="btn-floating btn-large waves-effect waves-light blue blue-super-dark registration-btn">
+          <i class="material-icons">person_add</i>
+        </a>
+      </p>
     </form>
+    <div class="forget-password blue-dark"><a href="#" >Forget Password?</a></div>
   </div>
   <!-- END LOGIN MODAL -->
 
