@@ -18,6 +18,9 @@ def ajax_login(request):
             json_response_data['exists'] = True
             if user.is_active:
                 login(request, user)
+                if not request.POST.get('remember_user', False):
+                    # If value is 0, the user’s session cookie will expire when the user’s Web browser is closed.
+                    request.session.set_expiry(0)
                 json_response_data['is_active'] = True
                 json_response_data.setdefault('username', username)
             else:

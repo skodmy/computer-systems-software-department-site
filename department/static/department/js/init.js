@@ -91,6 +91,7 @@
 
 function login_form_submit_handler(event){
 	var form_alert = $(this).attr('id')=='login_modal_form'?$('#login_modal_error_alert'):$('#login_mobile_error_alert');
+	alert($(this).serialize());
 	$.post('login/', $(this).serialize(),
 		function(json_response_data){
 			var show_form_alert = function(message){form_alert.text(message); form_alert.show()};
