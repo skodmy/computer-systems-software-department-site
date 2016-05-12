@@ -58,20 +58,20 @@
       <div id="login-mobile" class="side-nav mobile-login blue-dark">
         <div class="mobile-login-header center-align">Log in</div>
         <div class="error-alert-container blue-dark">
-          <div class="error-alert red darken-2 white-text" id="login_modal_error_alert"> 
-            Wrong usename or password!
+          <div class="error-alert red darken-2 white-text" id="login_mobile_error_alert">
+            Wrong username or password!
           </div>
         </div>
         <form class="login-container blue-dark" method="POST" id="login_mobile_form">
           {% csrf_token %}
           <p>
-            <input type="text" placeholder="Email" id="login_mobile" name="username">
+            <input type="text" placeholder="Login" id="login_mobile" name="username">
           </p>
           <p>
             <input id="password_mobile" type="password" name="password" placeholder="Password">
           </p>
           <p>
-            <input type="checkbox" id="remember_me_mobile" />
+            <input type="checkbox" id="remember_me_mobile" name="remember_user"/>
             <label for="remember_me_mobile" class="white-text">Remember me?</label>
           </p>
           <p>
@@ -79,7 +79,7 @@
           </p>
         </form>
         <div class="forget-password blue-dark"><a href="#" >Create account</a></div>
-        <div class="forget-password blue-dark"><a href="#" >Forget Password?</a></div>
+        <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
       </div>
       <!-- END LOGIN MOBILE -->
     </div>
@@ -100,6 +100,9 @@
           </div>
         </div>
     </li>
+    {% if request.user.is_staff %}
+        <li><a href="admin/">Administration</a></li>
+    {% endif %}
     <li><a href="#">Action1</a></li>
     <li><a href="#">Action2</a></li>
     <li class="divider"></li>
@@ -133,13 +136,13 @@
     <form class="login-container blue-dark" action="" method="POST" id="login_modal_form">
       {% csrf_token %}
       <p>
-        <input type="text" placeholder="Email" id="login_modal" name="username">
+        <input type="text" placeholder="Login" id="login_modal" name="username">
       </p>
       <p>
         <input id="password_modal" type="password" name="password" placeholder="Password">
       </p>
       <p>
-        <input type="checkbox" id="remember_me" />
+        <input type="checkbox" id="remember_me" checked/>
         <label for="remember_me" class="white-text">Remember me?</label>
       </p>
       <p>
@@ -149,7 +152,7 @@
         </a>
       </p>
     </form>
-    <div class="forget-password blue-dark"><a href="#" >Forget Password?</a></div>
+    <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
   </div>
   <!-- END LOGIN MODAL -->
 
