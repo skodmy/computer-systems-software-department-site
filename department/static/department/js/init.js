@@ -43,26 +43,25 @@ function login_form_submit_handler(event){
 
 function create_charts(){
 	Chart.defaults.global.legend.display = false;
-	$.getJSON('fact/facts-arguments-json/', function(response_data){
-		$.each(response_data, function(key, value){
+	$.getJSON('fact/facts-arguments-json/', function(json_data){
+		$.each(json_data, function(key, value){
 			new Chart($('#fact-chart-area-'+key.toString())[0].getContext('2d'),
 				{
 					type: 'doughnut',
 					data: {
 						labels: value['labels'],
-						datasets:[{data: value['data'], backgroundColor: random_colors_array(value['data'].length)}]
+						datasets:[{
+							data: value['data'],
+							backgroundColor: Please.make_color({
+								base_color: 'lightblue',
+								colors_returned: value['data'].length,
+								format: 'hex'
+							})
+						}]
 					},
 					options: {responsive: true}
 				}
 			)
 		})
 	});
-}
-
-function random_color(){
-	return '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
-}
-
-function random_colors_array(n){
-	var result = []; while(n!=0) {result.push(random_color()); n--} return result
 }
