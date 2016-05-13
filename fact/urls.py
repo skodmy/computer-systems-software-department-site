@@ -1,7 +1,8 @@
 from django.conf.urls import url
 
-from .views import divs_list
+from .views import rows, facts_arguments_json
 
 urlpatterns = [
-    url(r'^divs-list/', divs_list)
+    url(r'^rows/', rows),
+    url(r'^facts-arguments-json/', facts_arguments_json),
 ]

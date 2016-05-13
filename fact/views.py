@@ -1,8 +1,15 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 
 from fact.models import Fact
 
 
-def divs_list(request):
-    context = {'facts':Fact.objects.all()[:5]}
-    return render(request, 'fact/divs_list.html', context)
+def rows(request):
+    return render(request, 'fact/rows.html', {'facts': Fact.objects.all()[:3]})
+
+
+def facts_arguments_json(request):
+    context = {}
+    for fact in Fact.objects.all()[:3]:
+        context.setdefault(fact.id, fact.arguments_json())
+    return JsonResponse(context)
