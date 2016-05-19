@@ -2,10 +2,10 @@
     $(function(){
 		$.get('slides/', function(slides_html){$('.slides').append(slides_html); $('.slider').slider()});
 		$.get('fact/rows/', function(facts_html){$('.interesting-facts').append(facts_html); create_charts()});
-		$('#technologies-carousel').load('technology/carousel-items-list/', function(){$(this).carousel({dist: 0})});
+		$('#technologies-carousel').load('technology/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
 		$('#advertisements-row').load('advertisement/cards-list/');
 		$.get('news/records/', function(records_html){$('#news-start').after(records_html)});//('#news-start').load('news/cards-list/');
-		$('#partners-carousel').load('partner/carousel-items-list/', function(){$(this).carousel({dist: 0})});
+		$('#partners-carousel').load('partner/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
 
 		$('.nav-dropdown-button').dropdown({hover: true});
 	  	$('.mobile-dropdown-button').dropdown({hover: false});

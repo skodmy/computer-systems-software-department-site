@@ -90,6 +90,18 @@ nav ul li.non-hover:hover {
 }
 
 /* Slider */
+
+.slider .slides li .caption-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: rgba(4, 46, 71, .6) !important;
+}
+
+
+
 @media only screen and (min-width: 993px) {
   	.slider {
 	    height: 525px !important;
@@ -133,13 +145,13 @@ nav ul li.non-hover:hover {
 }
 
 .learn-more-btn {
-	background: rgba(4, 46, 71, .8) !important;
+	background-color: #042e47 !important;
 	border: 3px solid #fff;
 	color: #fff;
 }
 
 .learn-more-btn:hover {
-	background: rgba(4, 46, 71, 1) !important;
+	background-color: #063c5e !important;
 }
 /* End Slider */
 
@@ -185,6 +197,9 @@ nav ul li.non-hover:hover {
 }
 
 /* news css */
+.row.news-record {
+	margin-bottom: 0px;
+}
 
 .news-record {
 	padding: 10px 0;
@@ -217,17 +232,74 @@ nav ul li.non-hover:hover {
 	}
 }
 
-.news .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-	color: #057dc8;
+.info-panel {
+	color: #909090;
+	display: inline-block;
+	padding-bottom: 10px;
+	font-size: 11px;
+	font-family: Arial,Helvetica Neue,sans-serif;
 }
 
-.news .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
-	color: #55ace2;
+.info-panel a {
+	color: #909090;
+	display: inline-block;
+	margin-right: 5px;
 }
+
+.info-panel a:hover {
+	text-decoration: underline;
+}
+
+.info-panel .material-icons {
+	font-size: 11px;
+}
+
+.read-more-button {
+	padding: 0 1rem;
+	font-size: 14px;
+	box-shadow: none;
+	background-color: #039be5 !important;
+	color: #fff;
+}
+
+.read-more-button:hover {
+	box-shadow: none;
+	background-color: #03B8E5 !important;
+}
+
+.news-card .card-image .card-title  {
+	width: 100%;
+	color: #063c5e;
+	background: rgba(217, 231, 239, .7);
+	padding: 5px;
+}
+
+.news-card .info-panel {
+	padding-top: 10px;
+}
+
+.news-card .card-content .card-title  {
+	color: #063c5e;
+	line-height: normal;
+}
+
+.news-card .card-action a {
+	color: #039be5 !important;
+}
+
+.news .card .card-action a {
+	color: #039be5 !important;
+}
+
+/* End news */
 
 .show-more-button {
 	background-color: #d9e7ef !important;
 	color: #042e47;
+}
+
+.show-more-container {
+	padding-top: 10px !important;
 }
 
 /* Interesting fact */
