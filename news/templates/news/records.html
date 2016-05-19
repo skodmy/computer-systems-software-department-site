@@ -1,0 +1,14 @@
+{% for news in news_list %}
+    <div class="divider"></div>
+    <div class="row news-record">
+        <div class="col s3">
+        {% if news.image %}
+            <img src="{{ news.image.url }}" alt="" class="responsive-img">
+        {% endif %}
+        </div>
+        <div class="col s9">
+            <h4 class="news-title"><a href="news/article-id={{ news.id }}">{{ news.heading }}</a></h4>
+            <p>{{ news.short_description }}.</p>
+        </div>
+    </div>
+{% endfor %}

@@ -3,9 +3,9 @@ from django.shortcuts import render
 from .models import News
 
 
-def cards_list(request):
+def records(request):
     context = {'news_list': News.objects.all()[:5]}
-    return render(request, 'news/cards_list.html', context)
+    return render(request, 'news/records.html', context)
 
 
 def news_details(request):

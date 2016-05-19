@@ -1,8 +1,8 @@
 from django.conf.urls import url
 
-from .views import cards_list, news_details
+from .views import records, news_details
 
 urlpatterns = [
-    url(r'^cards-list/$', cards_list),
-    url(r'^news-details/$', news_details)
+    url(r'^records/$', records),
+    url(r'^news-details/$', news_details),
 ]
