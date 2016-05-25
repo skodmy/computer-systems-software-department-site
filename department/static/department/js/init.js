@@ -7,8 +7,7 @@
 		$.get('news/records/', function(records_html){$('#news-start').after(records_html)});//('#news-start').load('news/cards-list/');
 		$('#partners-carousel').load('partner/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
 
-		$('.nav-dropdown-button').dropdown({hover: true});
-	  	$('.mobile-dropdown-button').dropdown({hover: false});
+	  	$('.mobile-dropdown-button').dropdown({alignment: 'right', belowOrigin: true});
 		$('#mobile-login-btn').sideNav();
 	    $('#mobile-nav-btn').sideNav();
 		$('#user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
@@ -27,6 +26,7 @@
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
+
 
 function login_form_submit_handler(event){
 	var form_alert = $(this).attr('id')=='login_modal_form'?$('#login_modal_error_alert'):$('#login_mobile_error_alert');

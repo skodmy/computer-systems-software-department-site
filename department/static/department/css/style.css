@@ -97,10 +97,15 @@ nav ul li.non-hover:hover {
 	height: 100%;
 	top: 0px;
 	left: 0px;
-	background: rgba(4, 46, 71, .6) !important;
+	/*background: rgba(4, 46, 71, .6) !important;*/
 }
 
-
+.slider-header {
+	padding: 10px;
+	background: rgba(4, 46, 71, .6) !important;
+	display: inline-block;
+	margin-bottom: 10px;
+}
 
 @media only screen and (min-width: 993px) {
   	.slider {
@@ -142,6 +147,10 @@ nav ul li.non-hover:hover {
 
 .slider .indicators .indicator-item.active {
   background-color: #d9e7ef;
+}
+
+.learn-more-container {
+	display: block;
 }
 
 .learn-more-btn {
@@ -214,6 +223,11 @@ nav ul li.non-hover:hover {
 	color: #042e47;
 }
 
+.news-title a:hover {
+	text-decoration: underline;
+	color: #03B8E5;
+}
+
 @media only screen and (max-width: 600px) {
   	.news-title {
 		font-size: 18px;
@@ -253,6 +267,49 @@ nav ul li.non-hover:hover {
 .info-panel .material-icons {
 	font-size: 11px;
 }
+
+.info-block {
+	border: 1px solid #159fd8;
+	display: inline-block;
+	color: #909090;
+	font-size: 12px;
+	font-family: Arial,Helvetica Neue,sans-serif;
+}
+
+.info-block a {
+	color: #909090;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.info-block a:hover {
+	text-decoration: underline;
+}
+
+.info-block .material-icons {
+	font-size: 18px;
+}
+
+.info-block .inside-block {
+	display: inline-block;
+	padding: 10px;
+}
+
+.hide-on-med-and-up .info-block .inside-block {
+	font-size: 11px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.info-block .inside-block:not(:last-child){
+	border-right: 1px solid #e1e1e1;
+}
+
+.info-block .inside-block .text{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 
 .read-more-button {
 	padding: 0 1rem;

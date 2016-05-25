@@ -1,0 +1,20 @@
+{% for news in news_list %}
+    <div class="col s12 news">
+            <div class="card blue-light">
+                {% if news.image %}
+                    <div class="card-image">
+                        <img src="{{ news.image.url }}">
+                    </div>
+                {% endif %}
+                <div class="news-title">
+                    <span class="card-title">{{ news.heading }}</span>
+                </div>
+              <div class="card-content text-blue">
+                <p>{{ news.short_description }}</p>
+              </div>
+              <div class="card-action">
+                <a href="news/news-details/">Read more</a>
+              </div>
+            </div>
+    </div>
+{% endfor %}

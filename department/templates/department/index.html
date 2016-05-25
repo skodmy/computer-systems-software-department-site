@@ -15,14 +15,16 @@
   <!-- NAVBAR -->
   <nav class="blue-super-dark" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
-        <li><a href="#">Link4</a></li>
+      <a id="logo-container" href="#" class="brand-logo center">
+        <img src="{% static 'department/images/logo.png' %}" class="responsive-img">
+      </a>
+      <ul class="right">
+        <!--<li><a class="dropdown-button nav-dropdown-button" href="#!" data-activates="dropdown1">Про Кафедру<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#">Студентам</a></li>
+        <li><a href="#">Абітурієнтам</a></li>
+        <li><a href="#">Новини</a></li>
+        <li><a href="#">Оголошення</a></li>-->
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button nav-dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
         {% if request.user.is_authenticated %}
         <!-- USER MENU BTN -->
         <li class="non-hover" id="user-menu-btn-container">
@@ -37,22 +39,15 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav blue-super-dark mobile-nav">
-        <li><a href="#">Mobile Link1</a></li>
-        <li><a href="#">Mobile Link2</a></li>
-        <li><a href="#">Mobile Link3</a></li>
-        <li><a href="#">Mobile Link4</a></li>
+        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown1">Про кафедру<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown2">Наукова діяльність<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown3">Студентам<i class="material-icons right">arrow_drop_down</i></a></li>
         <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown4">Абітурієнтам<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a href="#">Новини</a></li>
+        <li><a href="#">Оголошення</a></li>
       </ul>
-      <a href="#" id="mobile-nav-btn" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-
-    {% if request.user.is_authenticated %}
-      <!-- MOBILE USER MENU BTN -->
-      <a class="button-collapse dropdown-button btn-floating btn-large waves-effect waves-light blue blue-super-dark right" data-activates="user_menu" id="mobile-user-menu-btn"><i class="material-icons">person</i></a>
-      <!-- END MOBILE USER MENU BTN -->
-    {% else %}
-      <a href="#" id="mobile-login-btn" data-activates="login-mobile" class="button-collapse login-mobile-btn"><i class="material-icons">perm_identity</i></a>
-    {% endif %}
+      <a href="#" id="mobile-nav-btn" data-activates="nav-mobile" class="left"><i class="material-icons">menu</i></a>
 
       <!-- LOGIN MOBILE -->
       <div id="login-mobile" class="side-nav mobile-login blue-dark">
@@ -109,18 +104,28 @@
     <li><a id="logout-btn">Logout</a></li>
   </ul>
   <!-- END USER menu -->
-  
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
+    <li><a href="#!">Завідуючий кафедри</a></li>
+    <li><a href="#!">Колектив кафедри</a></li>
+    <li><a href="#!">Досягнення студентів</a></li>
+    <li><a href="#!">Наші партнери</a></li>
+    <li><a href="#!">Фотогалерея</a></li>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">one1</a></li>
-    <li><a href="#!">two2</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three3</a></li>
+    <li><a href="#!">Публікації</a></li>
+    <li><a href="#!">Розробки</a></li>
+    <li><a href="#!">Дисертації</a></li>
+    <li><a href="#!">Конференції</a></li>
+  </ul>
+  <ul id="dropdown3" class="dropdown-content">
+    <li><a href="#!">Дисципліни</a></li>
+    <li><a href="#!">Розклад занять</a></li>
+    <li><a href="#!">Корисні посилання</a></li>
+    <li><a href="#!">Рейтинг успішності</a></li>
+  </ul>
+  <ul id="dropdown4" class="dropdown-content">
+    <li><a href="#!">Умови вступу</a></li>
+    <li><a href="#!">Дні відкритих дверей</a></li>
   </ul>
   <!-- END NAVBAR -->
 
@@ -163,9 +168,13 @@
         <img src="{% static 'department/images/soft1.jpg' %}"> <!-- random image -->
         <div class="caption-container">
           <div class="caption center-align">
-            <h3>This is our big Tagline!</h3>
-            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            <span class="slider-header">
+              <h3>This is our big Tagline!</h3>
+              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </span>
+            <span class="learn-more-container">
+              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            </span>
           </div>
         </div>
       </li>
@@ -173,9 +182,13 @@
         <img src="{% static 'department/images/soft2.jpg' %}"> <!-- random image -->
         <div class="caption-container">
           <div class="caption right-align">
-            <h3>This is our big Tagline!</h3>
-            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            <span class="slider-header">
+              <h3>This is our big Tagline!</h3>
+              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </span>
+            <span class="learn-more-container">
+              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            </span>
           </div>
         </div>
       </li>
@@ -183,9 +196,13 @@
         <img src="{% static 'department/images/soft3.png' %}"> <!-- random image -->
         <div class="caption-container">
           <div class="caption left-align">
-            <h3>This is our big Tagline!</h3>
-            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            <span class="slider-header">
+              <h3>This is our big Tagline!</h3>
+              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </span>
+            <span class="learn-more-container">
+              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+            </span>
           </div>
         </div>
       </li>
@@ -264,8 +281,7 @@
               </div>
               <div class="col s12">
                 <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
+                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
                 </div>
               </div>
               <div class="col s3">
@@ -273,60 +289,28 @@
               </div>
               <div class="col s9">
                 May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row news-record">
-              <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
               </div>
               <div class="col s12">
-                <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
+                <div class="info-block">
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div class="col s12">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
-              </div>
             </div>
-            <div class="divider"></div>
-            <div class="row news-record">
-              <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
-              </div>
-              <div class="col s12">
-                <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
-                </div>
-              </div>
-              <div class="col s3">
-                <img src="{% static 'department/images/student.jpg' %}" alt="" class="responsive-img">
-              </div>
-              <div class="col s9">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row news-record">
-              <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
-              </div>
-              <div class="col s12">
-                <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
-                </div>
-              </div>
-              <div class="col s12">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
-              </div>
-            </div>
+            
             <div class="divider"></div>
             <div class="row">
             <!-- SHOW MORE BUTTON -->
@@ -346,8 +330,7 @@
               </div>
               <div class="col s12">
                 <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
+                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
                 </div>
               </div>
               <div class="col s4">
@@ -355,23 +338,25 @@
               </div>
               <div class="col s8">
                 May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row news-record">
-              <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
               </div>
               <div class="col s12">
-                <div class="info-panel">
-                  <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                  <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
+                <div class="info-block">
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div class="col s12">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-                <p><a class="waves-effect waves-light btn read-more-button right">Читати далі</a></p>
               </div>
             </div>
             <div class="divider"></div>
@@ -484,7 +469,7 @@
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">Про кафедру</h5>
           <ul>
             <li><a class="white-text" href="#!">Link 1</a></li>
             <li><a class="white-text" href="#!">Link 2</a></li>
