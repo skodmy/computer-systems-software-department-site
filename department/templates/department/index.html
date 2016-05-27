@@ -9,6 +9,8 @@
 {% block head-extra-links %}
     <link href="{% static 'department/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'department/css/login-form-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {% block xhead-extra-links %}
+    {% endblock %}
 {% endblock %}
 
 {% block body-content %}
@@ -96,7 +98,7 @@
         </div>
     </li>
     {% if request.user.is_staff %}
-        <li><a href="admin/">Administration</a></li>
+        <li><a href="/admin/">Administration</a></li>
     {% endif %}
     <li><a href="#">Action1</a></li>
     <li><a href="#">Action2</a></li>
@@ -161,7 +163,7 @@
   </div>
   <!-- END LOGIN MODAL -->
 
-  <!--  SLIDER-->
+  {% block slider %}
   <div class="slider">
     <ul class="slides">
       <li>
@@ -208,14 +210,14 @@
       </li>
     </ul>
   </div>
-  <!--  END SLIDER-->
+  {% endblock %}
 
-  <!--  CONTAINER-->
+  {% block container %}
   <div class="container">
     <div class="row">
       <div class="col s12 m8">
         <div class="row">
-          <!-- FOCUS ON -->
+          {% block container-focus-on %}
           <div class="col s12">
             <h4>Focus on</h4>
             <div class="divider simple-blue"></div>
@@ -262,173 +264,174 @@
               </div>
             </div>
           </div>
-          <!-- END FOCUS ON -->
-          <!-- Technologies -->
+          {% endblock %}
+          {% block container-technologies %}
           <div class="col s12 technologies">
             <h4>Technologies</h4>
             <div class="carousel" id="technologies-carousel">
             </div>
           </div>
-          <!-- END Technologies -->
-          <!-- New Last News Block -->
-          <!-- NEWS Large-->
+          {% endblock %}
+          {% block container-news %}
           <div class="col s12 hide-on-med-and-down">
-            <h4>Large</h4>
+            <h4>Large news</h4>
             <div class="divider  simple-blue"></div>
+            {% for news in news_list %}
             <div class="row news-record">
               <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
+                <h4 class="news-title"><a href="#">{{ news.title }}</a></h4>
               </div>
               <div class="col s12">
                 <div class="info-panel">
-                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
+                  <i class="material-icons">local_offer</i>
+                  {% for tag in news.tag.all %}
+                      <a href="#">{{ tag.name }}</a>
+                  {% endfor %}
                 </div>
               </div>
               <div class="col s3">
-                <img src="{% static 'department/images/student.jpg' %}" alt="" class="responsive-img">
+                <img src="{{ news.image.url }}" alt="" class="responsive-img">
               </div>
               <div class="col s9">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
+                  {{ news.short_description }}
               </div>
               <div class="col s12">
                 <div class="info-block">
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                      <i class="material-icons">event</i>
+                      <a href="#"><span class="valign text">{{ news.publication_date_time }}</span></a>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                      <i class="material-icons">visibility</i><span class="valign text">{{ news.clicks }}</span>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                      <i class="material-icons">person</i><a href="#"><span class="valign text">{{ news.author }}</span></a>
                     </span>
                   </div>
                 </div>
               </div>
             </div>
-            
+            {% endfor %}
+            {% block container-news-show-more-container-large %}
             <div class="divider"></div>
             <div class="row">
             <!-- SHOW MORE BUTTON -->
               <div class="col s12 show-more-container">
-                  <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+                  <a class="waves-effect waves-light btn  blue show-more-button" href="news/index">Show more</a>
               </div>
             </div>
+            {% endblock %}
           </div>
           <!-- END NEWS -->
           <!-- NEWS Medium-->
           <div class="col s12 hide-on-small-and-down hide-on-large-only">
-            <h4>Medium</h4>
+            <h4>Medium news</h4>
             <div class="divider  simple-blue"></div>
+            {% for news in news_list %}
             <div class="row news-record">
               <div class="col s12 title-container">
-                <h4 class="news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
+                <h4 class="news-title"><a href="#">{{ news.title }}</a></h4>
               </div>
               <div class="col s12">
                 <div class="info-panel">
-                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
+                  <i class="material-icons">local_offer</i>
+                  {% for tag in news.tag.all %}
+                      <a href="#">{{ tag.name }}</a>
+                  {% endfor %}
                 </div>
               </div>
               <div class="col s4">
-                <img src="{% static 'department/images/student.jpg' %}" alt="" class="responsive-img">
+                <img src="{{ news.image.url }}" alt="" class="responsive-img">
               </div>
               <div class="col s8">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
+                {{ news.short_description }}
               </div>
               <div class="col s12">
                 <div class="info-block">
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                      <i class="material-icons">event</i>
+                      <a href="#"><span class="valign text">{{ news.publication_date_time }}</span></a>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                      <i class="material-icons">visibility</i><span class="valign text">{{ news.clicks }}</span>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                      <i class="material-icons">person</i>
+                      <a href="#"><span class="valign text">{{ news.author }}</span></a>
                     </span>
                   </div>
                 </div>
               </div>
             </div>
+            {% endfor %}
+            {% block container-news-show-more-container-medium %}
             <div class="divider"></div>
             <div class="row">
             <!-- SHOW MORE BUTTON -->
               <div class="col s12 show-more-container">
-                  <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+                  <a class="waves-effect waves-light btn  blue show-more-button" href="news/index">Show more</a>
               </div>
             </div>
+            {% endblock %}
           </div>
           <!-- END NEWS -->
           <!-- NEWS Small-->
           <div class="col s12 hide-on-med-and-up">
-            <h4>Small</h4>
+            <h4>Small news</h4>
             <div class="divider  simple-blue"></div>
+            {% for news in news_list %}
             <div class="card news-card">
               <div class="card-image">
-                <img src="{% static 'department/images/student.jpg' %}">
-                <span class="card-title">Google’s crusade against Flash will take a huge step later this year</span>
+                <img src="{{ news.image.url }}">
+                <span class="card-title">{{ news.title }}</span>
               </div>
               <div class="card-content">
                 <p>
                   <div class="info-panel">
-                    <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                    <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
+                    <a href="#"><i class="material-icons">access_time</i>{{ news.publication_date_time }}</a>
+                    <a href="#"><i class="material-icons">remove_red_eye</i>{{ news.clicks }}</a>
                   </div>
-                </p>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                  <p>{{ news.short_description }}</p>
               </div>
               <div class="card-action">
-                <a href="#">Читати далі</a>
+                <a href="news/index">Читати далі</a>
               </div>
             </div>
-            <div class="card news-card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title">Google’s crusade against Flash will take a huge step later this year</span>
-                </p>
-                <p>
-                  <div class="info-panel">
-                    <a href="#"><i class="material-icons">access_time</i>Тра 19, 2016 @ 15:54</a>
-                    <a href="#"><i class="material-icons">remove_red_eye</i>34</a>
-                  </div>
-                </p>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">Читати далі</a>
-              </div>
-            </div>
+            {% endfor %}
+            {% block container-news-show-more-container-small %}
             <div class="row">
             <!-- SHOW MORE BUTTON -->
               <div class="col s12">
-                  <a class="waves-effect waves-light btn  blue show-more-button" href="index.html">Show more</a>
+                  <a class="waves-effect waves-light btn  blue show-more-button" href="news/index">Show more</a>
               </div>
             </div>
+            {% endblock %}
           </div>
-          <!-- END NEWS -->
-          <!-- END New Last News Block -->
+          {% block xcontainer-news %}
+          {% endblock %}
+          {% endblock %}
         </div>
       </div>
       <div class="col s12 m4">
         <div class="row">
+          {% block container-facts %}
           <div class="col s12 interesting-facts hide-on-small-and-down ">
             <h4>Interesting</h4>
             <div class="divider simple-blue"></div>
             <!-- Interestings facts -->
           </div>
-          <!-- End Interesting Facts -->
-          <!-- Advertisments -->
+          {% endblock %}
+          {% block container-advertisements %}
           <div class="col s12">
             <div class="divider simple-blue"></div>
             <h4>Advertisements</h4>
@@ -441,10 +444,13 @@
                   </div>
               </div>
           </div>
-          <!-- End Advertisements -->
+          {% endblock %}
+          {% block container-extra %}
+          {% endblock %}
         </div>
       </div>
     </div>
+    {% block container-partners %}
     <div class="row">
       <div class="col s12">
         <h4>Partners</h4>
@@ -453,8 +459,10 @@
         </div>
       </div>
     </div>
+    {% endblock %}
   </div>
-  <!--  END CONTAINER-->
+  {% endblock %}
+
   <!-- UP BUTTON -->
   <a class="btn-floating btn-large waves-effect waves-light blue up_button" id="up_button"><i class="material-icons">keyboard_arrow_up</i></a>
   <!-- END UP BUTTON -->
@@ -498,7 +506,9 @@
 {% endblock %}
 
 {% block body-extra-scripts %}
-    <script src="{% static 'department/js/Chart.bundle.min.js' %}"></script>
-    <script src="{% static 'department/js/Please-compressed.js' %}"></script>
     <script src="{% static 'department/js/init.js' %}"></script>
+    {% block xbody-extra-scripts %}
+        <script src="{% static 'department/js/Chart.bundle.min.js' %}"></script>
+        <script src="{% static 'department/js/Please-compressed.js' %}"></script>
+    {% endblock %}
 {% endblock %}

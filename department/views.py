@@ -2,10 +2,11 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import Slide
+from news.models import News
 
 
 def index(request):
-    return render(request, 'department/index.html')
+    return render(request, 'department/index.html', {'news_list': News.objects.all()[:5]})
 
 
 def ajax_login(request):

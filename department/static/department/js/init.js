@@ -1,11 +1,10 @@
 (function($){
     $(function(){
-		$.get('slides/', function(slides_html){$('.slides').append(slides_html); $('.slider').slider()});
-		$.get('fact/rows/', function(facts_html){$('.interesting-facts').append(facts_html); create_charts()});
-		$('#technologies-carousel').load('technology/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
-		$('#advertisements-row').load('advertisement/cards-list/');
-		$.get('news/records/', function(records_html){$('#news-start').after(records_html)});//('#news-start').load('news/cards-list/');
-		$('#partners-carousel').load('partner/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
+		$.get('/slides/', function(slides_html){$('.slides').append(slides_html); $('.slider').slider()});
+		$.get('/fact/rows/', function(facts_html){$('.interesting-facts').append(facts_html); create_charts()});
+		$('#technologies-carousel').load('/technology/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
+		$('#advertisements-row').load('/advertisement/cards-list/');
+		$('#partners-carousel').load('/partner/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
 
 	  	$('.mobile-dropdown-button').dropdown({alignment: 'right', belowOrigin: true});
 		$('#mobile-login-btn').sideNav();
@@ -13,7 +12,7 @@
 		$('#user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
 	  	$('#mobile-user-menu-btn').dropdown({belowOrigin: true, constrain_width : false, hover: false});
 		$('#up_button').click(function(){$('html, body').animate({scrollTop:0},800)});
-		$('#logout-btn').click(function(){$.get('logout/', function(){location.reload()})});
+		$('#logout-btn').click(function(){$.get('/logout/', function(){location.reload()})});
 		$('.modal-trigger').leanModal();
 		$('.error-alert').hide();
 
@@ -30,7 +29,7 @@
 
 function login_form_submit_handler(event){
 	var form_alert = $(this).attr('id')=='login_modal_form'?$('#login_modal_error_alert'):$('#login_mobile_error_alert');
-	$.post('login/', $(this).serialize(),
+	$.post('/login/', $(this).serialize(),
 		function(json_response_data){
 			var show_form_alert = function(message){form_alert.text(message); form_alert.show()};
 			if(json_response_data['exists']){
@@ -43,7 +42,7 @@ function login_form_submit_handler(event){
 
 function create_charts(){
 	Chart.defaults.global.legend.display = false;
-	$.getJSON('fact/facts-arguments-json/', function(json_data){
+	$.getJSON('/fact/facts-arguments-json/', function(json_data){
 		$.each(json_data, function(key, value){
 			new Chart($('#fact-chart-area-'+key.toString())[0].getContext('2d'),
 				{
