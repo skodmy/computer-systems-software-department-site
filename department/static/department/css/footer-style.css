@@ -1,0 +1,82 @@
+.footer-block h5 {
+	color: #3385ff;
+}
+
+.footer-block ul li :before {
+    content: "•";
+    color: #3385ff;
+    margin-right: 10px;
+}
+
+.footer-block.personalization ul li :before {
+    color: #3385ff;
+    margin-right: 10px;
+}
+
+.footer-block ul li.login-footer :before {
+	font-family: 'Material Icons';
+	content: "perm_identity";
+}
+
+.footer-block ul li.registration :before {
+	font-family: 'Material Icons';
+	content: "person_add";
+}
+
+.footer-block ul li.profile :before {
+	font-family: 'Material Icons';
+	content: "person";
+}
+
+.footer-block ul li.mail :before {
+	font-family: 'Material Icons';
+	content: "mail";
+}
+
+.update input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.update input[type="text"] {
+  margin: 0px;
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.update input[type="text"]:focus {
+  border-bottom: none !important;
+  border-color: #888;
+}
+
+
+.update input[type="submit"] {
+  display: inline-block;
+  background: #057dc8;
+  border-radius: 2px;
+  border-color: transparent;
+  color: #fff;
+  width: auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.update input[type="submit"]:hover {
+  background: #0d8bda;
+}
+
+/* Buttons' focus effect */
+.update input[type="submit"]:focus {
+  border-color: #05a;
+}

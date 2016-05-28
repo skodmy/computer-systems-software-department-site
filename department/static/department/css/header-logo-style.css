@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Play&subset=latin,cyrillic-ext);
+
+.header-logo-container {
+	height: 100%;
+	display: -webkit-flex !important;
+  	display: -ms-flexbox !important;
+  	display: flex !important;
+}
+
+.header-logo-image {
+	height: 100%;
+	width: auto;
+}
+
+.logo-image-container {
+	height: 100%;
+	display: inline-block;	
+}
+
+.logo-caption-container {
+	font-family: 'Play', sans-serif;
+	padding-left: 5px;
+	padding-top: 5px;
+	height: 100%;
+	display: inline-block;	
+	line-height: 28px;
+}
+
+.header-logo-main-caption {
+	font-size: 22px;
+}
+
+.header-logo-low-caption {
+	font-size: 18px;
+}

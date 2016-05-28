@@ -9,6 +9,8 @@
 {% block head-extra-links %}
     <link href="{% static 'department/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="{% static 'department/css/login-form-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="{% static 'department/css/login-form-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'department/css/header-logo-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     {% block xhead-extra-links %}
     {% endblock %}
 {% endblock %}
@@ -17,9 +19,19 @@
   <!-- NAVBAR -->
   <nav class="blue-super-dark" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo center">
-        <img src="{% static 'department/images/logo.png' %}" class="responsive-img">
-      </a>
+      <div id="logo-container"  class="brand-logo center header-logo-container">
+        <div class="logo-image-container">
+          <img src="{% static 'department/images/logo3.png' %}" class="header-logo-image">
+        </div>
+        <div class="logo-caption-container valign-wrapper hide-on-med-and-down">
+          <span class="header-logo-main-caption valign">
+            Кафедра програмного забезпечення
+          </span>
+          <span class="header-logo-low-caption valing left">
+            ЧНУ ім. Ю. Федьковича
+          </span>
+        </div>
+      </div>
       <ul class="right">
         <!--<li><a class="dropdown-button nav-dropdown-button" href="#!" data-activates="dropdown1">Про Кафедру<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="#">Студентам</a></li>
@@ -30,7 +42,7 @@
         {% if request.user.is_authenticated %}
         <!-- USER MENU BTN -->
         <li class="non-hover" id="user-menu-btn-container">
-            <a class="btn-floating dropdown-button btn-large waves-effect waves-light blue blue-super-dark" id="user-menu-btn" data-activates="user_menu">
+            <a class="btn-floating dropdown-button btn-large waves-effect waves-light blue blue-super-dark profile-button" id="user-menu-btn" data-activates="user_menu">
                 <i class="material-icons">person</i>
             </a>
         </li>
@@ -466,39 +478,101 @@
   <!-- UP BUTTON -->
   <a class="btn-floating btn-large waves-effect waves-light blue up_button" id="up_button"><i class="material-icons">keyboard_arrow_up</i></a>
   <!-- END UP BUTTON -->
-  <!-- FOOTER -->
+ <!-- FOOTER -->
   <footer class="page-footer blue-dark">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Department Bio</h5>
-          <p class="grey-text text-lighten-4">We are the best department in the  Universe.</p>
-
-
+        <div class="col l3 s12 footer-block personalization">
+          <div class="row">
+            <div class="col s12">
+              <h5>Персоналізація</h5>
+              <ul>
+                <li class="login-footer"><a class="white-text" href="#!">Увійти</a></li>
+                <li class="registration"><a class="white-text" href="#!">Зареєструватися</a></li>
+                <!-- If authorized -->
+                <li class="profile"><a class="white-text" href="#!"> В особистий кабінет</a></li>
+              </ul>     
+            </div>
+            <div class="col s12">
+              <h5>Підпишіться на оновлення</h5>
+              <form class="update" action="" method="POST">
+                <input type="text" placeholder="Email" />
+                <input type="submit" value="Підписатися" />
+              </form>
+            </div>
+            <div class="col s12">
+              <h5>З уміса питаннями</h5>
+              <ul>
+                <li class="mail"><span class="white-text">info@pzks.com</span></li>
+              </ul>  
+            </div>
+          </div> 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Про кафедру</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col l9 s12">
+          <div class="row footer-block">
+            <div class="col l4 m6 s12">
+              <h5>Про кафедру</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Завідуючий кафедрою</a></li>
+                <li><a class="white-text" href="#!">Колектив кафедри</a></li>
+                <li><a class="white-text" href="#!">Досягнення студентів</a></li>
+                <li><a class="white-text" href="#!">Наші партнери</a></li>
+                <li><a class="white-text" href="#!">Фотогалерея</a></li>
+              </ul>
+            </div>
+            <div class="col l4 m6 s12">
+              <h5>Наука</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Публікації</a></li>
+                <li><a class="white-text" href="#!">Розробки</a></li>
+                <li><a class="white-text" href="#!">Дисертації</a></li>
+                <li><a class="white-text" href="#!">Конференції</a></li>
+              </ul>
+            </div>
+            <div class="col l4 m6 s12">
+              <h5>Наші послуги</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Детальніше про послуги</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row footer-block">
+            <div class="col l4 m6 s12">
+              <h5>Студентам</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Навчальні дисципліни</a></li>
+                <li><a class="white-text" href="#!">Розклад занять</a></li>
+                <li><a class="white-text" href="#!">Корисні посилання</a></li>
+                <li><a class="white-text" href="#!">Рейтинг успішності</a></li>
+              </ul>
+            </div>
+            <div class="col l4 m6 s12">
+              <h5>Абітурієнтам</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Умови вступу</a></li>
+              </ul>
+            </div>
+            <div class="col l4 m6 s12">
+              <h5>Останні публікації</h5>
+              <ul>
+                <li><a class="white-text" href="#!">Новини</a></li>
+                <li><a class="white-text" href="#!">Оголошення</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="footer-copyright blue-super-dark">
       <div class="container">
-      Made by RedCat
+        <div class="row">
+          <div class="col l8 s12">
+            Кафедра ПЗКС ЧНУ ім. Ю. Федьковича. Всі права захищені &copy; 2016 Чернівці, Україна
+          </div>
+          <div class="col l4 hide-on-med-and-down right-align">
+            Made by RedCat
+          </div>
+        </div>
       </div>
     </div>
   </footer>
