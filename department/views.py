@@ -43,8 +43,12 @@ def slides(request):
 
 
 def contacts(request):
-    return render(request, 'department/contacts.html')
+    return render(request, 'department/contacts.html', {'latest_news': News.objects.all()[:5]})
 
 
 def applicant(request):
-    return render(request, 'department/applicant.html')
+    return render(request, 'department/applicant.html', {'latest_news': News.objects.all()[:5]})
+
+
+def under_development(request):
+    return render(request, 'department/under_development.html')

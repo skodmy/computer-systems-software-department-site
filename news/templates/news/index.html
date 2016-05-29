@@ -55,7 +55,7 @@
     <!-- End Search -->
     <!-- Advertisments Large-->
     <div id="advertisments_block" class="col s12 m12 hide-on-med-and-down">
-        <h4>Оголошення Large</h4>
+        <h4>Оголошення</h4>
         <div class="divider simple-blue"></div>
         {% for advertisement in advertisements %}
         <div class="row advertisment valign-wrapper">
@@ -63,7 +63,7 @@
                 <img src="{{ advertisement.image.url }}" alt="" class="responsive-img">
             </div>
             <div class="col s9 m8 valign">
-                <span class="advertisment-title"><a href="#">{{ advertisement.title }}</a></span>
+                <span class="advertisment-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
             </div>
         </div>
         <div class="divider"></div>

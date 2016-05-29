@@ -1,4 +1,4 @@
-{% extends 'department/index.html' %}
+{% extends 'department/info_with_latest_news.html' %}
 
 {% load staticfiles %}
 
@@ -8,14 +8,8 @@
   <link href="{% static 'department/css/contact-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block slider %}{% endblock %}
-
-{% block container %}
-  <!--  CONTAINER-->
-  <div class="container">
+{% block container-left-col %}
     <div class="row">
-      <div class="col s12 m8">
-        <div class="row">
           <div class="col s12">
             <div class="row">
               <div class="col s12 contacts-header">
@@ -23,108 +17,26 @@
               </div>
               <div class="col s12">
                 <ul class="contact-info">
-                  <li class="address-li">Адреса: каб. 25 (2 поверх), корпус №1, ЧНУ ім. Ю. Федьковича, вул. Коцюбинського 2, м. Чернівці, 58012, Україна</li>
-                  <li class="phone-number">Телефон кафедри: (0372) 58 47 94</li>
-                  <li class="phone-number">Телефон завідуючого кафедрою: 050 434 05 95</li>
-                  <li class="email-address">E-mail кафедри: kafedrapzks@gmail.com</li>
-                  <li class="email-address">E-mail завідуючого кафедрою: sergey.ostapov@gmail.com</li>
-                </ul>    
-              </div> 
+                    <li><i class="material-icons">home</i>Адреса: каб. 25 (2 поверх), корпус №1, ЧНУ ім. Ю. Федьковича, вул. Коцюбинського 2, м. Чернівці, 58012, Україна</li>
+                    <li><i class="material-icons">phone</i>Телефон кафедри: (0372) 58 47 94</li>
+                    <li><i class="material-icons">phone</i>Телефон завідуючого кафедрою: 050 434 05 95</li>
+                    <li><i class="material-icons">email</i>E-mail кафедри: kafedrapzks@gmail.com</li>
+                    <li><i class="material-icons">email</i>E-mail завідуючого кафедрою: sergey.ostapov@gmail.com</li>
+                </ul>
+              </div>
               <div class="col l6 m12">
                 <span class="info-title">Ми на карті</span>
                 <div id="map_frame">
-                  
+
                 </div>
-              </div>       
+              </div>
               <div class="col l6 m12">
                 <span class="info-title">Вигляд корпусу</span>
-                <img src="images/building.jpg" class="responsive-img">
+                <img src="{% static 'department/images/corps.jpg' %}" class="responsive-img">
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="row">
-          <!-- Lates news block Large--> 
-          <div class="col s12 hide-on-med-and-down">
-            <h4>Останні новини</h4>
-            <div class="divider simple-blue"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s3">
-                <img src="images/strawberries.jpg" alt="" class="responsive-img">
-              </div>
-              <div class="col s9 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s3">
-                <img src="images/strawberries.jpg" alt="" class="responsive-img">
-              </div>
-              <div class="col s9 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s3">
-                <img src="images/strawberries.jpg" alt="" class="responsive-img">
-              </div>
-              <div class="col s9 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s3">
-                <img src="images/strawberries.jpg" alt="" class="responsive-img">
-              </div>
-              <div class="col s9 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-          </div>
-          <!-- Medium -->
-          <div class="col s12 hide-on-small-and-down hide-on-large-only">
-            <h4>Останні новини</h4>
-            <div class="divider simple-blue"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s12 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s12 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row side-news valign-wrapper">
-              <div class="col s12 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div><div class="row side-news valign-wrapper">
-              <div class="col s12 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div><div class="row side-news valign-wrapper">
-              <div class="col s12 valign">
-                <span class="side-news-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
-              </div>
-            </div>
-            <div class="divider"></div>
-          </div>
-          <!-- End lates news block -->
-        </div>
-      </div>
-    </div>
-  </div>
 {% endblock %}
 
 {% block xbody-extra-scripts %}

@@ -258,23 +258,7 @@ nav ul li.non-hover:hover {
 	padding-top: 10px;
 }
 
-.address-li:before {
-	font-family: 'Material Icons', serif;
-	content: "home";
-	margin-right: 10px;
-	font-size: 24px;
-}
-
-.phone-number:before {
-    font-family: 'Material Icons';
-	margin-right: 10px;
-	content: "phone";
-	font-size: 24px;
-}
-
-.email-address:before {
-	font-family: 'Material Icons';
-	content: "email";
+.contact-info .material-icons {
 	margin-right: 10px;
 	font-size: 24px;
 }
