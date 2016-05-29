@@ -40,3 +40,11 @@ def manual_logout(request):
 def slides(request):
     if request.is_ajax():
         return render(request, 'department/slides.html', {'slides': Slide.objects.all().order_by('display_priority')})
+
+
+def contacts(request):
+    return render(request, 'department/contacts.html')
+
+
+def applicant(request):
+    return render(request, 'department/applicant.html')
