@@ -1,0 +1,286 @@
+/* Custom Stylesheet */
+
+/* Background Colors */
+.blue-super-light {
+  background-color: #f6fbfe !important;
+}
+
+.blue-light {
+	background-color: #d9e7ef !important;
+}
+
+.simple-blue {
+	background-color: #057dc8 !important;
+}
+
+.blue-dark {
+	background-color: #063c5e !important;
+}
+
+.blue-super-dark {
+	background-color: #042e47 !important;
+}
+/* End Background Colors */
+
+/* Text Colors */
+.text-blue {
+	color: #063c5e !important;
+}
+
+.text-white {
+	color: #f7fbfd !important;
+}
+/* End Text Colors */
+
+/* NavBar css */
+nav ul li:hover {
+   background-color: #063c5e;
+}
+
+nav ul li.non-hover:hover {
+   background-color: transparent;
+}
+
+.dropdown-content a {
+  color: #063c5e !important;
+}
+
+.login-mobile-btn {
+	float: right !important;
+}
+
+
+/* end NavBar css */
+
+/* MOBILE SIDE-NAV */
+.mobile-nav.side-nav a {
+	color: #fff;
+}
+
+.mobile-nav.side-nav li {
+	padding: 0px;
+}
+
+.mobile-nav.side-nav li:hover, .mobile-nav.side-nav li.active {
+  background-color: #063c5e;
+}
+
+.mobile-nav .dropdown-content li:hover {
+	background-color: #d9e7ef;
+}
+/* END MOBILE SIDE-NAV*/
+ 
+.divider {
+	height: 2px;
+}
+
+.container {
+    width: 90%;
+}
+
+
+.contacts-header h4 {
+	color: #042e47;
+}
+
+.right-image {
+	float: right;
+	margin: 10px;
+	margin-right: 0px;
+	max-width: 50%;
+	height:auto;
+}
+
+.left-image {
+	float: left;
+	margin: 10px;
+	margin-left: 0px;
+	max-width: 50%;
+	height:auto;
+}
+
+.info-title {
+
+}
+
+
+/* Side news */
+.side-news {
+	margin-top: 10px; 
+}
+
+.side-news-title a {
+	color: #042e47;
+}
+
+@media only screen and (min-width: 601px) {
+	.side-news-title {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+  	.side-news-title {
+		font-size: 18px;
+	}
+}
+
+.up_button {
+	text-decoration: none;
+	position:fixed;
+	display:none;
+}
+
+@media only screen and (max-width: 600px) {
+	.up_button{
+		bottom: 5px;
+		right: 5px;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.up_button{
+		bottom: 75px;
+		right: 5px;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+  	.up_button {
+		bottom:75px;
+		right:40px;
+	}
+}
+
+/* User menu */
+.user-menu li a {
+	color: #fff !important;
+}
+
+.user-menu li:hover {
+	background-color: #063c5e;
+}
+
+.user-profile{
+	margin: 0px;
+	border-radius: 0px;
+	padding: 15px;
+}
+
+.user-profile-avatar {
+	margin-right: 10px;
+}
+
+.user-avatar-image {
+	border-radius: 2px;
+}
+
+.user-profile-name {
+	font-size: 14px;
+	font-weight: 700;
+}
+/* End user menu */
+
+/* Search form */
+
+.search {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.search button {
+	width: 100%;
+	padding: 10px;
+	height: 44px;
+	border-radius: 0px;
+	line-height: normal;
+}
+
+.search input {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  border: 2px solid #063c5e;
+  padding: 12px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.search .row .col.s10 {
+	padding-right: 0px;
+}
+
+.search .row .col.s2 {
+	padding-left: 0px;
+}
+
+.search input[type="text"] {
+  margin: 0px;
+  background: #fff;
+  color: #063c5e;
+}
+
+.search input[type="text"]:focus {
+	border-bottom: none !important;
+	box-shadow: none !important;
+	border: 2px solid #063c5e !important;
+}
+
+
+.side-nav-search {
+	line-height: 64px;
+}
+
+.input-field input[type=search] {
+	margin: 0px;
+	height: 64px;
+}
+/* FLOATING BLOCK */
+.float-block {
+	position: fixed;
+	top: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+	.float-block {
+		/* Dont add nothing */
+	}
+}
+
+.contact-info {
+	font-size: 14px;
+}
+
+.info-title {
+	font-size: 22px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.link-list li:before {
+	 content: "•";
+    color: #3385ff;
+    margin-right: 10px;
+}
+
+.address-li:before {
+	font-family: 'Material Icons';
+	content: "home";
+	margin-right: 10px;
+	font-size: 24px;
+}
+
+.phone-number:before {
+    font-family: 'Material Icons';
+	margin-right: 10px;
+	content: "phone";
+	font-size: 24px;
+}
+
+.email-address:before {
+	font-family: 'Material Icons';
+	content: "email";
+	margin-right: 10px;
+	font-size: 24px;
+}
