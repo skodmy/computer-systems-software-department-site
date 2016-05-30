@@ -54,3 +54,6 @@ docs/_build/
 
 # DB
 *.sqlite3
+
+media/*
+PZKS_dep_site/*
