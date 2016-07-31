@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'department/materialized_base_page.html' %}
 
 {% load staticfiles %}
@@ -591,3 +592,382 @@
         <script src="{% static 'department/js/Please-compressed.js' %}"></script>
     {% endblock %}
 {% endblock %}
+=======
+{% extends 'department/materialized_base_page.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}
+    Home
+{% endblock %}
+
+{% block head-extra-links %}
+    <link href="{% static 'department/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'department/css/circle.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block body-content %}
+  <!-- dropdowns -->
+  <ul id="plainDropdown" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <ul id="mobileDropdown" class="dropdown-content">
+    <li><a href="#!">one1</a></li>
+    <li><a href="#!">two2</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three3</a></li>
+  </ul>
+  <!-- Header -->
+  <div class="blue darken-4">
+
+    <!-- Navigation -->
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="left hide-on-med-and-down">
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+          <li><a href="#">Link4</a></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="plainDropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+        <form class="right hide-on-med-and-down">
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label for="search"><i class="white-text material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+        <ul id="nav-mobile" class="side-nav">
+          <li>
+            <form>
+              <div class="input-field z-depth-1">
+                <input id="search" type="search" class="mobile-search-field" required>
+                <label for="search"><i class="blue-text material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </li>
+          <li><a href="#">Mobile Link1</a></li>
+          <li><a href="#">Mobile Link2</a></li>
+          <li><a href="#">Mobile Link3</a></li>
+          <li><a href="#">Mobile Link4</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="mobileDropdown">Dropdown<i class="material-icons right">
+          arrow_drop_down</i></a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="nav-mobile" class="brand-logo center">Logo</a>
+      </div>
+    </nav>
+
+    <!-- Logo -->
+    <div class="section no-pad-bot container">
+      <div class="row logo-row">
+        <div class="col m7 hide-on-med-and-down">
+          <a href="#">
+            <img src="{% static 'department/images/logo.png' %}">
+          </a>
+        </div>
+        <div class="col m5 hide-on-med-and-down">
+          <ul>
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link2</a></li>
+            <li><a href="#">Link3</a></li>
+            <li><a href="#">Link4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <a href="#"><img src="{% static 'department/images/im1.jpg' %}"></a><!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="{% static 'department/images/im2.jpg' %}"></a> <!-- random image -->
+              <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <a href="#"><img src="{% static 'department/images/im3.jpg' %}"> </a><!-- random image -->
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end header -->
+
+
+  <!-- body -->
+  <div class="container">
+    <div class="section">
+      <div class="row">
+
+        <div class="col s12 m8">
+          <h5>Focus on</h5>
+          <div class="divider"></div>
+          <br>
+          
+          <div class="col s12 m6">
+            <div class="card-panel z-depth-1 focus-card-panel blue darken-4 white-text">
+              <div class="row valign-wrapper focus-card">
+                <div class="col s6">
+                  <img src="{% static 'department/images/im3.jpg' %}" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s6">
+                  <span class="card-title">Card Title</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card-panel z-depth-1 focus-card-panel blue darken-4 white-text">
+              <div class="row valign-wrapper focus-card">
+                <div class="col s6">
+                  <img src="{% static 'department/images/im3.jpg' %}" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s6">
+                  <span class="card-title">Card Title</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card-panel z-depth-1 focus-card-panel blue darken-4 white-text">
+              <div class="row valign-wrapper focus-card">
+                <div class="col s6">
+                  <img src="{% static 'department/images/im3.jpg' %}" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s6">
+                  <span class="card-title">Card Title</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="card-panel z-depth-1 focus-card-panel blue darken-4 white-text">
+              <div class="row valign-wrapper focus-card">
+                <div class="col s6">
+                  <img src="{% static 'department/images/im3.jpg' %}" alt="" class="responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s6">
+                  <span class="card-title">Card Title</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <br>
+          <h5>Lates news</h5>
+          <div class="divider"></div>
+          <br>
+          <div class="col s12">
+            <div class="card">
+              <div class="card-image">
+                <img src="{% static 'department/images/im3.jpg' %}">
+                <span class="card-title">News with image</span>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">News without image</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn" href="#">Show all</a>
+        </div>
+        <div class="col s12 m4 right-block">
+          <h5>Its Interesting</h5>
+          <div class="divider"></div>
+
+          <div class="row valign-wrapper interesting-fact">
+              <div class="col s4">
+                <div class="c100 p25 small center-align">
+                  <span>25%</span>
+                  <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s8">
+                <span class="center-align">Interesting fact 1</span>
+              </div>
+          </div>
+          <div class="divider  blue lighten-4"></div>
+          <div class="row valign-wrapper interesting-fact">
+              <div class="col s4">
+                <div class="c100 p25 small orange center-align">
+                  <span>25%</span>
+                  <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s8">
+                <span class="center-align">Interesting fact 2 Interesting fact 1 Interesting fact 1
+                Interesting fact 1Interesting fact 1vInteresting fact 1Interesting fact 1Interesting fact 1Interesting fact 1</span>
+              </div>
+          </div>
+          <div class="divider  blue lighten-4"></div>
+          <div class="row valign-wrapper interesting-fact">
+              <div class="col s4">
+                <h4 class="center-align blue-text text-darken-1">45</h4>
+              </div>
+              <div class="col s8">
+                <span class="center-align">Interesting fact 3</span>
+              </div>
+          </div>
+
+          <h5>Advertisments</h5>
+          <div class="divider"></div>
+          <br>
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn">Show all</a>
+
+          <h5>Technologies</h5>
+          <div class="divider"></div>
+          <br>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+          <div class="col s4">
+            <img class="responsive-img" src="{% static 'department/images/partner.png' %}" >
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row valing-wrapper">
+        <div class="col s12">
+          <h4 class="center-align">Our partners</h4>
+          <div class="divider"></div>
+          <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="{% static 'department/images/partner.png' %}"></a>
+            <a class="carousel-item" href="#two!"><img src="{% static 'department/images/partner.png' %}"></a>
+            <a class="carousel-item" href="#three!"><img src="{% static 'department/images/partner.png' %}"></a>
+            <a class="carousel-item" href="#four!"><img src="{% static 'department/images/partner.png' %}"></a>
+            <a class="carousel-item" href="#five!"><img src="{% static 'department/images/partner.png' %}"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by Red Cat
+      </div>
+    </div>
+  </footer>
+{% endblock %}
+
+{% block body-extra-scripts %}
+    <script src="{% static 'department/js/init.js' %}"></script>
+{% endblock %}
+>>>>>>> master

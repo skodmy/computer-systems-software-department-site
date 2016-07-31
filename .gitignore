@@ -55,5 +55,9 @@ docs/_build/
 # DB
 *.sqlite3
 
+<<<<<<< HEAD
 media/*
+=======
+# Local Virtual Env
+>>>>>>> master
 PZKS_dep_site/*
