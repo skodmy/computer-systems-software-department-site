@@ -1,12 +1,15 @@
 from django.shortcuts import render
-
 from advertisement.models import Advertisement
 from .models import News
+from django.core.paginator import Paginator
 
 
 def index(request):
-    return render(request, 'news/index.html', {'news_list': News.objects.all(),
-                                               'advertisements': Advertisement.objects.all()[:5]})
+    context = {'advertisements': Advertisement.objects.all()[:5]}
+    paginator = Paginator(News.objects.all(),3)
+    context.setdefault('paginator', paginator)
+    context.setdefault('news_list', paginator.page(1))
+    return render(request, 'news/index.html', context)
 
 
 def single_news(request, id):
@@ -15,3 +18,7 @@ def single_news(request, id):
 
 def search(request):
     return render(request, 'news/index.html')
+
+
+def toggle_page(request, page_number):
+    return render(request, 'news/news_list.html', {'news_list': Paginator(News.objects.all(), 3).page(page_number)})

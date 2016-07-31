@@ -23,13 +23,13 @@
     <!-- Pagination -->
     <div class="col s12 center-align">
         <ul class="pagination">
-            <li class="disabled edge"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!">4</a></li>
-            <li class="waves-effect"><a href="#!">5</a></li>
-            <li class="waves-effect edge"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            {% if paginator.num_pages != 0 %}
+                <li class="disabled edge"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                {% for page_number in paginator.page_range %}
+                    <li class="waves-effect"><a href="{{ page_number }}">{{ page_number }}</a></li>
+                {% endfor %}
+                <li class="waves-effect edge"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            {% endif %}
         </ul>
     </div>
 {% endblock %}
