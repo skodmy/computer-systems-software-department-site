@@ -1,5 +1,7 @@
 from django.db import models
 
+from news.models import Tag
+
 
 class Advertisement(models.Model):
     title = models.CharField(max_length=100)
@@ -9,6 +11,7 @@ class Advertisement(models.Model):
     image = models.ImageField(upload_to='advertisement/images', null=True, blank=True)
     author = models.CharField(max_length=200, default='Анонім')
     views = models.IntegerField(default=0)
+    tag = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title + ' ' + self.author
