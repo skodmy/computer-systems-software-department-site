@@ -18,11 +18,22 @@
 			$('#up_button').fadeOut();
 		}	
 	});
-	
+
 	//Click event to scroll to top
 	$('#up_button').click(function(){
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+
+	  //Pagination initialization
+	  $('.disabled.edge + li').addClass('active');
+	  $('.pagination.waves-effect > a').click(function(e){
+		 e.preventDefault();
+		  $.get('page' + $(this).text() + '/', function(data){
+			  $('.advertismant-record').remove();
+			  $('#advertisements-start').after(data);
+		  })
+	  });
+	  //end of initialization
   }); // end of document ready
 })(jQuery); // end of jQuery name space
