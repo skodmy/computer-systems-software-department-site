@@ -19,76 +19,53 @@
           <!-- NEWS Large-->
           <div class="col s12 hide-on-med-and-down">
             <h4>Оголошення</h4>
-            <div class="divider  simple-blue"></div>
-            <div class="row advertismant-record">
+            <div id="advertisements-start" class="divider  simple-blue"></div>
+              {% for advertisement_object in first_page.object_list %}
+                  <div class="row advertismant-record">
               <div class="col s12 title-container">
-                <h4 class="advertismant-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
+                <h4 class="advertismant-title"><a href="#">{{ advertisement_object.title }}</a></h4>
               </div>
               <div class="col s12">
                 <div class="info-panel">
-                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
+                  <i class="material-icons">local_offer</i>
+                    {% for tag in advertisement_object.tag.all %}
+                        <a href="#">{{ tag.name }}</a>,
+                    {% endfor %}
                 </div>
               </div>
               <div class="col s3">
-                <img src="images/strawberries.jpg" alt="" class="responsive-img">
+                {% if advertisement_object.image %}
+                    <img src="{{ advertisement_object.image.url }}" alt="" class="responsive-img">
+                {% endif %}
               </div>
               <div class="col s9">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
+                {{ advertisement_object.main_message }}
               </div>
               <div class="col s12">
                 <div class="info-block">
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                      <i class="material-icons">event</i>
+                        <a href="#"><span class="valign text">{{ advertisement_object.published_date_time }}</span></a>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                      <i class="material-icons">visibility</i>
+                        <span class="valign text">{{ advertisement_object.views }}</span>
                     </span>
                   </div>
                   <div class="inside-block ">
                     <span class="valign-wrapper">
-                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                      <i class="material-icons">person</i>
+                        <a href="#"><span class="valign text">{{ advertisement_object.author }}</span></a>
                     </span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="divider"></div>
-            <div class="row advertismant-record">
-              <div class="col s12 title-container">
-                <h4 class="advertismant-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></h4>
-              </div>
-              <div class="col s12">
-                <div class="info-panel">
-                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
-                </div>
-              </div>
-              <div class="col s12">
-                May 16th - While Google obviously has no control over the entirety of the web, they will use their influence to see that Flash dies. Google has detailed a plan to disable the Flash plugin in Google Chrome by the end of this year.
-              </div>
-              <div class="col s12">
-                <div class="info-block">
-                  <div class="inside-block ">
-                    <span class="valign-wrapper">
-                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
-                    </span>
-                  </div>
-                  <div class="inside-block ">
-                    <span class="valign-wrapper">
-                      <i class="material-icons">visibility</i><span class="valign text">10<span>
-                    </span>
-                  </div>
-                  <div class="inside-block ">
-                    <span class="valign-wrapper">
-                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="divider"></div>
+              {% endfor %}
           </div>
           <!-- END NEWS -->
           <!-- NEWS Medium-->
@@ -212,11 +189,11 @@
           <div class="col s12 center-align">
             <ul class="pagination">
               <li class="disabled edge"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-              <li class="active"><a href="#!">1</a></li>
-              <li class="waves-effect"><a href="#!">2</a></li>
-              <li class="waves-effect"><a href="#!">3</a></li>
-              <li class="waves-effect"><a href="#!">4</a></li>
-              <li class="waves-effect"><a href="#!">5</a></li>
+                {% if paginator.num_pages != 0 %}
+                    {% for page_number in paginator.page_range %}
+                    <li class="waves-effect"><a href="#{{ page_number }}">{{ page_number }}</a></li>
+                    {% endfor %}
+                {% endif %}
               <li class="waves-effect edge"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
             </ul>
           </div>
