@@ -17,215 +17,297 @@
 {% endblock %}
 
 {% block body-content %}
-  <!-- NAVBAR -->
-  <nav class="blue-super-dark" role="navigation">
-    <div class="nav-wrapper container">
-      <div id="logo-container"  class="brand-logo center header-logo-container">
-        <div class="logo-image-container">
-          <img src="{% static 'department/images/Logo v.1.0.1 (background is none).png' %}" class="header-logo-image">
-        </div>
-        <div class="logo-caption-container valign-wrapper hide-on-med-and-down">
-          <span class="header-logo-main-caption valign">
-            Кафедра програмного забезпечення
-          </span>
-          <span class="header-logo-low-caption valing left">
-            ЧНУ ім. Ю. Федьковича
-          </span>
-        </div>
-      </div>
-      <ul class="right">
-        {% if request.user.is_authenticated %}
-        <!-- USER MENU BTN -->
-        <li class="non-hover" id="user-menu-btn-container">
-            <a class="btn-floating dropdown-button btn-large waves-effect waves-light blue blue-super-dark profile-button" id="user-menu-btn" data-activates="user_menu">
-                <i class="material-icons">person</i>
-            </a>
-        </li>
-        <!-- END USER MENU BTN -->
-        {% else %}
-        <li id="login-btn-container"><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
-        {% endif %}
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav blue-super-dark mobile-nav">
-        <li><a href="/">Головна</a></li>
-        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown1">Про кафедру<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown2">Наукова діяльність<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown3">Студентам<i class="material-icons right">arrow_drop_down</i></a></li>
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button mobile-dropdown-button" href="#!" data-activates="dropdown4">Абітурієнтам<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="/news/">Новини</a></li>
-        <li><a href="/advertisement/">Оголошення</a></li>
-		<li><a href="/contacts/">Контакти</a></li>
-      </ul>
-      <a href="#" id="mobile-nav-btn" data-activates="nav-mobile" class="left"><i class="material-icons">menu</i></a>
-
-      <!-- LOGIN MOBILE -->
-      <div id="login-mobile" class="side-nav mobile-login blue-dark">
-        <div class="mobile-login-header center-align">Log in</div>
-        <div class="error-alert-container blue-dark">
-          <div class="error-alert red darken-2 white-text" id="login_mobile_error_alert">
-            Wrong username or password!
-          </div>
-        </div>
-        <form class="login-container blue-dark" method="POST" id="login_mobile_form">
-          {% csrf_token %}
-          <p>
-            <input type="text" placeholder="Login" id="login_mobile" name="username">
-          </p>
-          <p>
-            <input id="password_mobile" type="password" name="password" placeholder="Password">
-          </p>
-          <p>
-            <input type="checkbox" id="remember_me_mobile" name="remember_user" checked/>
-            <label for="remember_me_mobile" class="white-text">Remember me?</label>
-          </p>
-          <p>
-            <input type="submit" value="Log in" id="login_mobile_form_submit">
-          </p>
-        </form>
-        <div class="forget-password blue-dark"><a href="#" >Create account</a></div>
-        <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
-      </div>
-      <!-- END LOGIN MOBILE -->
-    </div>
-  </nav>
-
-  <!-- User menu -->
-  <ul id="user_menu" class="dropdown-content blue-super-dark user-menu">
-    <li>
-       <div class="user-profile blue-dark text-white">
-          <div class="valign-wrapper">
-            <div class="user-profile-avatar">
-              <img src="images/avatar.jpg" alt="" class="circle responsive-img user-avatar-image"> 
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="blue-super-dark" role="navigation">
+        <div class="nav-wrapper container">
+            <!-- BRAND BLOCK -->
+            <div id="logo-container"  class="brand-logo header-logo-container left">
+                <div class="logo-image-container">
+                    <a href="/">
+                        <img src="{% static 'department/images/Logo v.1.0.1 (background is none).png' %}"
+                         class="header-logo-image">
+                    </a>
+                </div>
+                  <div class="logo-caption-container valign-wrapper hide-on-med-and-down">
+                      <a href="/">
+                          <span class="header-logo-main-caption valign">Кафедра програмного забезпечення</span>
+                          <span class="header-logo-low-caption valing left">ЧНУ ім. Ю. Федьковича</span>
+                      </a>
+                  </div>
             </div>
-            <div>
-              <div class="user-profile-name">{{ request.user.username }}</div>
-              <div>{{ request.user.email }}</div>
+            <!-- END BRAND BLOCK -->
+
+            <!-- LOGIN TRIGGER AND INTERNATIONALIZATION BLOCK -->
+            <ul class="right">
+                <li class="hide-on-small-only">
+                    <a href="#ua"><img src="{% static 'department/images/uk.png' %}"></a>
+                </li>
+                <li class="hide-on-small-only">
+                    <a href="#en"><img src="{% static 'department/images/en.png' %}"></a>
+                </li>
+                {% if request.user.is_authenticated %}
+                    <!-- USER MENU BTN -->
+                    <li class="non-hover" id="user-menu-btn-container">
+                        <a class="btn-floating dropdown-button btn-large waves-effect waves-light blue blue-super-dark profile-button"
+                           id="user-menu-btn" data-activates="user_menu">
+                            <i class="material-icons">person</i>
+                        </a>
+                    </li>
+                    <!-- END USER MENU BTN -->
+                {% else %}
+                    <li id="login-btn-container"><a href="#login_modal" class="modal-trigger">Login<i class="material-icons right">perm_identity</i></a></li>
+                {% endif %}
+            </ul>
+            <!-- END LOGIN TRIGGER AND INTERNATIONALIZATION BLOCK -->
+
+            <!-- LOGIN MOBILE -->
+            <div id="login-mobile" class="side-nav mobile-login blue-dark">
+                <div class="mobile-login-header center-align">Log in</div>
+                <div class="error-alert-container blue-dark">
+                    <div class="error-alert red darken-2 white-text" id="login_mobile_error_alert">
+                        Wrong username or password!
+                    </div>
+                </div>
+                <form class="login-container blue-dark" method="POST" id="login_mobile_form">
+                    {% csrf_token %}
+                    <p>
+                        <input type="text" placeholder="Login" id="login_mobile" name="username">
+                    </p>
+                    <p>
+                        <input id="password_mobile" type="password" name="password" placeholder="Password">
+                    </p>
+                    <p>
+                        <input type="checkbox" id="remember_me_mobile" name="remember_user" checked/>
+                        <label for="remember_me_mobile" class="white-text">Remember me?</label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Log in" id="login_mobile_form_submit">
+                    </p>
+                </form>
+                <div class="forget-password blue-dark"><a href="#" >Create account</a></div>
+                <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
             </div>
-          </div>
-        </div>
-    </li>
-    {% if request.user.is_staff %}
-        <li><a href="/admin/">Administration</a></li>
-    {% endif %}
-    <li><a href="#">Action1</a></li>
-    <li><a href="#">Action2</a></li>
-    <li class="divider"></li>
-    <li><a id="logout-btn">Logout</a></li>
-  </ul>
-  <!-- END USER menu -->
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="/under-development/">Завідуючий кафедри</a></li>
-    <li><a href="/under-development/">Колектив кафедри</a></li>
-    <li><a href="/under-development/">Досягнення студентів</a></li>
-    <li><a href="/under-development/">Наші партнери</a></li>
-    <li><a href="/under-development/">Фотогалерея</a></li>
-  </ul>
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a href="/under-development/">Публікації</a></li>
-    <li><a href="/under-development/">Розробки</a></li>
-    <li><a href="/under-development/">Дисертації</a></li>
-    <li><a href="/under-development/">Конференції</a></li>
-  </ul>
-  <ul id="dropdown3" class="dropdown-content">
-    <li><a href="/under-development/">Дисципліни</a></li>
-    <li><a href="/under-development/">Розклад занять</a></li>
-    <li><a href="/under-development/">Корисні посилання</a></li>
-    <li><a href="/under-development/">Рейтинг успішності</a></li>
-  </ul>
-  <ul id="dropdown4" class="dropdown-content">
-    <li><a href="/applicant/">Умови вступу</a></li>
-    <li><a href="/under-development/">Дні відкритих дверей</a></li>
-  </ul>
-  <!-- END NAVBAR -->
+            <!-- END LOGIN MOBILE -->
 
-  <!-- LOGIN MODAl -->
-  <!-- Modal Structure -->
-  <div  id="login_modal" class="modal login blue-super-dark">   
-    <h2 class="login-header">Log in</h2>
-    <div class="error-alert-container blue-dark">
-      <div class="error-alert red darken-2 white-text" id="login_modal_error_alert"> 
-        Wrong usename or password!
-      </div>
-    </div>
-    <form class="login-container blue-dark" action="" method="POST" id="login_modal_form">
-      {% csrf_token %}
-      <p>
-        <input type="text" placeholder="Login" id="login_modal" name="username">
-      </p>
-      <p>
-        <input id="password_modal" type="password" name="password" placeholder="Password">
-      </p>
-      <p>
-        <input type="checkbox" id="remember_me" name="remember_user" checked/>
-        <label for="remember_me" class="white-text">Remember me?</label>
-      </p>
-      <p>
-        <input type="submit" value="Log in" id="login_modal_form_submit">
-        <a class="btn-floating btn-large waves-effect waves-light blue blue-super-dark registration-btn">
-          <i class="material-icons">person_add</i>
-        </a>
-      </p>
-    </form>
-    <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
-  </div>
-  <!-- END LOGIN MODAL -->
+            <!-- LOGIN MODAl -->
+            <!-- MODAL STRUCTURE -->
+            <div  id="login_modal" class="modal login blue-super-dark">
+                <h2 class="login-header">Log in</h2>
+                <div class="error-alert-container blue-dark">
+                    <div class="error-alert red darken-2 white-text" id="login_modal_error_alert">
+                        Wrong username or password!
+                    </div>
+                </div>
+                <form class="login-container blue-dark" action="" method="POST" id="login_modal_form">
+                    {% csrf_token %}
+                    <p>
+                        <input type="text" placeholder="Login" id="login_modal" name="username">
+                    </p>
+                    <p>
+                        <input id="password_modal" type="password" name="password" placeholder="Password">
+                    </p>
+                    <p>
+                        <input type="checkbox" id="remember_me" name="remember_user" checked/>
+                        <label for="remember_me" class="white-text">Remember me?</label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Log in" id="login_modal_form_submit">
+                        <a class="btn-floating btn-large waves-effect waves-light blue blue-super-dark registration-btn">
+                            <i class="material-icons">person_add</i>
+                        </a>
+                    </p>
+                </form>
+                <div class="forget-password blue-dark"><a href="#" >Forgot Password?</a></div>
+            </div>
+            <!-- END LOGIN MODAL -->
 
-  {% block slider %}
-  <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="{% static 'department/images/soft1.jpg' %}"> <!-- random image -->
-        <div class="caption-container">
-          <div class="caption center-align">
-            <span class="slider-header">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </span>
-            <span class="learn-more-container">
-              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
-            </span>
-          </div>
+            <!-- USER MENU DROP-DOWN -->
+            <ul id="user_menu" class="dropdown-content blue-super-dark user-menu">
+                <li>
+                    <div class="user-profile blue-dark text-white">
+                        <div class="valign-wrapper">
+                            <div class="user-profile-avatar">
+                                <img src="images/avatar.jpg" alt="" class="circle responsive-img user-avatar-image">
+                            </div>
+                            <div>
+                                <div class="user-profile-name">{{ request.user.username }}</div>
+                                <div>{{ request.user.email }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% if request.user.is_staff %}
+                    <li><a href="/admin/">Administration</a></li>
+                {% endif %}
+                <li><a href="#">Action1</a></li>
+                <li><a href="#">Action2</a></li>
+                <li class="divider"></li>
+                <li><a id="logout-btn">Logout</a></li>
+            </ul>
+            <!-- END USER MENU DROP-DOWN -->
         </div>
-      </li>
-      <li>
-        <img src="{% static 'department/images/soft2.jpg' %}"> <!-- random image -->
-        <div class="caption-container">
-          <div class="caption right-align">
-            <span class="slider-header">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </span>
-            <span class="learn-more-container">
-              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
-            </span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <img src="{% static 'department/images/soft3.png' %}"> <!-- random image -->
-        <div class="caption-container">
-          <div class="caption left-align">
-            <span class="slider-header">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </span>
-            <span class="learn-more-container">
-              <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
-            </span>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  {% endblock %}
+    </nav>
+    <!-- END TOP NAVIGATION BAR -->
 
-  <div class="container">
-  {% block container %}
-    <div class="row">
-      <div class="col s12 m8">
-        <div class="row">
+    <!-- BOTTOM NAVIGATION BAR -->
+    <nav class="blue-dark" role="navigation">
+        <div class="nav-wrapper container">
+            <!-- MOBILE NAV UL TRIGGER -->
+            <a href="#" id="mobile-nav-btn" data-activates="nav-mobile" class="left button-collapse"><i class="material-icons">menu</i></a>
+
+            <!-- MOBILE NAV UL -->
+            <ul id="nav-mobile" class="side-nav blue-super-dark mobile-nav">
+                <li><a href="/">Головна</a></li>
+                <!-- PAGES DROP-DOWN TRIGGERS -->
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="about-cathedra-dropdown-content">
+                        Про кафедру<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="research-activities-dropdown-content">
+                        Наукова діяльність<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="for-students-dropdown-content">
+                        Студентам<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="for-applicants-dropdown-content">
+                        Абітурієнтам<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <!-- END PAGES DROP-DOWN TRIGGERS -->
+                <li><a href="/news/">Новини</a></li>
+                <li><a href="/advertisement/">Оголошення</a></li>
+                <li><a href="/contacts/">Контакти</a></li>
+            </ul>
+            <!-- END MOBILE NAV UL -->
+
+            <!-- DESKTOP NAV UL -->
+            <ul class="left hide-on-med-and-down mobile-nav">
+                <li><a href="/">Головна</a></li>
+                <!-- PAGES DROP-DOWN TRIGGERS -->
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="about-cathedra-dropdown-content">
+                        Про кафедру<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="research-activities-dropdown-content">
+                        Наукова діяльність<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="for-students-dropdown-content">
+                        Студентам<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-button mobile-dropdown-button" href="#!"
+                       data-activates="for-applicants-dropdown-content">
+                        Абітурієнтам<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <!-- END PAGES DROP-DOWN TRIGGERS -->
+                <li><a href="/news/">Новини</a></li>
+                <li><a href="/advertisement/">Оголошення</a></li>
+                <li><a href="/contacts/">Контакти</a></li>
+            </ul>
+            <!-- END DESKTOP NAV UL -->
+
+            <!-- PAGES DROP-DOWN CONTENTS -->
+            <ul id="about-cathedra-dropdown-content" class="dropdown-content">
+                <li><a href="/under-development/">Завідуючий кафедри</a></li>
+                <li><a href="/under-development/">Колектив кафедри</a></li>
+                <li><a href="/under-development/">Досягнення студентів</a></li>
+                <li><a href="/under-development/">Наші партнери</a></li>
+                <li><a href="/under-development/">Фотогалерея</a></li>
+            </ul>
+            <ul id="research-activities-dropdown-content" class="dropdown-content">
+                <li><a href="/under-development/">Публікації</a></li>
+                <li><a href="/under-development/">Розробки</a></li>
+                <li><a href="/under-development/">Дисертації</a></li>
+                <li><a href="/under-development/">Конференції</a></li>
+            </ul>
+            <ul id="for-students-dropdown-content" class="dropdown-content">
+                <li><a href="/under-development/">Дисципліни</a></li>
+                <li><a href="/under-development/">Розклад занять</a></li>
+                <li><a href="/under-development/">Корисні посилання</a></li>
+                <li><a href="/under-development/">Рейтинг успішності</a></li>
+            </ul>
+            <ul id="for-applicants-dropdown-content" class="dropdown-content">
+                <li><a href="/applicant/">Умови вступу</a></li>
+                <li><a href="/under-development/">Дні відкритих дверей</a></li>
+            </ul>
+            <!-- END PAGES DROP-DOWN CONTENTS -->
+        </div>
+    </nav>
+    <!-- END BOTTOM NAVIGATION BAR -->
+
+    {% block slider %}
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="{% static 'department/images/soft1.jpg' %}"> <!-- random image -->
+                    <div class="caption-container">
+                        <div class="caption center-align">
+                            <span class="slider-header">
+                                <h3>This is our big Tagline!</h3>
+                                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                            </span>
+                            <span class="learn-more-container">
+                                <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static 'department/images/soft2.jpg' %}"> <!-- random image -->
+                    <div class="caption-container">
+                        <div class="caption right-align">
+                            <span class="slider-header">
+                                <h3>This is our big Tagline!</h3>
+                                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                            </span>
+                            <span class="learn-more-container">
+                                <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="{% static 'department/images/soft3.png' %}"> <!-- random image -->
+                    <div class="caption-container">
+                        <div class="caption left-align">
+                            <span class="slider-header">
+                                <h3>This is our big Tagline!</h3>
+                                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                            </span>
+                            <span class="learn-more-container">
+                                <a class="waves-effect waves-light btn blue learn-more-btn" href="index.html">Learn more</a>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    {% endblock %}
+
+    <div class="container">
+        {% block container %}
+            <div class="row">
+                <div class="col s12 m8">
+                    <div class="row">
           {% block container-focus-on %}
           <div class="col s12">
             <h4>Focus on</h4>
@@ -472,116 +554,119 @@
   {% endblock %}
   </div>
 
-  <!-- UP BUTTON -->
-  <a class="btn-floating btn-large waves-effect waves-light blue up_button" id="up_button"><i class="material-icons">keyboard_arrow_up</i></a>
-  <!-- END UP BUTTON -->
- <!-- FOOTER -->
-  <footer class="page-footer blue-dark">
-    <div class="container">
-      <div class="row">
-        <div class="col l3 s12 footer-block personalization">
-          <div class="row">
-            <div class="col s12">
-                <h5>Додому</h5>
-                <ul class="personalization-ul">
-                    <li><a class="white-text" href="/"><i class="material-icons">home</i>Головна</a></li>
-                </ul>
+    <!-- UP BUTTON -->
+    <a class="btn-floating btn-large waves-effect waves-light blue up_button" id="up_button">
+        <i class="material-icons">keyboard_arrow_up</i>
+    </a>
+    <!-- END UP BUTTON -->
+
+    <!-- FOOTER -->
+    <footer class="page-footer blue-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col l3 s12 footer-block personalization">
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Додому</h5>
+                            <ul class="personalization-ul">
+                                <li><a class="white-text" href="/"><i class="material-icons">home</i>Головна</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <h5>Персоналізація</h5>
+                            <ul class="personalization-ul">
+                                {% if request.user.is_authenticated %}
+                                    <li><a class="white-text" href="/under-development/"><i class="material-icons">person</i>В особистий кабінет</a></li>
+                                {% else %}
+                                    <li><a class="white-text" href="/under-development/"><i class="material-icons">perm_identity</i>Увійти</a></li>
+                                    <li><a class="white-text" href="/under-development/"><i class="material-icons">person_add</i>Зареєструватися</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <h5>Підпишіться на оновлення</h5>
+                            <form class="update" action="" method="POST">
+                                <input type="text" placeholder="Email" />
+                                <input type="submit" value="Підписатися" />
+                            </form>
+                        </div>
+                        <div class="col s12">
+                            <h5>Знайдіть нас</h5>
+                            <ul>
+                                <li><a class="white-text" href="/contacts/">Контакти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l9 s12">
+                    <div class="row footer-block">
+                        <div class="col l4 m6 s12">
+                            <h5>Про кафедру</h5>
+                            <ul>
+                                <li><a class="white-text" href="/under-development/">Завідуючий кафедрою</a></li>
+                                <li><a class="white-text" href="/under-development/">Колектив кафедри</a></li>
+                                <li><a class="white-text" href="/under-development/">Досягнення студентів</a></li>
+                                <li><a class="white-text" href="/under-development/">Наші партнери</a></li>
+                                <li><a class="white-text" href="/under-development/">Фотогалерея</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l4 m6 s12">
+                            <h5>Наука</h5>
+                            <ul>
+                                <li><a class="white-text" href="/under-development/">Публікації</a></li>
+                                <li><a class="white-text" href="/under-development/">Розробки</a></li>
+                                <li><a class="white-text" href="/under-development/">Дисертації</a></li>
+                                <li><a class="white-text" href="/under-development/">Конференції</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l4 m6 s12">
+                            <h5>Наші послуги</h5>
+                            <ul>
+                                <li><a class="white-text" href="/under-development/">Детальніше про послуги</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row footer-block">
+                        <div class="col l4 m6 s12">
+                            <h5>Студентам</h5>
+                            <ul>
+                                <li><a class="white-text" href="/under-development/">Навчальні дисципліни</a></li>
+                                <li><a class="white-text" href="/under-development/">Розклад занять</a></li>
+                                <li><a class="white-text" href="/under-development/">Корисні посилання</a></li>
+                                <li><a class="white-text" href="/under-development/">Рейтинг успішності</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l4 m6 s12">
+                            <h5>Абітурієнтам</h5>
+                            <ul>
+                                <li><a class="white-text" href="/applicant/">Умови вступу</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l4 m6 s12">
+                            <h5>Останні публікації</h5>
+                            <ul>
+                                <li><a class="white-text" href="/news/">Новини</a></li>
+                                <li><a class="white-text" href="/advertisement/">Оголошення</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col s12">
-              <h5>Персоналізація</h5>
-              <ul class="personalization-ul">
-                  {% if request.user.is_authenticated %}
-                    <li><a class="white-text" href="/under-development/"><i class="material-icons">person</i>В особистий кабінет</a></li>
-                  {% else %}
-                    <li><a class="white-text" href="/under-development/"><i class="material-icons">perm_identity</i>Увійти</a></li>
-                    <li><a class="white-text" href="/under-development/"><i class="material-icons">person_add</i>Зареєструватися</a></li>
-                  {% endif %}
-              </ul>
-            </div>
-            <div class="col s12">
-              <h5>Підпишіться на оновлення</h5>
-              <form class="update" action="" method="POST">
-                <input type="text" placeholder="Email" />
-                <input type="submit" value="Підписатися" />
-              </form>
-            </div>
-            <div class="col s12">
-              <h5>Знайдіть нас</h5>
-              <ul>
-                <li><a class="white-text" href="/contacts/">Контакти</a></li>
-              </ul>  
-            </div>
-          </div>
         </div>
-        <div class="col l9 s12">
-          <div class="row footer-block">
-            <div class="col l4 m6 s12">
-              <h5>Про кафедру</h5>
-              <ul>
-                <li><a class="white-text" href="/under-development/">Завідуючий кафедрою</a></li>
-                <li><a class="white-text" href="/under-development/">Колектив кафедри</a></li>
-                <li><a class="white-text" href="/under-development/">Досягнення студентів</a></li>
-                <li><a class="white-text" href="/under-development/">Наші партнери</a></li>
-                <li><a class="white-text" href="/under-development/">Фотогалерея</a></li>
-              </ul>
+        <div class="footer-copyright blue-super-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col l8 s12">
+                        Кафедра ПЗКС ЧНУ ім. Ю. Федьковича. Всі права захищені &copy; 2016 Чернівці, Україна
+                    </div>
+                    <div class="col l4 hide-on-med-and-down right-align">
+                        Made by RedCat
+                    </div>
+                </div>
             </div>
-            <div class="col l4 m6 s12">
-              <h5>Наука</h5>
-              <ul>
-                <li><a class="white-text" href="/under-development/">Публікації</a></li>
-                <li><a class="white-text" href="/under-development/">Розробки</a></li>
-                <li><a class="white-text" href="/under-development/">Дисертації</a></li>
-                <li><a class="white-text" href="/under-development/">Конференції</a></li>
-              </ul>
-            </div>
-            <div class="col l4 m6 s12">
-              <h5>Наші послуги</h5>
-              <ul>
-                <li><a class="white-text" href="/under-development/">Детальніше про послуги</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row footer-block">
-            <div class="col l4 m6 s12">
-              <h5>Студентам</h5>
-              <ul>
-                <li><a class="white-text" href="/under-development/">Навчальні дисципліни</a></li>
-                <li><a class="white-text" href="/under-development/">Розклад занять</a></li>
-                <li><a class="white-text" href="/under-development/">Корисні посилання</a></li>
-                <li><a class="white-text" href="/under-development/">Рейтинг успішності</a></li>
-              </ul>
-            </div>
-            <div class="col l4 m6 s12">
-              <h5>Абітурієнтам</h5>
-              <ul>
-                <li><a class="white-text" href="/applicant/">Умови вступу</a></li>
-              </ul>
-            </div>
-            <div class="col l4 m6 s12">
-              <h5>Останні публікації</h5>
-              <ul>
-                <li><a class="white-text" href="/news/">Новини</a></li>
-                <li><a class="white-text" href="/advertisement/">Оголошення</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright blue-super-dark">
-      <div class="container">
-        <div class="row">
-          <div class="col l8 s12">
-            Кафедра ПЗКС ЧНУ ім. Ю. Федьковича. Всі права захищені &copy; 2016 Чернівці, Україна
-          </div>
-          <div class="col l4 hide-on-med-and-down right-align">
-            Made by RedCat
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- end FOOTER -->
+    </footer>
+    <!-- end FOOTER -->
 {% endblock %}
 
 {% block body-extra-scripts %}
