@@ -4,10 +4,6 @@ from .models import Advertisement
 
 from django.core.paginator import Paginator
 
-def cards_list(request):
-    context = {'advertisements': Advertisement.objects.filter(is_actual=True)[:5]}
-    return render(request, 'advertisement/cards_list.html', context)
-
 
 def index(request):
     paginator = Paginator(Advertisement.objects.all(), 3)

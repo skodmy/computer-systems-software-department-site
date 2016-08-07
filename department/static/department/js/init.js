@@ -1,11 +1,8 @@
 (function($){
     $(function(){
-		$.get('/slides/', function(slides_html){$('.slides').append(slides_html); $('.slider').slider()});
-		$.get('/fact/rows/', function(facts_html){$('.interesting-facts').append(facts_html); create_charts()});
-		$('#technologies-carousel').load('/technology/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
-		$('#advertisements-row').load('/advertisement/cards-list/');
-		$('#partners-carousel').load('/partner/carousel-items-list/', function(){$(this).carousel({dist: 0, padding : 10})});
-
+		$('.slider').slider();
+		$('#technologies-carousel').carousel({dist: 0, padding:10});
+		$('#partners-carousel').carousel({dist:0, padding: 10});
 	  	$('.mobile-dropdown-button').dropdown({alignment: 'right', belowOrigin: true});
 		$('#mobile-login-btn').sideNav();
 	    $('#mobile-nav-btn').sideNav();
@@ -21,8 +18,6 @@
 
 		$('#login_modal_form').submit(login_form_submit_handler);
 		$('#login_mobile_form').submit(login_form_submit_handler);
-
-
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
@@ -38,29 +33,4 @@ function login_form_submit_handler(event){
 		}
 	);
 	event.preventDefault()
-}
-
-function create_charts(){
-	Chart.defaults.global.legend.display = false;
-	$.getJSON('/fact/facts-arguments-json/', function(json_data){
-		$.each(json_data, function(key, value){
-			new Chart($('#fact-chart-area-'+key.toString())[0].getContext('2d'),
-				{
-					type: 'doughnut',
-					data: {
-						labels: value['labels'],
-						datasets:[{
-							data: value['data'],
-							backgroundColor: Please.make_color({
-								base_color: 'lightblue',
-								colors_returned: value['data'].length,
-								format: 'hex'
-							})
-						}]
-					},
-					options: {responsive: true}
-				}
-			)
-		})
-	});
 }

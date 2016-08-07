@@ -232,25 +232,25 @@ nav ul li.non-hover:hover {
 	background-color: #d9e7ef !important;
 	color: #042e47;
 }
-/* Advertisments */
+/* Advertisements */
 
-.advertisment {
+.advertisement {
 	margin-top: 10px; 
 	margin-bottom: 0px;
 }
 
-.advertisment-title a {
+.advertisement-title a {
 	color: #042e47;
 }
 
 @media only screen and (min-width: 601px) {
-	.advertisment-title {
+	.advertisement-title {
 		font-size: 18px;
 	}
 }
 
 @media only screen and (min-width: 993px) {
-  	.advertisment-title {
+  	.advertisement-title {
 		font-size: 20px;
 	}
 }

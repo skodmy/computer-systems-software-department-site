@@ -375,12 +375,12 @@ nav ul li.non-hover:hover {
 }
 
 /* Advertisments */
-.advertisment .card {
+.advertisement .card {
 	box-shadow: none;
 	border: 1px solid #d9e7ef;
 }
 
-.advertisment .card:hover {
+.advertisement .card:hover {
 	background-color: #d9e7ef;
 }
 
