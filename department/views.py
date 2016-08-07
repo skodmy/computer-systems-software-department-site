@@ -3,10 +3,18 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import Slide
 from news.models import News
+from technology.models import Technology
+from partner.models import Partner
+from advertisement.models import Advertisement
 
 
 def index(request):
-    return render(request, 'department/index.html', {'news_list': News.objects.all()[:5]})
+    context = {'slides': Slide.objects.all().order_by('display_priority')}
+    context.setdefault('technologies', Technology.objects.all())
+    context.setdefault('news_list', News.objects.all()[:5])
+    context.setdefault('partners', Partner.objects.all())
+    context.setdefault('advertisements', Advertisement.objects.all()[:5])
+    return render(request, 'department/index.html', context)
 
 
 def ajax_login(request):
@@ -35,11 +43,6 @@ def ajax_login(request):
 def manual_logout(request):
     logout(request)
     return JsonResponse({}) if request.is_ajax() else HttpResponseRedirect('/')
-
-
-def slides(request):
-    if request.is_ajax():
-        return render(request, 'department/slides.html', {'slides': Slide.objects.all().order_by('display_priority')})
 
 
 def contacts(request):

@@ -9,17 +9,16 @@
 {% endblock %}
 
 {% block slider %}{% endblock %}
-{% block container-focus-on %}{% endblock %}
-{% block container-facts %}{% endblock %}
-{% block container-technologies %}{% endblock %}
-{% block container-advertisements %}{% endblock %}
-{% block container-partners %}{% endblock %}
+{% block focus-on %}{% endblock %}
+{% block facts %}{% endblock %}
+{% block technologies %}{% endblock %}
+{% block advertisements %}{% endblock %}
+{% block partners %}{% endblock %}
 
-{% block container-news-show-more-container-large %}{% endblock %}
-{% block container-news-show-more-container-medium %}{% endblock %}
-{% block container-news-show-more-container-small %}{% endblock %}
+{% block md-lg-news-show-more-container %}{% endblock %}
+{% block sm-news-show-more-container %}{% endblock %}
 
-{% block xcontainer-news %}
+{% block xnews %}
     <!-- Pagination -->
     <div class="col s12 center-align">
         <ul class="pagination">
@@ -34,7 +33,7 @@
     </div>
 {% endblock %}
 
-{% block container-extra %}
+{% block right-col-extra %}
     <!-- Search -->
     <div class="col s12 hide-on-med-and-down">
         <h4>Пошук</h4>
@@ -58,12 +57,14 @@
         <h4>Оголошення</h4>
         <div class="divider simple-blue"></div>
         {% for advertisement in advertisements %}
-        <div class="row advertisment valign-wrapper">
+        <div class="row advertisement valign-wrapper">
             <div class="col s3 m4">
+                {% if advertisement.image %}
                 <img src="{{ advertisement.image.url }}" alt="" class="responsive-img">
+                {% endif %}
             </div>
             <div class="col s9 m8 valign">
-                <span class="advertisment-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
+                <span class="advertisement-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
             </div>
         </div>
         <div class="divider"></div>
@@ -77,7 +78,9 @@
         {% for advertisement in advertisements %}
         <div class="row advertisment valign-wrapper">
         <div class="col s4">
-            <img src="{{ advertisement.image.url }}" alt="" class="responsive-img">
+            {% if advertisement.image %}
+                <img src="{{ advertisement.image.url }}" alt="" class="responsive-img">
+            {% endif %}
             </div>
             <div class="col s8 valign">
                 <span class="advertisment-title"><a href="#">{{ advertisement.title }}</a></span>
