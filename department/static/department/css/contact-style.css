@@ -111,7 +111,15 @@ nav ul li.non-hover:hover {
 
 .side-news-title a {
 	color: #042e47;
+	text-decoration: none;
 }
+
+.side-news-title a:hover {
+	color: #042e47;
+	text-decoration: underline;
+}
+
+
 
 @media only screen and (min-width: 601px) {
 	.side-news-title {
@@ -136,6 +144,10 @@ nav ul li.non-hover:hover {
 		bottom: 5px;
 		right: 5px;
 	}
+
+	.contact-info {
+		font-size: 12px;
+	}
 }
 
 @media only screen and (min-width: 601px) {
@@ -143,12 +155,20 @@ nav ul li.non-hover:hover {
 		bottom: 75px;
 		right: 5px;
 	}
+
+	.contact-info {
+		font-size: 14px;
+	}
 }
 
 @media only screen and (min-width: 993px) {
   	.up_button {
 		bottom:75px;
 		right:40px;
+	}
+
+	.contact-info {
+		font-size: 16px;
 	}
 }
 
@@ -248,10 +268,6 @@ nav ul li.non-hover:hover {
 	}
 }
 
-.contact-info {
-	font-size: 14px;
-}
-
 .info-title {
 	font-size: 22px;
 	padding-bottom: 10px;
@@ -261,4 +277,112 @@ nav ul li.non-hover:hover {
 .contact-info .material-icons {
 	margin-right: 10px;
 	font-size: 24px;
+	vertical-align: middle;
+}
+
+.feedback-form-container {
+	border: 1px solid #159FD8;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 10px; 
+	align-items: center;
+}
+
+.feedback-form {
+	padding: 10px;
+}
+
+/* FOR TEXT FIELDS */
+/* label color */
+.feedback-form .input-field label {
+	color: #000;
+}
+
+/* label focus color */
+.feedback-form .input-field input[type=text]:focus + label {
+	color: #063c5e;
+}
+
+/* label underline focus color */
+.feedback-form .input-field input[type=text]:focus {
+	border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #000;
+}
+   
+/* valid color */
+.feedback-form .input-field input[type=text].valid {
+    border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #000;
+}
+   
+/* invalid color */
+.feedback-form .input-field input[type=text].invalid {
+	border-bottom: 1px solid #D32F2F;
+    box-shadow: 0 1px 0 0 #D32F2F;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+	color: #063c5e;
+}
+
+/* FOR EMAIl FIELDS */
+
+/* label focus color */
+.feedback-form .input-field input[type=email]:focus + label {
+	color: #063c5e;
+}
+
+/* label underline focus color */
+.feedback-form .input-field input[type=email]:focus {
+	border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #000;
+}
+   
+/* valid color */
+.feedback-form .input-field input[type=email].valid {
+    border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #000;
+}
+   
+/* invalid color */
+.feedback-form .input-field input[type=email].invalid {
+	border-bottom: 1px solid #D32F2F;
+    box-shadow: 0 1px 0 0 #D32F2F;
+}
+
+
+/* FOR TEXTAREA */
+/* label focus color */
+.feedback-form .input-field textarea:focus + label {
+	color: #063c5e;
+}
+
+/* label underline focus color */
+.feedback-form .input-field textarea:focus {
+	border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #063c5e;
+}
+   
+/* valid color */
+.feedback-form .input-field textarea.valid {
+    border-bottom: 1px solid #063c5e;
+    box-shadow: 0 1px 0 0 #063c5e;
+}
+   
+/* invalid color */
+.feedback-form .input-field textarea.invalid {
+	border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.feedback-contrast {
+	margin: 10px;
+}
+
+.feedback-icon {
+    width: auto !important;
+    font-size: 1.3rem !important;
+    line-height: inherit !important;
+    margin-right: 0px !important; 
 }
