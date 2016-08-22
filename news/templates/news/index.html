@@ -34,7 +34,7 @@
 {% endblock %}
 
 {% block right-col-extra %}
-    <!-- Search -->
+    <!-- SEARCH -->
     <div class="col s12 hide-on-med-and-down">
         <h4>Пошук</h4>
         <div class="divider simple-blue"></div>
@@ -51,8 +51,8 @@
             </form>
         </div>
     </div>
-    <!-- End Search -->
-    <!-- Advertisments Large-->
+    <!-- END SEARCH -->
+    <!-- ADVERTISEMENTS LARGE -->
     <div id="advertisments_block" class="col s12 m12 hide-on-med-and-down">
         <h4>Оголошення</h4>
         <div class="divider simple-blue"></div>
@@ -70,26 +70,7 @@
         <div class="divider"></div>
         {% endfor %}
     </div>
-    <!-- End Advertisments Large-->
-    <!-- Advertisments Medium-->
-    <!--div id="advertisments_medium_block" class="col s12 hide-on-small-and-down hide-on-large-only">
-        <h4>Оголошення Medium</h4>
-        <div class="divider simple-blue"></div>
-        {% for advertisement in advertisements %}
-        <div class="row advertisment valign-wrapper">
-        <div class="col s4">
-            {% if advertisement.image %}
-                <img src="{{ advertisement.image.url }}" alt="" class="responsive-img">
-            {% endif %}
-            </div>
-            <div class="col s8 valign">
-                <span class="advertisment-title"><a href="#">{{ advertisement.title }}</a></span>
-            </div>
-            </div>
-            <div class="divider"></div>
-        {% endfor %}
-    </--div>
-    <!-- End Advertisments Medium-->
+    <!-- END ADVERTISEMENTS LARGE -->
 {% endblock %}
 
 {% block xbody-extra-scripts %}
