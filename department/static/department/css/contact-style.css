@@ -276,8 +276,25 @@ nav ul li.non-hover:hover {
 
 .contact-info .material-icons {
 	margin-right: 10px;
-	font-size: 22px;
-	vertical-align: middle;
+	vertical-align: text-top;
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-info .material-icons {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .contact-info .material-icons {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .contact-info .material-icons {
+        font-size: 18px;
+    }
 }
 
 .feedback-form-container {
