@@ -90,6 +90,10 @@ nav ul li.non-hover:hover {
 	height: 2px;
 }
 
+.divider.blue-light {
+	height: 1px;
+}
+
 .container {
     width: 90%;
 }
@@ -324,7 +328,7 @@ nav ul li.non-hover:hover {
 	background-color: #039be5 !important;
 	color: #fff;
 }
-
+		
 .read-more-button:hover {
 	box-shadow: none;
 	background-color: #03B8E5 !important;
@@ -360,20 +364,31 @@ nav ul li.non-hover:hover {
 	background-color: #d9e7ef !important;
 	color: #042e47;
 }
-
+	 
 .show-more-container {
 	padding-top: 10px !important;
-}
-
+}	
+			
 /* Interesting fact */
 .interesting-facts .row{
 	margin-bottom: 0px;
 }
 
-.pie-chart {
-	margin-top: 10px !important;
+.interesting-fact {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+	
+.fact-value {
+	color: #057dc8 ;
+	font-size: 26px;
+	font-style: italic;
 }
 
+.fact-description {
+	padding-left: 5px;
+
+}
 /* Advertisments */
 .advertisement .card {
 	box-shadow: none;
