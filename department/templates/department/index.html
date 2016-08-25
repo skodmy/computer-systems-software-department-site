@@ -407,7 +407,13 @@
                                             </div>
                                         </div>
                                         <div class="col s3 m4">
-                                            <img src="{{ news.image.url }}" alt="" class="responsive-img">
+                                            <img src="
+                                                {% if news.image %}
+                                                    {{ news.image.url }}
+                                                {% else %}
+                                                    {% static 'department/images/no-thumb.png' %}
+                                                {% endif %}"
+                                            alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
                                         </div>
                                         <div class="col s9 m8">
                                             {{ news.short_description }}
@@ -454,7 +460,13 @@
                                 {% for news in news_list %}
                                     <div class="card news-card">
                                         <div class="card-image">
-                                            <img src="{{ news.image.url }}">
+                                            <img src="
+                                                {% if news.image %}
+                                                    {{ news.image.url }}
+                                                {% else %}
+                                                    {% static 'department/images/no-thumb.png' %}
+                                                {% endif %}"
+                                            alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
                                             <span class="card-title">{{ news.title }}</span>
                                         </div>
                                         <div class="card-content">
