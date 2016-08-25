@@ -284,3 +284,8 @@ nav ul li.non-hover:hover {
 	margin-right: 10px;
 	font-size: 24px;
 }
+
+/* Body text propreties */
+p {
+   text-align: justify;
+}
