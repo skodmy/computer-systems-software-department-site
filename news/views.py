@@ -4,11 +4,13 @@ from .models import News
 from django.core.paginator import Paginator
 
 
-def index(request):
+def index(request, page=1):
     context = {'advertisements': Advertisement.objects.all()[:5]}
     paginator = Paginator(News.objects.all(),3)
     context.setdefault('paginator', paginator)
-    context.setdefault('news_list', paginator.page(1))
+    active_page = paginator.page(page)
+    context.setdefault('news_list', active_page.object_list)
+    context.setdefault('active_page', active_page)
     return render(request, 'news/index.html', context)
 
 
