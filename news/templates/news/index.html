@@ -19,18 +19,31 @@
 {% block sm-news-show-more-container %}{% endblock %}
 
 {% block xnews %}
-    <!-- Pagination -->
+    <!-- PAGINATION -->
     <div class="col s12 center-align">
         <ul class="pagination">
             {% if paginator.num_pages != 0 %}
-                <li class="disabled edge"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="{% if active_page.has_previous %}waves-effect{% else %}disabled{% endif %} edge">
+                    <a href="{% if active_page.has_previous %}/news/page{{ active_page.previous_page_number }}
+                    {% else %}#!{% endif %}">
+                        <i class="material-icons">chevron_left</i>
+                    </a>
+                </li>
                 {% for page_number in paginator.page_range %}
-                    <li class="waves-effect"><a href="{{ page_number }}">{{ page_number }}</a></li>
+                    <li class="waves-effect {% if active_page.number == page_number %}active{% endif %}">
+                        <a href="/news/page{{ page_number }}">{{ page_number }}</a>
+                    </li>
                 {% endfor %}
-                <li class="waves-effect edge"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                <li class="{% if active_page.has_next %}waves-effect{% else %}disabled{% endif %} edge">
+                    <a href="{% if active_page.has_next %}/news/page{{ active_page.next_page_number }}
+                    {% else %}#!{% endif %}">
+                        <i class="material-icons">chevron_right</i>
+                    </a>
+                </li>
             {% endif %}
         </ul>
     </div>
+    <!-- END PAGINATION -->
 {% endblock %}
 
 {% block right-col-extra %}

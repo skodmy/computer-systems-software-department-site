@@ -24,28 +24,5 @@
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
-
-	  //initializing pagination
-	  $('.disabled.edge + li').addClass('active');
-	  
-	  $('li.waves-effect > a').click(function (e) {
-		  e.preventDefault();
-		  $.get('page_number' + $(this).text() + '/', function (data) {
-				  $('li.waves-effect.active').removeClass('active');
-			  	  $('.news-record').remove();
-			  	  $('#news-start').after(data);
-			  }
-		  )
-	  });
-
-	  $('li.edge > a').click(function (e) {
-		  e.preventDefault();
-		  var active_page_number = $('li.active > a').text();
-		  active_page_number = parseInt(active_page_number);
-		  ($(this).text()=='chevron_right')? active_page_number++: active_page_number--;
-		  active_page_number = active_page_number.toString();
-		  $('li.waves-effect > a[href="'+active_page_number+'"]').click();
-	  });
-	  //end of pagination's initialization
   }); // end of document ready
 })(jQuery); // end of jQuery name space
