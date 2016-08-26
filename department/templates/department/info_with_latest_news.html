@@ -1,5 +1,7 @@
 {% extends 'department/info_page.html' %}
 
+{% load staticfiles %}
+
 {% block head-title-content %}{% endblock %}
 
 {% block container-right-col %}
@@ -11,7 +13,13 @@
         {% for news in latest_news %}
             <div class="row side-news valign-wrapper">
                   <div class="col s3">
-                    <img src="{{ news.image.url }}" alt="" class="responsive-img">
+                    <img src="
+                         {% if news.image %}
+                            {{ news.image.url }}
+                         {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                         {% endif %}"
+                    alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
                   </div>
                   <div class="col s9 valign">
                     <span class="side-news-title"><a href="/news/id{{ news.id }}/">{{ news.title }}</a></span>
