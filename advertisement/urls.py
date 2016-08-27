@@ -1,9 +1,8 @@
 from django.conf.urls import url
 
-from .views import index, single, page
+from .views import index, single
 
 urlpatterns = [
-    url(r'^$', index),
+    url(r'^page(?P<page>\d+)$', index),
     url(r'^id(?P<id>\d+)/$', single),
-    url(r'^page(?P<number>\d+)/$', page),
 ]

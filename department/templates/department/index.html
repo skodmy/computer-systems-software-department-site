@@ -184,7 +184,7 @@
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
                 <li><a href="/news/page1">Новини</a></li>
-                <li><a href="/advertisement/">Оголошення</a></li>
+                <li><a href="/advertisement/page1">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END MOBILE NAV UL -->
@@ -219,7 +219,7 @@
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
                 <li><a href="/news/page1">Новини</a></li>
-                <li><a href="/advertisement/">Оголошення</a></li>
+                <li><a href="/advertisement/page1">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END DESKTOP NAV UL -->
@@ -322,37 +322,37 @@
             {% endblock %}
 
             {% block container_inner_html %}
-                {% block container_inner_html_before_1_row %}
+                {% block container_before_1_row %}
                 {% endblock %}
 
-                {% block container_inner_html_1_row %}
+                {% block container_1_row %}
                     <div class="row">
-                        {% block container_inner_html_1_row_before_inner_html %}
+                        {% block container_1_row_before_inner_html %}
                         {% endblock %}
 
-                        {% block container_inner_html_1_row_inner_html %}
-                            {% block container_inner_html_1_row_col_s12_m8 %}
+                        {% block container_1_row_inner_html %}
+                            {% block container_1_row_col_s12_m8 %}
                                 <div class="col s12 m8">
-                                    {% block container_inner_html_1_row_col_s12_m8_before_inner_html %}
+                                    {% block container_1_row_col_s12_m8_before_inner_html %}
                                     {% endblock %}
 
-                                    {% block container_inner_html_1_row_col_s12_m8_inner_html %}
-                                        {% block container_inner_html_1_row_col_s12_m8_before_1_row %}
+                                    {% block container_1_row_col_s12_m8_inner_html %}
+                                        {% block container_1_row_col_s12_m8_before_1_row %}
                                         {% endblock %}
 
-                                        {% block container_inner_html_1_row_col_s12_m8_1_row %}
+                                        {% block container_1_row_col_s12_m8_1_row %}
                                             <div class="row">
-                                                {% block container_inner_html_1_row_col_s12_m8_1_row_before_inner_html %}
+                                                {% block container_1_row_col_s12_m8_1_row_before_inner_html %}
                                                 {% endblock %}
 
-                                                {% block container_inner_html_1_row_col_s12_m8_1_row_inner_html %}
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_before_focus_on %}
+                                                {% block container_1_row_col_s12_m8_1_row_inner_html %}
+                                                    {% block container_1_row_col_s12_m8_1_row_before_focus_on %}
                                                     {% endblock %}
 
                                                     <!-- BLOCK FOCUS ON -->
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_focus_on %}
+                                                    {% block container_1_row_col_s12_m8_1_row_focus_on %}
                                                         <div class="col s12">
-                                                            {% block container_inner_html_1_row_col_s12_m8_1_row_focus_on_inner_html %}
+                                                            {% block container_1_row_col_s12_m8_1_row_focus_on_inner_html %}
                                                                 <h4>Зверніть увагу</h4>
                                                                 <div class="divider simple-blue"></div>
                                                                 <div class="row">
@@ -402,13 +402,13 @@
                                                     {% endblock %}
                                                     <!-- END BLOCK FOCUS ON -->
 
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_between_focus_on_and_technologies %}
+                                                    {% block container_1_row_col_s12_m8_1_row_between_focus_on_and_technologies %}
                                                     {% endblock %}
 
                                                     <!-- BLOCK TECHNOLOGIES -->
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_technologies %}
+                                                    {% block container_1_row_col_s12_m8_1_row_technologies %}
                                                         <div class="col s12 technologies">
-                                                            {% block container_inner_html_1_row_col_s12_m8_1_row_technologies_inner_html %}
+                                                            {% block container_1_row_col_s12_m8_1_row_technologies_inner_html %}
                                                             <h4>Технології</h4>
                                                             <div class="carousel" id="technologies-carousel">
                                                                 {% for technology in technologies %}
@@ -423,15 +423,15 @@
                                                     {% endblock %}
                                                     <!-- END TECHNOLOGIES BLOCK -->
 
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_between_technologies_and_news %}
+                                                    {% block container_1_row_col_s12_m8_1_row_between_technologies_and_news %}
                                                     {% endblock %}
 
                                                     <!-- BLOCK NEWS -->
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_news %}
-                                                        {% block container_inner_html_1_row_col_s12_m8_1_row_before_news_large_and_medium %}
+                                                    {% block container_1_row_col_s12_m8_1_row_news %}
+                                                        {% block container_1_row_col_s12_m8_1_row_before_news_large_and_medium %}
                                                         {% endblock %}
 
-                                                        {% block container_inner_html_1_row_col_s12_m8_1_row_news_large_and_medium %}
+                                                        {% block container_1_row_col_s12_m8_1_row_news_large_and_medium %}
                                                             <!-- LARGE AND MEDIUM NEWS -->
                                                             <div class="col s12 hide-on-small-only">
                                                                 <h4>Новини</h4>
@@ -484,7 +484,7 @@
                                                                     </div>
                                                                 {% endfor %}
 
-                                                                {% block md-lg-news-show-more-container %}
+                                                                {% block container_1_row_col_s12_m8_1_row_news_large_and_medium_show_more %}
                                                                     <div class="divider"></div>
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
@@ -497,10 +497,10 @@
                                                             <!-- END LARGE AND MEDIUM NEWS -->
                                                         {% endblock %}
 
-                                                        {% block container_inner_html_1_row_col_s12_m8_1_row_between_news_large_and_medium_and_news_small %}
+                                                        {% block container_1_row_col_s12_m8_1_row_between_news_large_and_medium_and_news_small %}
                                                         {% endblock %}
 
-                                                        {% block container_inner_html_1_row_col_s12_m8_1_row_news_small %}
+                                                        {% block container_1_row_col_s12_m8_1_row_news_small %}
                                                             <!-- SMALL NEWS -->
                                                             <div class="col s12 hide-on-med-and-up">
                                                                 <h4>Новини</h4>
@@ -520,9 +520,9 @@
                                                                         <div class="card-content">
                                                                             <p><!-- TODO check here -->
                                                                             <div class="info-panel">
-                                                                            <a href="#"><i class="material-icons">access_time</i>{{ news.publication_date_time }}</a>
-                                                                            <a href="#"><i class="material-icons">remove_red_eye</i>{{ news.clicks }}</a>
-                                                                        </div>
+                                                                                <a href="#"><i class="material-icons">access_time</i>{{ news.publication_date_time }}</a>
+                                                                                <a href="#"><i class="material-icons">remove_red_eye</i>{{ news.clicks }}</a>
+                                                                            </div>
                                                                             <p>{{ news.short_description }}</p>
                                                                         </div>
                                                                         <div class="card-action">
@@ -531,7 +531,7 @@
                                                                     </div>
                                                                 {% endfor %}
 
-                                                                {% block sm-news-show-more-container %}
+                                                                {% block container_1_row_col_s12_m8_1_row_news_small_show_more %}
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
                                                                         <div class="col s12">
@@ -543,162 +543,170 @@
                                                             <!-- END SMALL NEWS -->
                                                         {% endblock %}
 
-                                                        {% block container_inner_html_1_row_col_s12_m8_1_row_after_news_small %}
+                                                        {% block container_1_row_col_s12_m8_1_row_after_news_small %}
                                                         {% endblock %}
                                                     {% endblock %}
                                                     <!-- END BLOCK NEWS -->
 
-                                                    {% block container_inner_html_1_row_col_s12_m8_1_row_after_news %}
+                                                    {% block container_1_row_col_s12_m8_1_row_after_news %}
                                                     {% endblock %}
                                                 {% endblock %}
 
-                                                {% block container_inner_html_1_row_col_s12_m8_1_row_after_inner_html %}
+                                                {% block container_1_row_col_s12_m8_1_row_after_inner_html %}
                                                 {% endblock %}
                                             </div>
                                         {% endblock %}
 
-                                        {% block container_inner_html_1_row_col_s12_m8_after_1_row %}
+                                        {% block container_1_row_col_s12_m8_after_1_row %}
                                         {% endblock %}
                                     {% endblock %}
 
-                                    {% block container_inner_html_1_row_col_s12_m8_after_inner_html %}
+                                    {% block container_1_row_col_s12_m8_after_inner_html %}
                                     {% endblock %}
                                 </div>
                             {% endblock %}
 
-                            {% block container_inner_html_1_row_col_s12_m4 %}
+                            {% block container_1_row_col_s12_m4 %}
                                 <div class="col s12 m4">
-                                    {% block container_inner_html_1_row_col_s12_m4_before_inner_html %}
+                                    {% block container_1_row_col_s12_m4_before_inner_html %}
                                     {% endblock %}
 
-                                    {% block container_inner_html_1_row_col_s12_m4_inner_html %}
-                                        {% block container_inner_html_1_row_col_s12_m4_before_1_row %}
+                                    {% block container_1_row_col_s12_m4_inner_html %}
+                                        {% block container_1_row_col_s12_m4_before_1_row %}
                                         {% endblock %}
 
-                                        {% block container_inner_html_1_row_col_s12_m4_1_row %}
+                                        {% block container_1_row_col_s12_m4_1_row %}
                                             <div class="row">
-                                                {% block container_inner_html_1_row_col_s12_m4_1_row_before_facts %}
+                                                {% block container_1_row_col_s12_m4_1_row_before_inner_html %}
                                                 {% endblock %}
 
-                                                <!-- BLOCK FACTS -->
-                                                {% block container_inner_html_1_row_col_s12_m4_1_row_facts %}
-                                                    <div class="col s12 interesting-facts hide-on-small-and-down">
-                                                        {% block container_inner_html_1_row_col_s12_m4_1_row_facts_inner_html %}
-                                                            <h4>Це цікаво</h4>
-                                                            <div class="divider simple-blue"></div>
-                                                            <div class="row valign-wrapper interesting-fact">
-                                                                <div class="col l2 m4 fact-value center">
-                                                                    180
-                                                                </div>
-                                                                <div class="col l10 m8 fact-description">
-                                                                    Дисциплін вивчає студент за увесь час свого навчання
-                                                                </div>
-                                                            </div>
-                                                            <div class="divider blue-light"></div>
-                                                            <div class="row valign-wrapper interesting-fact">
-                                                                <div class="col l2 m4 fact-value center">
-                                                                    90%
-                                                                </div>
-                                                                <div class="col l10 m8 fact-description">
-                                                                    Випускників закінчують навчання з відзнакою
-                                                                </div>
-                                                            </div>
-                                                            <div class="divider blue-light"></div>
-                                                            <div class="row valign-wrapper interesting-fact">
-                                                                <div class="col l2 m4 fact-value center">
-                                                                    90%
-                                                                </div>
-                                                                <div class="col l10 m8 fact-description">
-                                                                    Працевлаштовуються по спеціальності
-                                                                </div>
-                                                            </div>
-                                                            <div class="divider blue-light"></div>
-                                                            <div class="row valign-wrapper interesting-fact">
-                                                                <div class="col l2 m4 fact-value center">
-                                                                    25
-                                                                </div>
-                                                                <div class="col l10 m8 fact-descriprion">
-                                                                    Середній вік викладачів на кафедрі (один із найнижчих у вузі)
-                                                                </div>
-                                                            </div>
-                                                        {% endblock %}
-                                                    </div>
-                                                {% endblock %}
-                                                <!-- END BLOCK FACTS -->
+                                                {% block container_1_row_col_s12_m4_1_row_inner_html %}
+                                                    {% block container_1_row_col_s12_m4_1_row_before_facts %}
+                                                    {% endblock %}
 
-                                                {% block container_inner_html_1_row_col_s12_m4_1_row_between_facts_and_advertisements %}
-                                                {% endblock %}
+                                                    <!-- BLOCK FACTS -->
+                                                    {% block container_1_row_col_s12_m4_1_row_facts %}
+                                                        <div class="col s12 interesting-facts hide-on-small-and-down">
+                                                            {% block container_1_row_col_s12_m4_1_row_facts_inner_html %}
+                                                                <h4>Це цікаво</h4>
+                                                                <div class="divider simple-blue"></div>
+                                                                <div class="row valign-wrapper interesting-fact">
+                                                                    <div class="col l2 m4 fact-value center">
+                                                                        180
+                                                                    </div>
+                                                                    <div class="col l10 m8 fact-description">
+                                                                        Дисциплін вивчає студент за увесь час свого навчання
+                                                                    </div>
+                                                                </div>
+                                                                <div class="divider blue-light"></div>
+                                                                <div class="row valign-wrapper interesting-fact">
+                                                                    <div class="col l2 m4 fact-value center">
+                                                                        90%
+                                                                    </div>
+                                                                    <div class="col l10 m8 fact-description">
+                                                                        Випускників закінчують навчання з відзнакою
+                                                                    </div>
+                                                                </div>
+                                                                <div class="divider blue-light"></div>
+                                                                <div class="row valign-wrapper interesting-fact">
+                                                                    <div class="col l2 m4 fact-value center">
+                                                                        90%
+                                                                    </div>
+                                                                    <div class="col l10 m8 fact-description">
+                                                                        Працевлаштовуються по спеціальності
+                                                                    </div>
+                                                                </div>
+                                                                <div class="divider blue-light"></div>
+                                                                <div class="row valign-wrapper interesting-fact">
+                                                                    <div class="col l2 m4 fact-value center">
+                                                                        25
+                                                                    </div>
+                                                                    <div class="col l10 m8 fact-descriprion">
+                                                                        Середній вік викладачів на кафедрі (один із найнижчих у вузі)
+                                                                    </div>
+                                                                </div>
+                                                            {% endblock %}
+                                                        </div>
+                                                    {% endblock %}
+                                                    <!-- END BLOCK FACTS -->
 
-                                                <!-- BLOCK ADVERTISEMENTS -->
-                                                {% block container_inner_html_1_row_col_s12_m4_1_row_advertisements %}
-                                                    <div class="col s12">
-                                                        {% block container_inner_html_1_row_col_s12_m4_1_row_advertisements_inner_html %}
-                                                            <div class="divider simple-blue"></div>
-                                                            <h4>Оголошення</h4>
-                                                            <div class="row">
-                                                                {% for advertisement in advertisements %}
-                                                                    <div class="col s12 news advertisement">
-                                                                        <div class="card">
-                                                                            <div class="news-title">
-                                                                                <span class="card-title">{{ advertisement.title }}</span>
-                                                                            </div>
-                                                                            <div class="card-content text-blue">
-                                                                                <p>{{ advertisement.main_message }}</p>
-                                                                            </div>
-                                                                            <div class="card-action">
-                                                                                <a href="#">More about this</a>
+                                                    {% block container_1_row_col_s12_m4_1_row_between_facts_and_advertisements %}
+                                                    {% endblock %}
+
+                                                    <!-- BLOCK ADVERTISEMENTS -->
+                                                    {% block container_1_row_col_s12_m4_1_row_advertisements %}
+                                                        <div class="col s12">
+                                                            {% block container_1_row_col_s12_m4_1_row_advertisements_inner_html %}
+                                                                <div class="divider simple-blue"></div>
+                                                                <h4>Оголошення</h4>
+                                                                <div class="row">
+                                                                    {% for advertisement in advertisements %}
+                                                                        <div class="col s12 news advertisement">
+                                                                            <div class="card">
+                                                                                <div class="news-title">
+                                                                                    <span class="card-title">{{ advertisement.title }}</span>
+                                                                                </div>
+                                                                                <div class="card-content text-blue">
+                                                                                    <p>{{ advertisement.main_message }}</p>
+                                                                                </div>
+                                                                                <div class="card-action">
+                                                                                    <a href="#">More about this</a>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                {% endfor %}
-                                                            </div>
-                                                            <div class="row">
-                                                                <!-- ADVERTISEMENTS SHOW MORE BUTTON -->
-                                                                <div class="col s12">
-                                                                    <a class="waves-effect waves-light btn  blue show-more-button" href="/advertisement/">Show more</a>
+                                                                    {% endfor %}
                                                                 </div>
-                                                                <!-- END ADVERTISEMENTS SHOW MORE BUTTON -->
-                                                            </div>
-                                                        {% endblock %}
-                                                    </div>
-                                                {% endblock %}
-                                                <!-- END BLOCK ADVERTISEMENTS -->
+                                                                <div class="row">
+                                                                    <!-- ADVERTISEMENTS SHOW MORE BUTTON -->
+                                                                    <div class="col s12">
+                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/advertisement/">Show more</a>
+                                                                    </div>
+                                                                    <!-- END ADVERTISEMENTS SHOW MORE BUTTON -->
+                                                                </div>
+                                                            {% endblock %}
+                                                        </div>
+                                                    {% endblock %}
+                                                    <!-- END BLOCK ADVERTISEMENTS -->
 
-                                                {% block container_inner_html_1_row_col_s12_m4_1_row_after_advertisements %}
+                                                    {% block container_1_row_col_s12_m4_1_row_after_advertisements %}
+                                                    {% endblock %}
+                                                {% endblock %}
+
+                                                {% block container_1_row_col_s12_m4_1_row_after_inner_html %}
                                                 {% endblock %}
                                             </div>
                                         {% endblock %}
 
-                                        {% block container_inner_html_1_row_col_s12_m4_after_1_row %}
+                                        {% block container_1_row_col_s12_m4_after_1_row %}
                                         {% endblock %}
                                     {% endblock %}
 
-                                    {% block container_inner_html_1_row_col_s12_m4_after_inner_html %}
+                                    {% block container_1_row_col_s12_m4_after_inner_html %}
                                     {% endblock %}
                                 </div>
                             {% endblock %}
                         {% endblock %}
 
-                        {% block container_inner_html_1_row_after_inner_html %}
+                        {% block container_1_row_after_inner_html %}
                         {% endblock %}
                     </div>
                 {% endblock %}
 
-                {% block container_inner_html_between_1_row_and_2_row %}
+                {% block container_between_1_row_and_2_row %}
                 {% endblock %}
 
-                {% block container_inner_html_2_row %}
+                {% block container_2_row %}
                     <div class="row">
-                        {% block container_inner_html_2_row_before_inner_html %}
+                        {% block container_2_row_before_inner_html %}
                         {% endblock %}
 
-                        {% block container_inner_html_2_row_inner_html %}
+                        {% block container_2_row_inner_html %}
                             {% block container_inner_html_2_row_before_partners %}
-                        {% endblock %}
+                            {% endblock %}
 
-                            {% block container_inner_html_2_row_partners %}
+                            {% block container_2_row_partners %}
                                 <div class="col s12">
-                                    {% block container_inner_html_2_row_partners_inner_html %}
+                                    {% block container_2_row_partners_inner_html %}
                                         <h4>Партнери</h4>
                                         <div class="divider simple-blue"></div>
                                         <div class="carousel" id="partners-carousel">
@@ -712,16 +720,16 @@
                                 </div>
                             {% endblock %}
 
-                            {% block container_inner_html_2_row_after_partners %}
+                            {% block container_2_row_after_partners %}
                             {% endblock %}
                         {% endblock %}
 
-                        {% block container_inner_html_2_row_after_inner_html %}
+                        {% block container_2_row_after_inner_html %}
                         {% endblock %}
                     </div>
                 {% endblock %}
 
-                {% block container_inner_html_after_2_row %}
+                {% block container_after_2_row %}
                 {% endblock %}
             {% endblock %}
 

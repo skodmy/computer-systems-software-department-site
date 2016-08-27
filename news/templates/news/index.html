@@ -1,70 +1,17 @@
-{% extends 'department/index.html' %}
+{% extends 'department/publication_page.html' %}
 
 {% load staticfiles %}
 
-{% block head-title-content %}News{% endblock %}
+{% block head-title-content %}Новини{% endblock %}
 
 {% block xhead-extra-links %}
   <link href="{% static 'news/css/news-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block slider %}{% endblock %}
-{% block focus-on %}{% endblock %}
-{% block facts %}{% endblock %}
-{% block technologies %}{% endblock %}
-{% block advertisements %}{% endblock %}
-{% block partners %}{% endblock %}
+{% block container_1_row_col_s12_m8_1_row_news_large_and_medium_show_more %}{% endblock %}
+{% block container_1_row_col_s12_m8_1_row_news_small_show_more %}{% endblock %}
 
-{% block md-lg-news-show-more-container %}{% endblock %}
-{% block sm-news-show-more-container %}{% endblock %}
-
-{% block xnews %}
-    <!-- PAGINATION -->
-    <div class="col s12 center-align">
-        <ul class="pagination">
-            {% if paginator.num_pages != 0 %}
-                <li class="{% if active_page.has_previous %}waves-effect{% else %}disabled{% endif %} edge">
-                    <a href="{% if active_page.has_previous %}/news/page{{ active_page.previous_page_number }}
-                    {% else %}#!{% endif %}">
-                        <i class="material-icons">chevron_left</i>
-                    </a>
-                </li>
-                {% for page_number in paginator.page_range %}
-                    <li class="waves-effect {% if active_page.number == page_number %}active{% endif %}">
-                        <a href="/news/page{{ page_number }}">{{ page_number }}</a>
-                    </li>
-                {% endfor %}
-                <li class="{% if active_page.has_next %}waves-effect{% else %}disabled{% endif %} edge">
-                    <a href="{% if active_page.has_next %}/news/page{{ active_page.next_page_number }}
-                    {% else %}#!{% endif %}">
-                        <i class="material-icons">chevron_right</i>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
-    <!-- END PAGINATION -->
-{% endblock %}
-
-{% block right-col-extra %}
-    <!-- SEARCH -->
-    <div class="col s12 hide-on-med-and-down">
-        <h4>Пошук</h4>
-        <div class="divider simple-blue"></div>
-        <div class="search">
-            <form class="">
-                <div class="row">
-                  <div class="col s10">
-                    <input class="" type="text" placeholder="Шукати тут..." required/>
-                  </div>
-                  <div class="col s2">
-                    <button class="waves-effect waves-light btn blue-dark" type="submit"><i class="material-icons">search</i></button>
-                  </div>
-                </div>         
-            </form>
-        </div>
-    </div>
-    <!-- END SEARCH -->
+{% block container_1_row_col_s12_m4_1_row_advertisements %}
     <!-- ADVERTISEMENTS LARGE -->
     <div id="advertisments_block" class="col s12 m12 hide-on-med-and-down">
         <h4>Оголошення</h4>

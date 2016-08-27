@@ -78,43 +78,43 @@ nav ul li.non-hover:hover {
     width: 90%;
 }
 
-/* Advertisments css */
-.row.advertismant-record {
+/* Advertisements css */
+.row.advertisement-record {
 	margin-bottom: 0px;
 }
 
-.advertismant-record {
+.advertisement-record {
 	padding: 10px 0;
 }
 
-.advertismant-record h4 {
+.advertisement-record h4 {
 	margin: 0px;
 }
 
-.advertismant-title {
+.advertisement-title {
 	width: 100%;
 	color: #042e47;
 }
 
-.advertismant-title a:hover {
+.advertisement-title a:hover {
 	text-decoration: underline;
 	color: #03B8E5;
 }
 
 @media only screen and (max-width: 600px) {
-  	.advertismant-title {
+  	.advertisement-title {
 		font-size: 18px;
 	}
 }
 
 @media only screen and (min-width: 601px) {
-  	.advertismant-title {
+  	.advertisement-title {
 		font-size: 22px;
 	}
 }
 
 @media only screen and (min-width: 993px) {
-  	.advertismant-title {
+  	.advertisement-title {
 		font-size: 24px;
 	}
 }
@@ -197,29 +197,29 @@ nav ul li.non-hover:hover {
 	background-color: #03B8E5 !important;
 }
 
-.advertismant-card .card-image .card-title  {
+.advertisement-card .card-image .card-title  {
 	width: 100%;
 	color: #063c5e;
 	background: rgba(217, 231, 239, .7);
 	padding: 5px;
 }
 
-.advertismant-card .info-panel {
+.advertisement-card .info-panel {
 	padding-top: 10px;
 }
 
-.advertismant-card .card-content .card-title  {
+.advertisement-card .card-content .card-title  {
 	color: #063c5e;
 	line-height: normal;
 }
 
-.advertismant-card .card-action a {
+.advertisement-card .card-action a {
 	color: #039be5 !important;
 }
 
 /* Side block */
 
-.parner-block {
+.partner-block {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
