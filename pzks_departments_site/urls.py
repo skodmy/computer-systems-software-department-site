@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # next url's pattern serves urls that didn't match any another
     url(r'^', include('department.urls')),  # if something wrong with urls then don't forget to check this
-    url(r'^advertisement/', include('advertisement.urls')),
-    url(r'^news/', include('news.urls')),
+    url(r'^advertisement/', include('post.urls')),
+    url(r'^news/', include('post.urls')),
     url(r'^partner/', include('partner.urls')),
     url(r'^technology/', include('technology.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this too

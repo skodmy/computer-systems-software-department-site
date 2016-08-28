@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'news',
     'partner',
     'technology',
+    'post'
 ]
 
 MIDDLEWARE_CLASSES = [
