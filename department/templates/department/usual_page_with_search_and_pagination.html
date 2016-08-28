@@ -1,0 +1,31 @@
+{% extends 'department/usual_page_with_search.html' %}
+
+{% block head-title-content %}{% endblock %}
+
+{% block container_1_row_col_s12_m8_1_row_after_news_small %}
+    <!-- PAGINATION -->
+    <div class="col s12 center-align">
+        <ul class="pagination">
+            {% if paginator.num_pages != 0 %}
+                <li class="{% if active_page.has_previous %}waves-effect{% else %}disabled{% endif %} edge">
+                    <a href="{% if active_page.has_previous %}{{ page_url }}{{ active_page.previous_page_number }}
+                    {% else %}#!{% endif %}">
+                        <i class="material-icons">chevron_left</i>
+                    </a>
+                </li>
+                {% for page_number in paginator.page_range %}
+                    <li class="waves-effect {% if active_page.number == page_number %}active{% endif %}">
+                        <a href="{{ page_url }}{{ page_number }}">{{ page_number }}</a>
+                    </li>
+                {% endfor %}
+                <li class="{% if active_page.has_next %}waves-effect{% else %}disabled{% endif %} edge">
+                    <a href="{% if active_page.has_next %}{{ page_url }}{{ active_page.next_page_number }}
+                    {% else %}#!{% endif %}">
+                        <i class="material-icons">chevron_right</i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <!-- END PAGINATION -->
+{% endblock %}

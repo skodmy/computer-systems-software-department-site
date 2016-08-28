@@ -8,8 +8,95 @@
   <link href="{% static 'news/css/news-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block container_1_row_col_s12_m8_1_row_news_large_and_medium_show_more %}{% endblock %}
-{% block container_1_row_col_s12_m8_1_row_news_small_show_more %}{% endblock %}
+{% block container_1_row_col_s12_m8_1_row_news_large_and_medium %}
+    <!-- LARGE AND MEDIUM NEWS -->
+    <div class="col s12 hide-on-small-only">
+        <h4>Новини</h4>
+        <div id="news-start" class="divider simple-blue"></div>
+        {% for news in news_list %}
+            <div class="row news-record">
+                <div class="col s12 m12 title-container">
+                    <h4 class="news-title"><a href="/news/id{{ news.id }}/">{{ news.title }}</a></h4>
+                </div>
+                <div class="col s12 m12">
+                    <div class="info-panel">
+                        <i class="material-icons">local_offer</i>
+                        {% for tag in news.tag.all %}
+                            <a href="#">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col s3 m4">
+                    <img src="
+                        {% if news.image %}
+                            {{ news.image.url }}
+                        {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                        {% endif %}"
+                         alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
+                </div>
+                <div class="col s9 m8">
+                    {{ news.short_description }}
+                </div>
+                <div class="col s12 m12">
+                    <div class="info-block">
+                        <div class="inside-block ">
+                            <span class="valign-wrapper">
+                                <i class="material-icons">event</i>
+                                <a href="#"><span class="valign text">{{ news.publication_date_time }}</span></a>
+                            </span>
+                        </div>
+                        <div class="inside-block ">
+                            <span class="valign-wrapper">
+                                <i class="material-icons">visibility</i><span class="valign text">{{ news.clicks }}</span>
+                            </span>
+                        </div>
+                        <div class="inside-block ">
+                            <span class="valign-wrapper">
+                                <i class="material-icons">person</i><a href="#"><span class="valign text">{{ news.author }}</span></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- END LARGE AND MEDIUM NEWS -->
+{% endblock %}
+
+{% block container_1_row_col_s12_m8_1_row_news_small %}
+    <!-- SMALL NEWS -->
+    <div class="col s12 hide-on-med-and-up">
+        <h4>Новини</h4>
+        <div class="divider simple-blue"></div>
+        {% for news in news_list %}
+            <div class="card news-card">
+                <div class="card-image">
+                    <img src="
+                        {% if news.image %}
+                            {{ news.image.url }}
+                        {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                        {% endif %}"
+                        alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
+                    <span class="card-title">{{ news.title }}</span>
+                </div>
+                <div class="card-content">
+                    <p><!-- TODO check here -->
+                    <div class="info-panel">
+                        <a href="#"><i class="material-icons">access_time</i>{{ news.publication_date_time }}</a>
+                        <a href="#"><i class="material-icons">remove_red_eye</i>{{ news.clicks }}</a>
+                    </div>
+                    <p>{{ news.short_description }}</p>
+                </div>
+                <div class="card-action">
+                        <a href="/news/id{{ news.id }}/">Читати далі</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- END SMALL NEWS -->
+{% endblock %}
 
 {% block container_1_row_col_s12_m4_1_row_advertisements %}
     <!-- ADVERTISEMENTS LARGE -->
