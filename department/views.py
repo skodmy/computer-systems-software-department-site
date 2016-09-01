@@ -65,6 +65,9 @@ def about_specialization(request):
                   create_row_posts_block_context('Останні новини',
                                                 News.objects.all().order_by('-publication_date_time')[:5], 'single-url'))
 
+def academic_subjects(request):
+    return render(request, 'department/academic_subjects.html', {'latest_news': News.objects.all()[:5]})
+
 
 def under_development(request):
     return render(request, 'department/under_development.html')
