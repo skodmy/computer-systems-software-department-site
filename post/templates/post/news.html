@@ -1,0 +1,42 @@
+{% extends 'post/post.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Новини{% endblock %}
+
+{% block xhead-extra-links %}
+  <link href="{% static 'post/css/news-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container_1_row_col_s12_m4_1_row_advertisements %}
+    <!-- ADVERTISEMENTS LARGE -->
+    <div id="advertisments_block" class="col s12 m12 hide-on-med-and-down">
+        <h4>Оголошення</h4>
+        <div class="divider simple-blue"></div>
+        {% for advertisement in advertisements %}
+        <div class="row advertisement valign-wrapper">
+            <div class="col s3 m4">
+                <img src="
+                    {% if advertisement.image %}
+                        {{ advertisement.image.url }}
+                    {% else %}
+                        {% static 'department/images/no-thumb.png' %}
+                    {% endif %}"
+                alt="{{ advertisement.title }}"
+                title="{{ advertisement.title }}"
+                class="responsive-img">
+            </div>
+            <div class="col s9 m8 valign">
+                <span class="advertisement-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
+            </div>
+        </div>
+        <div class="divider"></div>
+        {% endfor %}
+    </div>
+    <!-- END ADVERTISEMENTS LARGE -->
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+  <script src="{% static 'post/js/news-init.js' %}"></script>
+  <script src="{% static 'post/js/news-floating-block.js' %}"></script>
+{% endblock %}

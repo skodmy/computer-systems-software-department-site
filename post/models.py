@@ -31,6 +31,9 @@ class Post(models.Model):
             self.content = self.content.replace('src="!image"', 'src="' + content_image.url + '"')
         return self.content
 
+    def short_description(self):
+        return self.content.replace('<p>', '').replace('</p>', '')[:150] + '...'
+
     class Meta:
         abstract = True
 
@@ -51,6 +54,9 @@ class News(Post):
     def collect_content_images(self):
         return NewsContentImage.objects.filter(news=self)
 
+    class Meta:
+        verbose_name_plural = 'News'
+
 
 class NewsContentImage(PostContentImage):
     UPLOAD_TO = 'news'
@@ -63,9 +69,23 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+    @staticmethod
+    def rating_objects(max_objects=5):
+        authors_statistics = {author: Advertisement.objects.filter(author=author).count() for author in
+                              Author.objects.all()}
+        authors_rating = [
+            author for author, advertisement_count in authors_statistics.items()
+            for next_greatest_advertisement_count in sorted(authors_statistics.values(), reverse=True)
+            if advertisement_count == next_greatest_advertisement_count
+        ][:max_objects]
+        for i in range(len(authors_rating)):
+            authors_rating[i].rating_number = i + 1
+        return authors_rating
+
 
 class Advertisement(Post):
     author = models.ForeignKey(Author)
+    # TODO add here field is_actual
 
     def collect_content_images(self):
         return AdvertisementContentImage.objects.filter(advertisement=self)

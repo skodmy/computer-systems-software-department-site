@@ -187,8 +187,8 @@
                     </a>
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
-                <li><a href="/news/page1">Новини</a></li>
-                <li><a href="/advertisement/page1">Оголошення</a></li>
+                <li><a href="/post/news/page-1/">Новини</a></li>
+                <li><a href="/post/advertisements/page-1/">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END MOBILE NAV UL -->
@@ -222,8 +222,8 @@
                     </a>
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
-                <li><a href="/news/page1">Новини</a></li>
-                <li><a href="/advertisement/page1">Оголошення</a></li>
+                <li><a href="/post/news/page-1/">Новини</a></li>
+                <li><a href="/post/advertisements/page-1/">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END DESKTOP NAV UL -->
@@ -356,52 +356,50 @@
                                                     <!-- BLOCK FOCUS ON -->
                                                     {% block container_1_row_col_s12_m8_1_row_focus_on %}
                                                         <div class="col s12">
-                                                            {% block container_1_row_col_s12_m8_1_row_focus_on_inner_html %}
-                                                                <h4>Зверніть увагу</h4>
-                                                                <div class="divider simple-blue"></div>
-                                                                <div class="row">
-                                                                    <div class="col s6 m3 focus-on">
-                                                                        <a href="#">
-                                                                            <div class="card">
-                                                                                <div class="card-image">
-                                                                                    <img src="{% static 'department/images/student.jpg' %}">
-                                                                                    <span class="card-title">Студенту</span>
-                                                                                </div>
+                                                            <h4>Зверніть увагу</h4>
+                                                            <div class="divider simple-blue"></div>
+                                                            <div class="row">
+                                                                <div class="col s6 m3 focus-on">
+                                                                    <a href="#">
+                                                                        <div class="card">
+                                                                            <div class="card-image">
+                                                                                <img src="{% static 'department/images/student.jpg' %}">
+                                                                                <span class="card-title">Студенту</span>
                                                                             </div>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="col s6 m3 focus-on">
-                                                                        <a href="#">
-                                                                            <div class="card">
-                                                                                <div class="card-image">
-                                                                                    <img src="{% static 'department/images/applicant.jpg' %}">
-                                                                                    <span class="card-title">Абітурієнту</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="col s6 m3 focus-on">
-                                                                        <a href="#">
-                                                                            <div class="card">
-                                                                                <div class="card-image">
-                                                                                    <img src="{% static 'department/images/science.jpg' %}">
-                                                                                    <span class="card-title">Наука</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="col s6 m3 focus-on">
-                                                                        <a href="#">
-                                                                            <div class="card">
-                                                                                <div class="card-image">
-                                                                                    <img src="{% static 'department/images/about_us.jpg' %}">
-                                                                                    <span class="card-title">Про кафедру</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </a>
-                                                                    </div>
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
-                                                                {% endblock %}
+                                                                <div class="col s6 m3 focus-on">
+                                                                    <a href="#">
+                                                                        <div class="card">
+                                                                            <div class="card-image">
+                                                                                <img src="{% static 'department/images/applicant.jpg' %}">
+                                                                                <span class="card-title">Абітурієнту</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col s6 m3 focus-on">
+                                                                    <a href="#">
+                                                                        <div class="card">
+                                                                            <div class="card-image">
+                                                                                <img src="{% static 'department/images/science.jpg' %}">
+                                                                                <span class="card-title">Наука</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="col s6 m3 focus-on">
+                                                                    <a href="#">
+                                                                        <div class="card">
+                                                                            <div class="card-image">
+                                                                                <img src="{% static 'department/images/about_us.jpg' %}">
+                                                                                <span class="card-title">Про кафедру</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     {% endblock %}
                                                     <!-- END BLOCK FOCUS ON -->
@@ -412,7 +410,6 @@
                                                     <!-- BLOCK TECHNOLOGIES -->
                                                     {% block container_1_row_col_s12_m8_1_row_technologies %}
                                                         <div class="col s12 technologies">
-                                                            {% block container_1_row_col_s12_m8_1_row_technologies_inner_html %}
                                                             <h4>Технології</h4>
                                                             <div class="carousel" id="technologies-carousel">
                                                                 {% for technology in technologies %}
@@ -422,7 +419,6 @@
                                                                     </a>
                                                                 {% endfor %}
                                                             </div>
-                                                            {% endblock %}
                                                         </div>
                                                     {% endblock %}
                                                     <!-- END TECHNOLOGIES BLOCK -->
@@ -439,50 +435,50 @@
                                                             <!-- LARGE AND MEDIUM NEWS -->
                                                             <div class="col s12 hide-on-small-only">
                                                                 <h4>Новини</h4>
-                                                                <div id="news-start" class="divider simple-blue"></div>
-                                                                {% for news in news_list %}
+                                                                <div class="divider simple-blue"></div>
+                                                                {% for article in news %}
                                                                     <div class="row news-record">
                                                                         <div class="col s12 m12 title-container">
-                                                                            <h4 class="news-title"><a href="/news/id{{ news.id }}/">{{ news.title }}</a></h4>
+                                                                            <h4 class="news-title"><a href="/news/id{{ article.id }}/">{{ article.title }}</a></h4>
                                                                         </div>
                                                                         <div class="col s12 m12">
                                                                             <div class="info-panel">
                                                                                 <i class="material-icons">local_offer</i>
-                                                                                {% for tag in news.tag.all %}
+                                                                                {% for tag in article.tag.all %}
                                                                                     <a href="#">{{ tag.name }}</a>
                                                                                 {% endfor %}
                                                                             </div>
                                                                         </div>
                                                                         <div class="col s3 m4">
                                                                             <img src="
-                                                                                {% if news.image %}
-                                                                                    {{ news.image.url }}
+                                                                                {% if article.front_image %}
+                                                                                    {{ article.front_image.url }}
                                                                                 {% else %}
                                                                                     {% static 'department/images/no-thumb.png' %}
                                                                                 {% endif %}"
-                                                                            alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
+                                                                            alt="{{ article.title }}" title="{{ article.title }}" class="responsive-img">
                                                                         </div>
                                                                         <div class="col s9 m8">
-                                                                            {{ news.short_description }}
+                                                                            {{ article.short_description }}
                                                                         </div>
                                                                         <div class="col s12 m12">
                                                                             <div class="info-block">
                                                                                 <div class="inside-block ">
                                                                                     <span class="valign-wrapper">
                                                                                         <i class="material-icons">event</i>
-                                                                                        <a href="#"><span class="valign text">{{ news.publication_date_time }}</span></a>
+                                                                                        <a href="#"><span class="valign text">{{ article.publication_date_time }}</span></a>
                                                                                     </span>
                                                                                 </div>
                                                                                 <div class="inside-block ">
                                                                                     <span class="valign-wrapper">
-                                                                                        <i class="material-icons">visibility</i><span class="valign text">{{ news.clicks }}</span>
+                                                                                        <i class="material-icons">visibility</i><span class="valign text">{{ article.views }}</span>
                                                                                     </span>
                                                                                 </div>
-                                                                                <div class="inside-block ">
+                                                                                <!--div class="inside-block ">
                                                                                     <span class="valign-wrapper">
-                                                                                        <i class="material-icons">person</i><a href="#"><span class="valign text">{{ news.author }}</span></a>
+                                                                                        <i class="material-icons">person</i><a href="#"><span class="valign text">{ article.author }}</span></a>
                                                                                     </span>
-                                                                                </div>
+                                                                                </div-->
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -509,28 +505,28 @@
                                                             <div class="col s12 hide-on-med-and-up">
                                                                 <h4>Новини</h4>
                                                                 <div class="divider simple-blue"></div>
-                                                                {% for news in news_list %}
+                                                                {% for article in news %}
                                                                     <div class="card news-card">
                                                                         <div class="card-image">
                                                                             <img src="
-                                                                                {% if news.image %}
-                                                                                    {{ news.image.url }}
+                                                                                {% if article.image %}
+                                                                                    {{ article.image.url }}
                                                                                 {% else %}
                                                                                     {% static 'department/images/no-thumb.png' %}
                                                                                 {% endif %}"
-                                                                            alt="{{ news.title }}" title="{{ news.title }}" class="responsive-img">
-                                                                            <span class="card-title">{{ news.title }}</span>
+                                                                            alt="{{ article.title }}" title="{{ article.title }}" class="responsive-img">
+                                                                            <span class="card-title">{{ article.title }}</span>
                                                                         </div>
                                                                         <div class="card-content">
                                                                             <p><!-- TODO check here -->
                                                                             <div class="info-panel">
-                                                                                <a href="#"><i class="material-icons">access_time</i>{{ news.publication_date_time }}</a>
-                                                                                <a href="#"><i class="material-icons">remove_red_eye</i>{{ news.clicks }}</a>
+                                                                                <a href="#"><i class="material-icons">access_time</i>{{ article.publication_date_time }}</a>
+                                                                                <a href="#"><i class="material-icons">remove_red_eye</i>{{ article.views }}</a>
                                                                             </div>
-                                                                            <p>{{ news.short_description }}</p>
+                                                                            <p>{{ article.short_description }}</p>
                                                                         </div>
                                                                         <div class="card-action">
-                                                                            <a href="/news/id{{ news.id }}/">Читати далі</a>
+                                                                            <a href="/news/id{{ article.id }}/">Читати далі</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endfor %}
@@ -651,7 +647,7 @@
                                                                                     <span class="card-title">{{ advertisement.title }}</span>
                                                                                 </div>
                                                                                 <div class="card-content text-blue">
-                                                                                    <p>{{ advertisement.main_message }}</p>
+                                                                                    <p>{{ advertisement.short_description }}</p>
                                                                                 </div>
                                                                                 <div class="card-action">
                                                                                     <a href="#">More about this</a>
@@ -834,8 +830,8 @@
                         <div class="col l4 m6 s12">
                             <h5>Останні публікації</h5>
                             <ul>
-                                <li><a class="white-text" href="/news/page1/">Новини</a></li>
-                                <li><a class="white-text" href="/advertisement/">Оголошення</a></li>
+                                <li><a class="white-text" href="/post/news/page-1/">Новини</a></li>
+                                <li><a class="white-text" href="/post/advertisements/page-1/">Оголошення</a></li>
                             </ul>
                         </div>
                     </div>

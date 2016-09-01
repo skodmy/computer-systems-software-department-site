@@ -2,19 +2,18 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import Slide
-from news.models import News
+from post.models import News, Advertisement
 from technology.models import Technology
 from partner.models import Partner
-from advertisement.models import Advertisement
-from news.views import NEWS_ON_PAGE
-from advertisement.views import ADVERTISEMENTS_ON_PAGE
+from post.views import ADVERTISEMENTS_PER_PAGE, NEWS_PER_PAGE
+
 
 def index(request):
     context = {'slides': Slide.objects.all().order_by('display_priority')}
     context.setdefault('technologies', Technology.objects.all())
-    context.setdefault('news_list', News.objects.all()[:NEWS_ON_PAGE])
+    context.setdefault('news', News.objects.all()[:NEWS_PER_PAGE])
     context.setdefault('partners', Partner.objects.all())
-    context.setdefault('advertisements', Advertisement.objects.all()[:ADVERTISEMENTS_ON_PAGE])
+    context.setdefault('advertisements', Advertisement.objects.all()[:ADVERTISEMENTS_PER_PAGE])
     return render(request, 'department/index.html', context)
 
 
