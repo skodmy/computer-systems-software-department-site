@@ -302,3 +302,14 @@ p {
 .tabs .indicator {
     background-color: #3385ff;
 }
+
+/* Scrollspy -> Table of Contents */
+.table-of-contents a:hover {
+  color: #a8a8a8;
+  border-left: 1px solid #3385ff;
+}
+
+.table-of-contents a.active{
+  font-weight: 500;
+  border-left: 2px solid #063c5e;
+}

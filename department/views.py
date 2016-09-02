@@ -68,6 +68,8 @@ def about_specialization(request):
 def academic_subjects(request):
     return render(request, 'department/academic_subjects.html', {'latest_news': News.objects.all()[:5]})
 
+def usefull_links(request):
+    return render(request, 'department/usefull_links.html', {'latest_news': News.objects.all()[:5]})
 
 def under_development(request):
     return render(request, 'department/under_development.html')

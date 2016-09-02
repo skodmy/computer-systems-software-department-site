@@ -8,6 +8,7 @@
     $('#mobile-login-btn').sideNav();
 	Materialize.updateTextFields();
 
+
 	$('.modal-trigger').leanModal();
 
 	$(window).scroll(function(){
@@ -27,3 +28,4 @@
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
+

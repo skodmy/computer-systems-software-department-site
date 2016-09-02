@@ -1,0 +1,124 @@
+{% extends 'department/info_with_latest_news.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Корисні посилання | Кафедра ПЗКС{% endblock %}
+
+{% block xhead-extra-links %}
+  <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container-left-col %}
+    <div class="row">
+        <div class="col s12 contacts-header">
+            <h4>Корисні посилання</h4>
+        </div>
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s3 active" ><a href="#dist_learning">Навчання</a></li>
+            <li class="tab col s3"><a href="#media">Медіа</a></li>
+            <li class="tab col s3"><a href="#chnu">ЧНУ</a></li>
+            <li class="tab col s3"><a href="#services">Сервіси</a></li>
+          </ul>
+        </div>
+        <div id="dist_learning" class="col s12">
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Prometheus2.png' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Громадський проект масових відкритих онлайн-курсів (МВОК). У співпраці з викладачами
+                                кращих ВНЗ України створює та розміщує МВОК на власній онлайн-платформі та надає безкоштовну можливість
+                                провідним організаціям та компаніям публікувати та розповсюджувати курси на своїй
+                                платформі. Відкриває безкоштовний онлайн-доступ до найкращих навчальних курсів університетського
+                                рівня всім охочим в Україні.<br>
+                            <strong>Мова(и) навчання:</strong> українська</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="http://prometheus.org.ua/">prometheus.org.ua</a>
+                            <a target="_blank" href="https://vk.com/prometheusmooc">Prometheus у ВК</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
+                                безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
+                                викладачі більше ніж 33 провідних західних університетів. Тут можна пройти повноцінне навчання,
+                                завірене сертифікатом. Доступ до кожного курсу обмежений у часі.<br>
+                                <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="https://www.coursera.org/">Coursera.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
+                                переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
+                                проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
+                                про підвищення кваліфікації.<br>
+                            <strong>Мова(и) навчання:</strong> російська</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="http://www.intuit.ru/">intuit.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# -------------------------------end of dist learning-------------------------------- #}
+
+        <div id="media" class="col s12">
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/TED.png' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Відома щорічна конференція, присвячена «ідеям вартим поширення». Славиться своїми лекціями (TED Talks),
+                                які спочатку були зосереджені
+                                на технологіях, розвагах та дизайні, але згодом включили також природничі науки, мистецтво, освіту,
+                                культуру, бізнес, глобальні проблеми, сталий розвиток — все, що разом формує наше майбутнє.<br>
+                            <strong>Ключова особливість:</strong> обмін найкращими ідеями</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a target="_blank" href="http://www.ted.com/">ted.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="chnu" class="col s12">
+
+        </div>
+        <div id="services" class="col s12">
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+  <script src="{% static 'department/js/for-studs-init.js' %}"></script>
+{% endblock %}
