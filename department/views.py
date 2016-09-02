@@ -71,5 +71,8 @@ def academic_subjects(request):
 def usefull_links(request):
     return render(request, 'department/usefull_links.html', {'latest_news': News.objects.all()[:5]})
 
+def students_rating(request):
+    return render(request, 'department/students_rating.html', {'latest_news': News.objects.all()[:5]})
+
 def under_development(request):
     return render(request, 'department/under_development.html')

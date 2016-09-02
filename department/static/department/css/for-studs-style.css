@@ -313,3 +313,8 @@ p {
   font-weight: 500;
   border-left: 2px solid #063c5e;
 }
+
+/* Tables */
+th {
+    text-align:center;
+}

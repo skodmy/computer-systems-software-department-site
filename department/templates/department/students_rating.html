@@ -1,0 +1,174 @@
+{% extends 'department/info_with_latest_news.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Рейтинг студентів ПЗКС | Кафедра ПЗКС{% endblock %}
+
+{% block xhead-extra-links %}
+  <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container-left-col %}
+    <div class="row">
+        <div class="col s12 contacts-header">
+            <h4>Рейтинг успішності студентів кафедри ПЗКС</h4>
+        </div>
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3 active"><a href="#1617">2016-2017</a></li>
+                <li class="tab col s3 active"><a href="#1516">2015-2016</a></li>
+            </ul>
+        </div>
+        <div id="1617" class="col s12">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header active"><i class="material-icons">gesture</i>1 курс</div>
+                    <div class="collapsible-body">
+                        <p style="text-align: center;"><strong>1 семестр</strong></p>
+                        <table class="highlight">
+                            <thead>
+                              <tr>
+                                  <th data-field="№">№</th>
+                                  <th data-field="id">ID заліковки</th>
+                                  <th data-field="academ_value">Академічний показник</th>
+                                  <th data-field="scientific_value">Науковий показник</th>
+                                  <th data-field="social_value">Показник громадської діяльності</th>
+                                  <th data-field="razom">Разом</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="text-align: center;"><strong>2 семестр</strong></p>
+                        <table class="highlight">
+                            <thead>
+                              <tr>
+                                  <th data-field="№">№</th>
+                                  <th data-field="id">ID заліковки</th>
+                                  <th data-field="academ_value">Академічний показник</th>
+                                  <th data-field="scientific_value">Науковий показник</th>
+                                  <th data-field="social_value">Показник громадської діяльності</th>
+                                  <th data-field="razom">Разом</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p style="text-align: center;"><strong>Підсумок</strong></p>
+                        <table class="highlight">
+                            <thead>
+                              <tr>
+                                  <th data-field="№">№</th>
+                                  <th data-field="id">ID заліковки</th>
+                                  <th data-field="academ_value">Академічний показник</th>
+                                  <th data-field="scientific_value">Науковий показник</th>
+                                  <th data-field="social_value">Показник громадської діяльності</th>
+                                  <th data-field="razom">Разом</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>19252423</td>
+                                    <td>81,53</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>81,57</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">assistant</i>2 курс</div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">flare</i>3 курс</div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">whatshot</i>4 курс</div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">school</i>5 курс</div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+        </div>
+        <div id="1516" class="col s12">
+            Дані будуть вказані згодом.
+        </div>
+    </div>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+  <script src="{% static 'department/js/for-studs-init.js' %}"></script>
+{% endblock %}
