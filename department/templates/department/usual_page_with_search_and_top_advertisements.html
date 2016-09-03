@@ -10,7 +10,7 @@
         <h4>Оголошення</h4>
         <div class="divider simple-blue"></div>
         {% for advertisement in advertisements %}
-        <div class="row advertisement valign-wrapper">
+        <div class="row row-post valign-wrapper">
             <div class="col s3 m4">
                 <img src="
                     {% if advertisement.image %}
@@ -23,7 +23,7 @@
                 class="responsive-img">
             </div>
             <div class="col s9 m8 valign">
-                <span class="advertisement-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
+                <span class="side-post-title"><a href="/advertisement/id{{ advertisement.id }}/">{{ advertisement.title }}</a></span>
             </div>
         </div>
         <div class="divider"></div>

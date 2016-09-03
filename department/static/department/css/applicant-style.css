@@ -105,22 +105,22 @@ nav ul li.non-hover:hover {
 
 
 /* Side news */
-.side-news {
+.side-post {
 	margin-top: 10px; 
 }
 
-.side-news-title a {
+.side-post-title a {
 	color: #042e47;
 }
 
 @media only screen and (min-width: 601px) {
-	.side-news-title {
+	.side-post-title {
 		font-size: 16px;
 	}
 }
 
 @media only screen and (min-width: 993px) {
-  	.side-news-title {
+  	.side-post-title {
 		font-size: 18px;
 	}
 }

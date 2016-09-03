@@ -234,23 +234,23 @@ nav ul li.non-hover:hover {
 }
 /* Advertisements */
 
-.advertisement {
+.row-post {
 	margin-top: 10px; 
 	margin-bottom: 0px;
 }
 
-.advertisement-title a {
+.side-post-title a {
 	color: #042e47;
 }
 
 @media only screen and (min-width: 601px) {
-	.advertisement-title {
+	.side-post-title {
 		font-size: 18px;
 	}
 }
 
 @media only screen and (min-width: 993px) {
-  	.advertisement-title {
+  	.side-post-title {
 		font-size: 20px;
 	}
 }

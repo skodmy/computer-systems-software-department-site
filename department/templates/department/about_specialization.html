@@ -1,30 +1,27 @@
-{% extends 'department/info_with_latest_news.html' %}
+{% extends 'department/usual_page_with_row_post_block.html' %}
 
 {% load staticfiles %}
 
-{% block head-title-content %}Про спеціальність | Кафедра ПЗКС{% endblock %}
+{% block head-title-content %}Про спеціальність{% endblock %}
 
 {% block xhead-extra-links %}
     <link href="{% static 'department/css/applicant-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block container-left-col %}
-    <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <div class="col s12 contacts-header">
-                    <h4>Про спеціальність "Програмна інженерія"</h4>
-                </div>
-                <div class="col s12 ">
-                    <p>Кафедра програмного забезпечення комп’ютерних систем відділу комп’ютерних наук Інституту фізико-технічних та
-                        комп’ютерних наук Чернівецького національного університету імені Юрія Федьковича готує фахівців наступної
-                        кваліфікації:
-                    </p>
-                    <ul class="collapsible popout" data-collapsible="accordion">
-                        <li>
-                          <div class="collapsible-header active"><i class="material-icons">class</i>Технік-програміст</div>
-                          <div class="collapsible-body">
-                              <p>
+{% block container_1_row_col_s12_m8_1_row_focus_on %}
+    <div class="col s12 contacts-header">
+        <h4>Про спеціальність "Програмна інженерія"</h4>
+    </div>
+    <div class="col s12 ">
+        <p>Кафедра програмного забезпечення комп’ютерних систем відділу комп’ютерних наук Інституту фізико-технічних та
+            комп’ютерних наук Чернівецького національного університету імені Юрія Федьковича готує фахівців наступної
+            кваліфікації:
+        </p>
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header active"><i class="material-icons">class</i>Технік-програміст</div>
+                <div class="collapsible-body">
+                    <p>
                                   <strong>Напрям</strong>: 050103 «Програмна інженерія»<br>
                                   <strong>Освітньо-кваліфікаційний рівень</strong>: 6.050103 – бакалавр<br>
                                   <strong>Форми навчання</strong>: денна, заочна<br>
@@ -35,21 +32,21 @@
                                   <strong>Набір</strong>: молодших спеціалістів, які закінчили коледжі за напрямом
                                   5.050103 – «Розробка програмного забезпечення» за результатами диплому<br>
                                   <strong>Тривалість навчання</strong>: 2 роки (3-4 курси)<br>
-                              </p>
-                              <p style="text-align: center;"><strong>Вступні критерії</strong></p>
-                                <table class="highlight">
-                                    <thead>
-                                      <tr>
-                                          <th data-field="name">Критерій</th>
-                                          <th data-field="coef" class="tooltipped" data-position="top"
-                                              data-delay="50" data-tooltip="Коефіцієнт множення здобутого вами результату">Коефіцієнт</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Українська мова та література</td>
-                                            <td>0,25</td>
-                                        </tr>
+                    </p>
+                    <p style="text-align: center;"><strong>Вступні критерії</strong></p>
+                    <table class="highlight">
+                        <thead>
+                        <tr>
+                            <th data-field="name">Критерій</th>
+                            <th data-field="coef" class="tooltipped" data-position="top"
+                                data-delay="50" data-tooltip="Коефіцієнт множення здобутого вами результату">Коефіцієнт</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Українська мова та література</td>
+                            <td>0,25</td>
+                        </tr>
                                         <tr>
                                             <td>Математика <strong>(профільний предмет)</strong></td>
                                             <td>0,35</td>
@@ -277,9 +274,6 @@
                         Ознайомтесь з нашими <a href="/contacts/">контактами</a>.
                     </p>
                 </div>
-            </div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block xbody-extra-scripts %}

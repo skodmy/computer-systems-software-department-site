@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import News, Advertisement, Author
 
+
 NEWS_PER_PAGE = 7
 ADVERTISEMENTS_PER_PAGE = 8
 
@@ -15,6 +16,22 @@ def create_paginator_context(model_class, objects_per_page, page_url, active_pag
 def create_post_context(post_header, post_record_class, post_card_class, single_post_url):
     return {'post_header4': post_header, 'post_record_class': post_record_class, 'post_card_class': post_card_class,
             'single_post_url': single_post_url}
+
+
+def create_row_posts_block_context(header, posts, single_url):
+    return {
+        'row_posts_block_header4': header,
+        'row_posts': posts,
+        'single_row_post_url': single_url
+    }
+
+
+def create_side_posts_block_context(header, posts, single_url):
+    return {
+        'side_posts_block_header4': header,
+        'side_posts': posts,
+        'single_side_post_url': single_url
+    }
 
 
 def news(request, page_number):

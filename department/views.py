@@ -5,7 +5,8 @@ from .models import Slide
 from post.models import News, Advertisement
 from technology.models import Technology
 from partner.models import Partner
-from post.views import ADVERTISEMENTS_PER_PAGE, NEWS_PER_PAGE
+from post.views import ADVERTISEMENTS_PER_PAGE, NEWS_PER_PAGE, create_row_posts_block_context, \
+    create_side_posts_block_context
 
 
 def index(request):
@@ -46,15 +47,23 @@ def manual_logout(request):
 
 
 def contacts(request):
-    return render(request, 'department/contacts.html', {'latest_news': News.objects.all()[:5]})
+    context = create_row_posts_block_context('Топ оголошення', Advertisement.objects.all()[:5],'single-url')
+    context.update(create_side_posts_block_context('Останні новини',
+                                                   News.objects.all().order_by('-publication_date_time')[:5],
+                                                   'single-url'))
+    return render(request, 'department/contacts.html', context)
 
 
 def applicant_in_general(request):
-    return render(request, 'department/applicant_in_general.html', {'latest_news': News.objects.all()[:5]})
+    return render(request, 'department/applicant_in_general.html',
+                  create_row_posts_block_context('Останні новини',
+                                                 News.objects.all().order_by('-publication_date_time')[:5], 'single-url'))
 
 
 def about_specialization(request):
-    return render(request, 'department/about_specialization.html', {'latest_news': News.objects.all()[:5]})
+    return render(request, 'department/about_specialization.html',
+                  create_row_posts_block_context('Останні новини',
+                                                News.objects.all().order_by('-publication_date_time')[:5], 'single-url'))
 
 
 def under_development(request):
