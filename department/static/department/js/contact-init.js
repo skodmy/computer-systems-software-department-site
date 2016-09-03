@@ -31,5 +31,5 @@
 
 function initGoogleMap() {
 	var width = $("#map_frame").width();
-	$("#map_frame").html("<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1327.2458731933987!2d25.92969268342978!3d48.29339312788115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x974c4f797f290a9b!2z0KTQsNC60YPQu9GM0YLQtdGCINC80LDRgtC10LzQsNGC0LjQutC4INGC0LAg0ZbQvdGE0L7RgNC80LDRgtC40LrQuA!5e0!3m2!1suk!2sua!4v1464466479235' width='" + width + "' height='" + width + "' frameborder='0' style='border:0' allowfullscreen></iframe>")
+	$("#map_frame").html("<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.817709295214!2d25.911583415653585!3d48.267882479234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47340f527f1c6c67%3A0x36d194a60811cabb!2zOCDQutC-0YDQv9GD0YEg0KfQndCj!5e0!3m2!1suk!2sua!4v1472918942384' width='" + width + "' height='" + width + "' frameborder='0' style='border:0' allowfullscreen></iframe>")
 }

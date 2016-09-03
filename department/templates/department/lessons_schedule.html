@@ -1,32 +1,30 @@
-{% extends 'department/info_with_latest_news.html' %}
+{% extends 'department/../../../post/templates/post/usual_page_with_row_post_block.html' %}
 
 {% load staticfiles %}
 
-{% block head-title-content %}Розклад занять | Кафедра ПЗКС{% endblock %}
+{% block head-title-content %}Розклад занять{% endblock %}
 
 {% block xhead-extra-links %}
   <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block container-left-col %}
-    <div class="row">
-        <div class="col s12 contacts-header">
-            <h4>Розклад занять</h4>
-            <div id="advertisements-start" class="divider simple-blue"></div>
-        </div>
-        <div class="col s12">
-            <ul class="tabs">
-                <li class="tab col s3 active" ><a href="#1c_cal">1 курс</a></li>
-                <li class="tab col s3"><a href="#2c_cal">2 курс</a></li>
-                <li class="tab col s3"><a href="#3c_cal">3 курс</a></li>
-                <li class="tab col s3"><a href="#4c_cal">4 курс</a></li>
-                <li class="tab col s3"><a href="#5c_cal">5 курс</a></li>
-            </ul>
-        </div>
-        <div id="1c_cal" class="col s12">
-            <br>
-            <iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=kq1huoogp0humk7vfrk8ecbvg8%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FKiev" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
+{% block container_1_row_col_s12_m8_1_row_focus_on %}
+    <div class="col s12 contacts-header">
+        <h4>Розклад занять</h4>
+        <div id="advertisements-start" class="divider simple-blue"></div>
+    </div>
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3 active" ><a href="#1c_cal">1 курс</a></li>
+            <li class="tab col s3"><a href="#2c_cal">2 курс</a></li>
+            <li class="tab col s3"><a href="#3c_cal">3 курс</a></li>
+            <li class="tab col s3"><a href="#4c_cal">4 курс</a></li>
+            <li class="tab col s3"><a href="#5c_cal">5 курс</a></li>
+        </ul>
+    </div>
+    <div id="1c_cal" class="col s12">
+        <br>
+        <iframe src="https://calendar.google.com/calendar/embed?mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=kq1huoogp0humk7vfrk8ecbvg8%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FKiev" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 {% endblock %}
 
