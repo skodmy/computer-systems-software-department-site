@@ -1,0 +1,97 @@
+{% extends 'department/usual_page_with_search_pagination_and_cloud_of_tags.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Сторінка публікацій{% endblock %}
+
+{% block container_1_row_col_s12_m8_1_row_news_large_and_medium %}
+    <!-- LARGE AND MEDIUM POSTS -->
+    <div class="col s12 hide-on-small-only">
+        <h4>{{ post_header4 }}</h4>
+        <div class="divider simple-blue"></div>
+        {% for post in active_page %}
+            <div class="row {{ post_record_class }}">
+                <div class="col s12 m12 title-container">
+                    <h4 class="news-title"><a href="{{ single_post_url }}">{{ post.title }}</a></h4>
+                </div>
+                <div class="col s12 m12">
+                    <div class="info-panel">
+                        <i class="material-icons">local_offer</i>
+                        {% for tag in post.tag.all %}
+                            <a href="#">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col s3 m4">
+                    <img src="
+                        {% if post.image %}
+                            {{ post.image.url }}
+                        {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                        {% endif %}"
+                         alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img">
+                </div>
+                <div class="col s9 m8">
+                    {{ post.short_description }}
+                </div>
+                <div class="col s12 m12">
+                    <div class="info-block">
+                        <div class="inside-block ">
+                            <span class="valign-wrapper">
+                                <i class="material-icons">event</i>
+                                <a href="#"><span class="valign text">{{ post.publication_date_time }}</span></a>
+                            </span>
+                        </div>
+                        <div class="inside-block ">
+                            <span class="valign-wrapper">
+                                <i class="material-icons">visibility</i><span class="valign text">{{ post.views }}</span>
+                            </span>
+                        </div>
+                        {% block post_info_block_after_inner_html %}
+                            <div class="inside-block ">
+                                <span class="valign-wrapper">
+                                    <i class="material-icons">person</i><a href="#"><span class="valign text">{{ post.author }}</span></a>
+                                </span>
+                            </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- END LARGE AND MEDIUM POSTS -->
+{% endblock %}
+
+{% block container_1_row_col_s12_m8_1_row_news_small %}
+    <!-- SMALL POSTS -->
+    <div class="col s12 hide-on-med-and-up">
+        <h4>{{ post_header4 }}</h4>
+        <div class="divider simple-blue"></div>
+        {% for post in active_page %}
+            <div class="card {{ post_card_class }}">
+                <div class="card-image">
+                    <img src="
+                        {% if post.image %}
+                            {{ post.image.url }}
+                        {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                        {% endif %}"
+                        alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img">
+                    <span class="card-title">{{ post.title }}</span>
+                </div>
+                <div class="card-content">
+                    <p><!-- TODO check here -->
+                    <div class="info-panel">
+                        <a href="#"><i class="material-icons">access_time</i>{{ post.publication_date_time }}</a>
+                        <a href="#"><i class="material-icons">remove_red_eye</i>{{ post.views }}</a>
+                    </div>
+                    <p>{{ post.short_description }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ single_post_url }}">Читати далі</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- END SMALL POSTS -->
+{% endblock %}

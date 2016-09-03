@@ -78,8 +78,9 @@ nav ul li.non-hover:hover {
     width: 90%;
 }
 
+/* news css */
 
-.contacts-header h4 {
+.news-header h4 {
 	color: #042e47;
 }
 
@@ -99,9 +100,72 @@ nav ul li.non-hover:hover {
 	height:auto;
 }
 
-.info-title {
-
+.info-panel {
+	color: #909090;
+	display: inline-block;
+	padding-bottom: 10px;
+	font-size: 12px;
+	font-family: Arial,Helvetica Neue,sans-serif;
 }
+
+.info-panel a {
+	color: #909090;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.info-panel a:hover {
+	text-decoration: underline;
+}
+
+.info-panel .material-icons {
+	font-size: 11px;
+}
+
+.info-block {
+	border: 1px solid #159fd8;
+	display: inline-block;
+	color: #909090;
+	font-size: 12px;
+	font-family: Arial,Helvetica Neue,sans-serif;
+}
+
+.info-block a {
+	color: #909090;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.info-block a:hover {
+	text-decoration: underline;
+}
+
+.info-block .material-icons {
+	font-size: 18px;
+}
+
+.info-block .inside-block {
+	display: inline-block;
+	padding: 10px;
+}
+
+.hide-on-med-and-up .info-block .inside-block {
+	font-size: 11px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.info-block .inside-block:not(:last-child){
+	border-right: 1px solid #e1e1e1;
+}
+
+.info-block .inside-block .text{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/* End news */
 
 
 /* Side news */
@@ -248,44 +312,8 @@ nav ul li.non-hover:hover {
 	}
 }
 
-.contact-info {
-	font-size: 14px;
-}
+/* FOOTER */
 
-.info-title {
-	font-size: 22px;
-	padding-bottom: 10px;
-	padding-top: 10px;
-}
 
-.link-list li:before {
-	 content: "•";
-    color: #3385ff;
-    margin-right: 10px;
-}
 
-.address-li:before {
-	font-family: 'Material Icons';
-	content: "home";
-	margin-right: 10px;
-	font-size: 24px;
-}
-
-.phone-number:before {
-    font-family: 'Material Icons';
-	margin-right: 10px;
-	content: "phone";
-	font-size: 24px;
-}
-
-.email-address:before {
-	font-family: 'Material Icons';
-	content: "email";
-	margin-right: 10px;
-	font-size: 24px;
-}
-
-/* Body text propreties */
-p {
-   text-align: justify;
-}
+/* END FOOTER */

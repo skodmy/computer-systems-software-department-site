@@ -1,15 +1,11 @@
-{% extends 'department/index.html' %}
+{% extends 'department/blank_page.html' %}
 
 {% load staticfiles %}
 
-{% block head-title-content %}Сторінка в розробці | Кафедра ПЗКС{% endblock %}
+{% block head-title-content %}Сторінка в розробці{% endblock %}
 
-{% block slider %}{% endblock %}
-
-{% block container-inner %}
-    <div class="row">
-        <div class="col s12">
-            <img src="{% static 'department/images/under_development.jpg' %}" class="responsive-img">
-        </div>
+{% block container_1_row_inner_html %}
+    <div class="col s12 center">
+        <img src="{% static 'department/images/under_development.jpg' %}" class="responsive-img">
     </div>
 {% endblock %}

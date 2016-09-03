@@ -390,12 +390,12 @@ nav ul li.non-hover:hover {
 
 }
 /* Advertisments */
-.advertisement .card {
+.row-post .card {
 	box-shadow: none;
 	border: 1px solid #d9e7ef;
 }
 
-.advertisement .card:hover {
+.row-post .card:hover {
 	background-color: #d9e7ef;
 }
 

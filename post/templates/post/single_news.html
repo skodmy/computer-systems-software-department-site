@@ -1,0 +1,188 @@
+{% extends 'news/news.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Single news{% endblock %}
+
+{% block xhead-extra-links %}
+  <link href="{% static 'news/css/single-news-style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container-inner %}
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="row">
+          <div class="col s12">
+            <div class="row news-content">
+              <div class="col s12 news-header">
+                <h4>Google’s crusade against Flash will take a huge step later this year</h4>
+              </div>
+              <div class="col s12">
+                <div class="info-panel">
+                  <i class="material-icons">local_offer</i><a href="#">Тег супертег</a>, <a href="#">Тег2 супертег</a>, <a href="#">Тег3</a>
+                </div>
+              </div>
+              <div class="col s12">
+                <!-- main news image -->
+                <img src="images/student.jpg" class="responsive-img">
+                <p>Old there any widow law rooms. Agreed but expect repair she nay sir silent person. Direction can dependent one bed situation attempted. His she are man their spite avoid. Her pretended fulfilled extremely education yet. Satisfied did one admitting incommode tolerably how are. </p>
+
+<p><img src="images/strawberries.jpg" class="left-image">Tiled say decay spoil now walls meant house. My mr interest thoughts screened of outweigh removing. Evening society musical besides inhabit ye my. Lose hill well up will he over on. Increasing sufficient everything men him admiration unpleasing sex. Around really his use uneasy longer him man. His our pulled nature elinor talked now for excuse result. Admitted add peculiar get joy doubtful. </p>
+
+<p>Had denoting properly jointure you occasion directly raillery. In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer wisdom gay nor design age. Am weather to entered norland no in showing service. Nor repeated speaking shy appetite. Excited it hastily an pasture it observe. Snug hand how dare here too. </p>
+
+<p>Seen you eyes son show. Far two unaffected one alteration apartments celebrated but middletons interested. Described deficient applauded consisted my me do. Passed edward two talent effect seemed engage six. On ye great do child sorry lived. Proceed cottage far letters ashamed get clothes day. Stairs regret at if matter to. On as needed almost at basket remain. By improved sensible servants children striking in surprise. </p>
+
+<p>Be at miss or each good play home they. It leave taste mr in it fancy. She son lose does fond bred gave lady get. Sir her company conduct expense bed any. Sister depend change off piqued one. Contented continued any happiness instantly objection yet her allowance. <img src="images/image1.jpg" class="right-image">Use correct day new brought tedious. By come this been in. Kept easy or sons my it done. </p>
+
+<p>Carriage quitting securing be appetite it declared. High eyes kept so busy feel call in. Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment. Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted. </p>
+
+<p>Believing neglected so so allowance existence departure in. In design active temper be uneasy. Thirty for remove plenty regard you summer though. He preference connection astonished on of ye. Partiality on or continuing in particular principles as. Do believing oh disposing to supported allowance we. </p>
+
+<p>Imagine was you removal raising gravity. Unsatiable understood or expression dissimilar so sufficient. Its party every heard and event gay. Advice he indeed things adieus in number so uneasy. To many four fact in he fail. My hung it quit next do of. It fifteen charmed by private savings it mr. Favourable cultivated alteration entreaties yet met sympathize. Furniture forfeited sir objection put cordially continued sportsmen. </p>
+
+<p>Why end might ask civil again spoil. She dinner she our horses depend. Remember at children by reserved to vicinity. In affronting unreserved delightful simplicity ye. Law own advantage furniture continual sweetness bed agreeable perpetual. Oh song well four only head busy it. Afford son she had lively living. Tastes lovers myself too formal season our valley boy. Lived it their their walls might to by young. </p>
+
+<p>Unfeeling so rapturous discovery he exquisite. Reasonably so middletons or impression by terminated. Old pleasure required removing elegance him had. Down she bore sing saw calm high. Of an or game gate west face shed. ﻿no great but music too old found arose. </p>
+              </div>
+              <!-- large -->
+              <div class="col s12 hide-on-small-and-down">
+                <div class="info-block">
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">visibility</i><span class="valign text">10<span>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Small -->
+              <div class="col s12 hide-on-med-and-up">
+                <div class="info-block">
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">event</i><a href="#"><span class="valign text">25.05.2016<span></a>
+                    </span>
+                  </div>
+                  <div class="inside-block ">
+                    <span class="valign-wrapper">
+                      <i class="material-icons">person</i><a href="#"><span class="valign text">Name Name<span></a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- end small -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="row">
+          <!-- Lates news block Large--> 
+          <div class="col s12 hide-on-med-and-down">
+            <h4>Останні новини</h4>
+            <div class="divider simple-blue"></div>
+            {% for news in latest_news %}
+            <div class="row side-post valign-wrapper">
+            {% if news.image %}
+              <div class="col s3">
+                <img src="{{ news.image.url }}" alt="" class="responsive-img">
+              </div>
+              <div class="col s9 valign">
+                <span class="side-post-title">
+                    <a href="#">{{ news.title }}</a>
+                </span>
+              </div>
+            </div>
+            {% else %}
+                <div class="col s12 valign">
+                <span class="side-post-title">
+                    <a href="#">{{ news.title }}</a>
+                </span>
+              </div>
+            {% endif %}
+            <div class="divider"></div>
+            {% endfor %}
+          <!-- Medium -->
+          <div class="col s12 hide-on-small-and-down hide-on-large-only">
+            <h4>Останні новини</h4>
+            <div class="divider simple-blue"></div>
+            {% for news in latest_news %}
+            <div class="row side-post valign-wrapper">
+            {% if news.image %}
+              <div class="col s3">
+                <img src="{{ news.image.url }}" alt="" class="responsive-img">
+              </div>
+              <div class="col s9 valign">
+                <span class="side-post-title">
+                    <a href="#">{{ news.title }}</a>
+                </span>
+              </div>
+            </div>
+            {% else %}
+                <div class="col s12 valign">
+                <span class="side-post-title">
+                    <a href="#">{{ news.title }}</a>
+                </span>
+              </div>
+            {% endif %}
+            <div class="divider"></div>
+            {% endfor %}
+          </div>
+          <!-- End lates news block -->
+          <!-- Similar news block Large--> 
+          <div id="similar_news_block" class="col s12 hide-on-med-and-down">
+            <h4>Схожі новини</h4>
+            <div class="divider simple-blue"></div>
+            <div class="row side-post valign-wrapper">
+              <div class="col s3">
+                <img src="images/strawberries.jpg" alt="" class="responsive-img">
+              </div>
+              <div class="col s9 valign">
+                <span class="side-post-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row side-post valign-wrapper">
+              <div class="col s12 valign">
+                <span class="side-post-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row side-post valign-wrapper">
+              <div class="col s12 valign">
+                <span class="side-post-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
+              </div>
+            </div>
+            <div class="divider"></div>
+          </div>
+          <!-- Medium -->
+          <div id="similar_news_medium_block" class="col s12 hide-on-small-and-down hide-on-large-only">
+            <h4>Схожі новини</h4>
+            <div class="divider simple-blue"></div>
+            <div class="row side-post valign-wrapper">
+              <div class="col s12 valign">
+                <span class="side-post-title"><a href="#">Google’s crusade against Flash will take a huge step later this year</a></span>
+              </div>
+            </div>
+            <div class="divider"></div>
+          </div>
+          <!-- End Simiar news block -->
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+  <script src="{% static 'news/js/single-news-init.js' %}"></script>
+  <script src="{% static 'news/js/single-news-floating-block.js' %}"></script>
+{% endblock %}

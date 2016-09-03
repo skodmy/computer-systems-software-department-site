@@ -1,0 +1,31 @@
+{% extends 'department/usual_page_with_row_post_block.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Сторінка з 2 блоками записів{% endblock %}
+
+{% block container_1_row_col_s12_m4_1_row_advertisements %}
+    <div class="col s12 hide-on-small-only">
+        <h4>{{ side_posts_block_header4 }}</h4>
+        <div class="divider simple-blue"></div>
+        {% for post in side_posts %}
+            <div class="row side-post valign-wrapper">
+                <div class="col s3">
+                    <img src="
+                        {% if post.image %}
+                            {{ post.image.url }}
+                        {% else %}
+                            {% static 'department/images/no-thumb.png' %}
+                        {% endif %}"
+                    alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img">
+                </div>
+                <div class="col s9 m12 valign">
+                    <span class="side-post-title">
+                        <a href="{{ single_side_post_url }}{{ post.id }}/">{{ post.title }}</a>
+                    </span>
+                </div>
+            </div>
+            <div class="divider"></div>
+        {% endfor %}
+    </div>
+{% endblock %}

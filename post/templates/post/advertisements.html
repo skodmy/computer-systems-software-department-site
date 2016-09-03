@@ -1,0 +1,38 @@
+{% extends 'post/posts.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %}Оголошення{% endblock %}
+
+{% block xhead-extra-links %}
+    <link href="{% static 'post/css/advertisements-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container_1_row_col_s12_m4_1_row_advertisements %}
+    <div id="raiting_large_floating" class="col s12 hide-on-med-and-down">
+        <h4>Рейтинг авторів</h4>
+        <div class="divider simple-blue"></div>
+        {% for author in authors_rating %}
+            <div class="row partner-block">
+                <div class="col s12">
+                    <div class="border author-border">
+                        <div class="row valign-wrapper">
+                            <div class="col s2 m3 valign center raiting-number-container">
+                                <span class="raiting-number">{{ author.rating_number }}</span>
+                            </div>
+                            <div class="col s10 m9 valign">
+                                {{ author.name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="divider"></div>
+    </div>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+    <script src="{% static 'post/js/advertisements-init.js' %}"></script>
+    <script src="{% static 'post/js/advertisements-floating-block.js' %}"></script>
+{% endblock %}
