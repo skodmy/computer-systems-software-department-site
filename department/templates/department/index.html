@@ -439,7 +439,9 @@
                                                                 {% for article in news %}
                                                                     <div class="row news-record">
                                                                         <div class="col s12 m12 title-container">
-                                                                            <h4 class="news-title"><a href="/news/id{{ article.id }}/">{{ article.title }}</a></h4>
+                                                                            <h4 class="news-title">
+                                                                                <a href="{{ article.single_url }}">{{ article.title }}</a>
+                                                                            </h4>
                                                                         </div>
                                                                         <div class="col s12 m12">
                                                                             <div class="info-panel">
@@ -474,11 +476,6 @@
                                                                                         <i class="material-icons">visibility</i><span class="valign text">{{ article.views }}</span>
                                                                                     </span>
                                                                                 </div>
-                                                                                <!--div class="inside-block ">
-                                                                                    <span class="valign-wrapper">
-                                                                                        <i class="material-icons">person</i><a href="#"><span class="valign text">{ article.author }}</span></a>
-                                                                                    </span>
-                                                                                </div-->
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -489,7 +486,7 @@
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
                                                                         <div class="col s12 m12 show-more-container">
-                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/news/page1">Show more</a>
+                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1/">Show more</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endblock %}
@@ -526,7 +523,7 @@
                                                                             <p>{{ article.short_description }}</p>
                                                                         </div>
                                                                         <div class="card-action">
-                                                                            <a href="/news/id{{ article.id }}/">Читати далі</a>
+                                                                            <a href="{{ article.single_url }}">Читати далі</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endfor %}
@@ -535,7 +532,7 @@
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
                                                                         <div class="col s12">
-                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/news/">Show more</a>
+                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1">Show more</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endblock %}
@@ -650,7 +647,7 @@
                                                                                     <p>{{ advertisement.short_description }}</p>
                                                                                 </div>
                                                                                 <div class="card-action">
-                                                                                    <a href="#">More about this</a>
+                                                                                    <a href="{{ advertisement.single_url }}">More about this</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -659,7 +656,7 @@
                                                                 <div class="row">
                                                                     <!-- ADVERTISEMENTS SHOW MORE BUTTON -->
                                                                     <div class="col s12">
-                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/advertisement/">Show more</a>
+                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/post/advertisements/page-1/">Show more</a>
                                                                     </div>
                                                                     <!-- END ADVERTISEMENTS SHOW MORE BUTTON -->
                                                                 </div>

@@ -9,6 +9,8 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
+    SINGLE_ROOT_URL = 'post-'
+
     title = models.CharField(max_length=300)
     front_image = models.ImageField(upload_to='post/front_images', blank=True, null=True)
     content = models.TextField(blank=True, null=True)
@@ -25,14 +27,18 @@ class Post(models.Model):
 
     def render_content(self):
         content_images = self.collect_content_images().order_by('priority')
+        print(content_images)
         for content_image in content_images:
             if not self.content.find('src="!image"'):
                 return self.content
-            self.content = self.content.replace('src="!image"', 'src="' + content_image.url + '"')
+            self.content = self.content.replace('src="!image"', 'src="' + content_image.file.url + '"', 1)
         return self.content
 
     def short_description(self):
-        return self.content.replace('<p>', '').replace('</p>', '')[:150] + '...'
+        return self.content.replace('<p>', '').replace('</p>', '')[:300] + '...'
+
+    def single_url(self):
+        return '/post/' + self.SINGLE_ROOT_URL + str(self.id)
 
     class Meta:
         abstract = True
@@ -44,13 +50,15 @@ class PostContentImage(models.Model):
     priority = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.post.title
+        return self.file.name
 
     class Meta:
         abstract = True
 
 
 class News(Post):
+    SINGLE_ROOT_URL = 'news/article-'
+
     def collect_content_images(self):
         return NewsContentImage.objects.filter(news=self)
 
@@ -61,6 +69,9 @@ class News(Post):
 class NewsContentImage(PostContentImage):
     UPLOAD_TO = 'news'
     news = models.ForeignKey(News)
+
+    def __str__(self):
+        return super().__str__() + ' in ' + self.news.title
 
 
 class Author(models.Model):
@@ -84,6 +95,8 @@ class Author(models.Model):
 
 
 class Advertisement(Post):
+    SINGLE_ROOT_URL = 'advertisements/advertisement-'
+
     author = models.ForeignKey(Author)
     # TODO add here field is_actual
 
@@ -94,3 +107,6 @@ class Advertisement(Post):
 class AdvertisementContentImage(PostContentImage):
     UPLOAD_TO = 'advertisement'
     advertisement = models.ForeignKey(Advertisement)
+
+    def __str__(self):
+        return super().__str__() + ' in ' + self.advertisement.title
