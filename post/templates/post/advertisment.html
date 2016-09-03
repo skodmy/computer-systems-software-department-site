@@ -1,0 +1,28 @@
+{% extends 'post/post.html' %}
+
+{% load staticfiles %}
+
+{% block xhead-extra-links %}
+    <link href="{% static 'post/css/single-advertisement.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block large_and_medium_info_block_after_inner_html %}
+    <div class="inside-block ">
+        <span class="valign-wrapper">
+            <i class="material-icons">person</i><a href="#"><span class="valign text">{{ post.author.name }}/span></a>
+        </span>
+    </div>
+{% endblock %}
+
+{% block small_info_block_after_inner_html %}
+    <div class="inside-block ">
+        <span class="valign-wrapper">
+            <i class="material-icons">person</i><a href="#"><span class="valign text">{{ post.author.name }}/span></a>
+        </span>
+    </div>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+    <script src="{% static 'post/js/single-advertisment.js' %}"></script>
+    <script src="{% static 'post/js/single-advertisment-floating-block.js' %}"></script>
+{% endblock %}

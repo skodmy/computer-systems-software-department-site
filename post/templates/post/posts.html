@@ -12,7 +12,7 @@
         {% for post in active_page %}
             <div class="row {{ post_record_class }}">
                 <div class="col s12 m12 title-container">
-                    <h4 class="news-title"><a href="{{ single_post_url }}">{{ post.title }}</a></h4>
+                    <h4 class="news-title"><a href="{{ post.single_url }}">{{ post.title }}</a></h4>
                 </div>
                 <div class="col s12 m12">
                     <div class="info-panel">
@@ -88,7 +88,7 @@
                     <p>{{ post.short_description }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="{{ single_post_url }}">Читати далі</a>
+                    <a href="{{ post.single_url }}">Читати далі</a>
                 </div>
             </div>
         {% endfor %}

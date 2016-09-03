@@ -1,0 +1,12 @@
+{% extends 'post/post.html' %}
+
+{% load staticfiles %}
+
+{% block xhead-extra-links %}
+    <link href="{% static 'post/css/single-news-style.css'%}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block xbody-extra-scripts %}
+    <script type="text/javascript" src="{% static 'post/js/single-news-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'post/js/single-news-floating-block.js' %}"></script>
+{% endblock %}
