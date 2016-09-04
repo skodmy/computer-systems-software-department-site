@@ -1,164 +1,162 @@
-{% extends 'department/info_page.html' %}
+{% extends 'department/../../../post/templates/post/usual_page_with_row_post_block.html' %}
 
 {% load staticfiles %}
 
-{% block head-title-content %}Корисні посилання | Кафедра ПЗКС{% endblock %}
+{% block head-title-content %}Корисні посилання{% endblock %}
 
 {% block xhead-extra-links %}
     <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
-{% block container-inner %}
-    <div class="row">
-        <div class="col s12 contacts-header">
-            <h4>Корисні посилання</h4>
-        </div>
-        <div class="col s12 m9 l10">
-            <div id="distance_learning" class="section scrollspy">
-                <h5>Дистанційна освіта</h5>
-                <div class="col s6">
-                    <div class="card horizontal medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
-                                    переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
-                                    проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
-                                    про підвищення кваліфікації.<br>
-                                <strong>Мова(и) навчання:</strong> російська</p>
-
-                            </div>
-                            <div class="card-action">
-                                <a href="http://www.intuit.ru/">intuit.ru</a>
-                            </div>
-                        </div>
+{% block container_1_row_col_s12_m8_1_row_focus_on %}
+    <div class="col s12 contacts-header">
+        <h4>Корисні посилання</h4>
+    </div>
+    <div class="col s12 m9 l10">
+        <div id="distance_learning" class="section scrollspy">
+            <h5>Дистанційна освіта</h5>
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
                     </div>
-                </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
+                                переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
+                                проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
+                                про підвищення кваліфікації.<br>
+                            <strong>Мова(и) навчання:</strong> російська</p>
 
-                <div class="col s6">
-                    <div class="card medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
                         </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
-                                    безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
-                                    викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
-                                    Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
-                                    пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
-                                    Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
-                                    <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://www.coursera.org/">Coursera.org</a>
-                            </div>
+                        <div class="card-action">
+                            <a href="http://www.intuit.ru/">intuit.ru</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="structure" class="section scrollspy">
-                <h5>Бла бла</h5>
-                <div class="col s6">
-                    <div class="card horizontal medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
-                                    переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
-                                    проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
-                                    про підвищення кваліфікації.<br>
-                                <strong>Мова(и) навчання:</strong> російська</p>
-
-                            </div>
-                            <div class="card-action">
-                                <a href="http://www.intuit.ru/">intuit.ru</a>
-                            </div>
-                        </div>
+            <div class="col s6">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
                     </div>
-                </div>
-
-                <div class="col s6">
-                    <div class="card medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
+                                безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
+                                викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
+                                Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
+                                пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
+                                Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
+                                <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
                         </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
-                                    безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
-                                    викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
-                                    Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
-                                    пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
-                                    Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
-                                    <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://www.coursera.org/">Coursera.org</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="initialization" class="section scrollspy">
-                <h5>Бла бла 2</h5>
-                <div class="col s6">
-                    <div class="card horizontal medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
-                                    переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
-                                    проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
-                                    про підвищення кваліфікації.<br>
-                                <strong>Мова(и) навчання:</strong> російська</p>
-
-                            </div>
-                            <div class="card-action">
-                                <a href="http://www.intuit.ru/">intuit.ru</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s6">
-                    <div class="card medium">
-                        <div class="card-image">
-                            <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
-                                    безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
-                                    викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
-                                    Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
-                                    пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
-                                    Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
-                                    <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://www.coursera.org/">Coursera.org</a>
-                            </div>
+                        <div class="card-action">
+                            <a href="https://www.coursera.org/">Coursera.org</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col hide-on-small-only m3 l2">
-            <ul class="section table-of-contents">
-                <li><a href="#distance_learning">Дистанційна освіта</a></li>
-                <li><a href="#structure">Бла бла</a></li>
-                <li><a href="#initialization">Бла бла 2</a></li>
-            </ul>
+
+        <div id="structure" class="section scrollspy">
+            <h5>Бла бла</h5>
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
+                                переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
+                                проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
+                                про підвищення кваліфікації.<br>
+                            <strong>Мова(и) навчання:</strong> російська</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a href="http://www.intuit.ru/">intuit.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
+                                безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
+                                викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
+                                Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
+                                пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
+                                Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
+                                <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.coursera.org/">Coursera.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div id="initialization" class="section scrollspy">
+            <h5>Бла бла 2</h5>
+            <div class="col s6">
+                <div class="card horizontal medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Intuit.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Ресурс, що надає послуги дистанційного навчання за кількома освітніми програмами, що стосуються
+                                переважно інформаційних технологій. Містить кілька сотень відкритих освітніх курсів, за
+                                проходження яких можна отримати електронний (безкоштовно) або паперовий (платно) сертифікат
+                                про підвищення кваліфікації.<br>
+                            <strong>Мова(и) навчання:</strong> російська</p>
+
+                        </div>
+                        <div class="card-action">
+                            <a href="http://www.intuit.ru/">intuit.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img src="{% static 'department/images/usefullLinks/Coursera.jpg' %}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Проект заснований професорами Стенфордського університету, пропонує користувачеві
+                                безкоштовні онлайн-курси від криптографії та мов програмування до поезії та кінематографу. Їх читають
+                                викладачі 33 провідних західних університетів - Стенфорда, Прінстона,
+                                Гарварду, Єля, Каліфорнійського технологічного інституту та інших. На відміну від інших проектів, що
+                                пропонують окремі відеолекції, тут можна пройти повноцінне навчання, завірене сертифікатом.
+                                Прокрастинаторів тут тримають в тонусі: доступ до кожного курсу обмежений у часі.<br>
+                                <strong>Мова(и) навчання:</strong> Англ., рос. та інші (включно із субтитрами)</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://www.coursera.org/">Coursera.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+        <ul class="section table-of-contents">
+            <li><a href="#distance_learning">Дистанційна освіта</a></li>
+            <li><a href="#structure">Бла бла</a></li>
+            <li><a href="#initialization">Бла бла 2</a></li>
+        </ul>
     </div>
 {% endblock %}
 

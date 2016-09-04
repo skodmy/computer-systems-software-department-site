@@ -415,7 +415,7 @@
                                                             <br>
                                                             <div class="carousel" id="technologies-carousel">
                                                                 {% for technology in technologies %}
-                                                                    <a class="carousel-item" href="#" title="{{ technology.name }}">
+                                                                    <a class="carousel-item" target="_blank" href="#" title="{{ technology.name }}">
                                                                         <img src="{{ technology.logotype.url }}" title="{{ technology.name }}"
                                                                              alt="{{ technology.name }}">
                                                                     </a>
@@ -488,7 +488,7 @@
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
                                                                         <div class="col s12 m12 show-more-container">
-                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1/">Show more</a>
+                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1/">Показати більше</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endblock %}
@@ -534,7 +534,7 @@
                                                                     <div class="row">
                                                                         <!-- SHOW MORE BUTTON -->
                                                                         <div class="col s12">
-                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1">Show more</a>
+                                                                            <a class="waves-effect waves-light btn  blue show-more-button" href="/post/news/page-1">Показати більше</a>
                                                                         </div>
                                                                     </div>
                                                                 {% endblock %}
@@ -649,7 +649,7 @@
                                                                                     <p>{{ advertisement.short_description }}</p>
                                                                                 </div>
                                                                                 <div class="card-action">
-                                                                                    <a href="{{ advertisement.single_url }}">More about this</a>
+                                                                                    <a href="{{ advertisement.single_url }}">Дізнатись більше</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -658,7 +658,7 @@
                                                                 <div class="row">
                                                                     <!-- ADVERTISEMENTS SHOW MORE BUTTON -->
                                                                     <div class="col s12">
-                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/post/advertisements/page-1/">Show more</a>
+                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/post/advertisements/page-1/">Показати більше</a>
                                                                     </div>
                                                                     <!-- END ADVERTISEMENTS SHOW MORE BUTTON -->
                                                                 </div>
@@ -710,7 +710,7 @@
                                         <div class="divider simple-blue"></div>
                                         <div class="carousel" id="partners-carousel">
                                             {% for partner in partners %}
-                                                <a class="carousel-item" href="{{ partner.site_url }}" title="{{ partner.name }}">
+                                                <a class="carousel-item" target="_blank" href="{{ partner.site_url }}" title="{{ partner.name }}">
                                                     <img src="{{ partner.logotype.url }}" title="{{ partner.name }}" alt="{{ partner.name }}">
                                                 </a>
                                             {% endfor %}
