@@ -415,7 +415,7 @@
                                                             <br>
                                                             <div class="carousel" id="technologies-carousel">
                                                                 {% for technology in technologies %}
-                                                                    <a class="carousel-item" target="_blank" href="#" title="{{ technology.name }}">
+                                                                    <a class="carousel-item" target="_blank" href="{{ technology.site_url }}" title="{{ technology.name }}">
                                                                         <img src="{{ technology.logotype.url }}" title="{{ technology.name }}"
                                                                              alt="{{ technology.name }}">
                                                                     </a>
