@@ -1,11 +1,11 @@
-{% extends 'department/../../../post/templates/post/usual_page_with_row_post_block.html' %}
+{% extends 'post/usual_page_with_row_post_block.html' %}
 
 {% load staticfiles %}
 
 {% block head-title-content %}Розклад занять{% endblock %}
 
 {% block xhead-extra-links %}
-  <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 {% endblock %}
 
 {% block container_1_row_col_s12_m8_1_row_focus_on %}
@@ -29,5 +29,5 @@
 {% endblock %}
 
 {% block xbody-extra-scripts %}
-  <script src="{% static 'department/js/for-studs-init.js' %}"></script>
+    <script src="{% static 'department/js/for-studs-init.js' %}"></script>
 {% endblock %}

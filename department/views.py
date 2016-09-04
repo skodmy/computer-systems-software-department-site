@@ -65,17 +65,20 @@ def about_specialization(request):
                   create_row_posts_block_context('Останні новини',
                                                 News.objects.all().order_by('-publication_date_time')[:5], 'single-url'))
 
+
 def academic_subjects(request):
     return render(request, 'department/academic_subjects.html',
                   create_row_posts_block_context('Останні новини',
                                                  News.objects.all().order_by('-publication_date_time')[:5],
                                                  'single-url'))
 
-def usefull_links(request):
-    return render(request, 'department/usefull_links.html',
+
+def useful_links(request):
+    return render(request, 'department/useful_links.html',
                   create_row_posts_block_context('Останні новини',
                                                  News.objects.all().order_by('-publication_date_time')[:5],
                                                  'single-url'))
+
 
 def students_rating(request):
     return render(request, 'department/students_rating.html',
@@ -83,11 +86,13 @@ def students_rating(request):
                                                  News.objects.all().order_by('-publication_date_time')[:5],
                                                  'single-url'))
 
+
 def lessons_schedule(request):
     return render(request, 'department/lessons_schedule.html',
                   create_row_posts_block_context('Останні новини',
                                                  News.objects.all().order_by('-publication_date_time')[:5],
                                                  'single-url'))
+
 
 def under_development(request):
     return render(request, 'department/under_development.html')
