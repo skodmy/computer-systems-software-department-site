@@ -29,7 +29,7 @@
                     {% else %}
                         {% static 'department/images/no-thumb.png' %}
                     {% endif %}"
-                    alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img">
+                    alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img right-image">
                 {% autoescape off %}
                     {{ post.render_content }}
                 {% endautoescape %}

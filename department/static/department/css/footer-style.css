@@ -67,3 +67,8 @@ background: #0d8bda;
 .update input[type="submit"]:focus {
 border-color: #05a;
 }
+
+/* Kafedra's mail*/
+#kaf_mail{
+    color: #0d8bda;
+}
