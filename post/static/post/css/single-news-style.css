@@ -88,6 +88,16 @@ nav ul li.non-hover:hover {
     color: #042e47;
 }
 
+.row-post {
+	margin-top: 10px; 
+	margin-bottom: 0px;
+}
+
+.side-post {
+	margin-top: 10px; 
+	margin-bottom: 10px;
+}
+
 .right-image {
 	float: right;
 	margin: 10px;
