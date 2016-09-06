@@ -188,7 +188,7 @@
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
                 <li><a href="/post/news/page-1/">Новини</a></li>
-                <li><a href="/post/advertisements/page-1/">Оголошення</a></li>
+                <li><a href="/post/attentors/page-1/">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END MOBILE NAV UL -->
@@ -223,7 +223,7 @@
                 </li>
                 <!-- END PAGES DROP-DOWN TRIGGERS -->
                 <li><a href="/post/news/page-1/">Новини</a></li>
-                <li><a href="/post/advertisements/page-1/">Оголошення</a></li>
+                <li><a href="/post/attentors/page-1/">Оголошення</a></li>
                 <li><a href="/contacts/">Контакти</a></li>
             </ul>
             <!-- END DESKTOP NAV UL -->
@@ -629,45 +629,45 @@
                                                     {% endblock %}
                                                     <!-- END BLOCK FACTS -->
 
-                                                    {% block container_1_row_col_s12_m4_1_row_between_facts_and_advertisements %}
+                                                    {% block container_1_row_col_s12_m4_1_row_between_facts_and_attentors %}
                                                     {% endblock %}
 
-                                                    <!-- BLOCK ADVERTISEMENTS -->
-                                                    {% block container_1_row_col_s12_m4_1_row_advertisements %}
+                                                    <!-- BLOCK ATTENTORS -->
+                                                    {% block container_1_row_col_s12_m4_1_row_attentors %}
                                                         <div class="col s12">
-                                                            {% block container_1_row_col_s12_m4_1_row_advertisements_inner_html %}
+                                                            {% block container_1_row_col_s12_m4_1_row_attentors_inner_html %}
                                                                 <h4>Оголошення</h4>
                                                                 <div class="divider simple-blue"></div>
                                                                 <div class="row">
-                                                                    {% for advertisement in advertisements %}
+                                                                    {% for attentor in attentors %}
                                                                         <div class="col s12 news row-post">
                                                                             <div class="card">
                                                                                 <div class="news-title">
-                                                                                    <span class="card-title">{{ advertisement.title }}</span>
+                                                                                    <span class="card-title">{{ attentor.title }}</span>
                                                                                 </div>
                                                                                 <div class="card-content text-blue">
-                                                                                    <p>{{ advertisement.short_description }}</p>
+                                                                                    <p>{{ attentor.short_description }}</p>
                                                                                 </div>
                                                                                 <div class="card-action">
-                                                                                    <a href="{{ advertisement.single_url }}">Дізнатись більше</a>
+                                                                                    <a href="{{ attentor.single_url }}">Дізнатись більше</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     {% endfor %}
                                                                 </div>
                                                                 <div class="row">
-                                                                    <!-- ADVERTISEMENTS SHOW MORE BUTTON -->
+                                                                    <!-- ATTENTORS SHOW MORE BUTTON -->
                                                                     <div class="col s12">
-                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/post/advertisements/page-1/">Показати більше</a>
+                                                                        <a class="waves-effect waves-light btn  blue show-more-button" href="/post/attentors/page-1/">Показати більше</a>
                                                                     </div>
-                                                                    <!-- END ADVERTISEMENTS SHOW MORE BUTTON -->
+                                                                    <!-- END ATTENTORS SHOW MORE BUTTON -->
                                                                 </div>
                                                             {% endblock %}
                                                         </div>
                                                     {% endblock %}
-                                                    <!-- END BLOCK ADVERTISEMENTS -->
+                                                    <!-- END BLOCK ATTENTORS -->
 
-                                                    {% block container_1_row_col_s12_m4_1_row_after_advertisements %}
+                                                    {% block container_1_row_col_s12_m4_1_row_after_attentors %}
                                                     {% endblock %}
                                                 {% endblock %}
 
@@ -809,7 +809,7 @@
                             <h5>Наші публікації</h5>
                             <ul>
                                 <li><a class="white-text" href="/post/news/page-1/">Новини</a></li>
-                                <li><a class="white-text" href="/post/advertisements/page-1/">Оголошення</a></li>
+                                <li><a class="white-text" href="/post/attentors/page-1/">Оголошення</a></li>
                             </ul>
                         </div>
                     </div>

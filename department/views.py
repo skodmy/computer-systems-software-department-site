@@ -2,10 +2,10 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import Slide
-from post.models import News, Advertisement
+from post.models import News, Attentor
 from technology.models import Technology
 from partner.models import Partner
-from post.views import ADVERTISEMENTS_PER_PAGE, NEWS_PER_PAGE, create_row_posts_block_context, \
+from post.views import ATTENTORS_PER_PAGE, NEWS_PER_PAGE, create_row_posts_block_context, \
     create_side_posts_block_context
 
 
@@ -14,7 +14,7 @@ def index(request):
     context.setdefault('technologies', Technology.objects.all())
     context.setdefault('news', News.objects.all()[:NEWS_PER_PAGE])
     context.setdefault('partners', Partner.objects.all())
-    context.setdefault('advertisements', Advertisement.objects.all()[:ADVERTISEMENTS_PER_PAGE])
+    context.setdefault('attentors', Attentor.objects.all()[:ATTENTORS_PER_PAGE])
     return render(request, 'department/index.html', context)
 
 
@@ -47,7 +47,7 @@ def manual_logout(request):
 
 
 def contacts(request):
-    context = create_row_posts_block_context('Топ оголошення', Advertisement.objects.all()[:5],'single-url')
+    context = create_row_posts_block_context('Топ оголошення', Attentor.objects.all()[:5],'single-url')
     context.update(create_side_posts_block_context('Останні новини',
                                                    News.objects.all().order_by('-publication_date_time')[:5],
                                                    'single-url'))

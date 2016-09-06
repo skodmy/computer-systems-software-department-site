@@ -82,31 +82,31 @@ class Author(models.Model):
 
     @staticmethod
     def rating_objects(max_objects=5):
-        authors_statistics = {author: Advertisement.objects.filter(author=author).count() for author in
+        authors_statistics = {author: Attentor.objects.filter(author=author).count() for author in
                               Author.objects.all()}
         authors_rating = [
-            author for author, advertisement_count in authors_statistics.items()
-            for next_greatest_advertisement_count in sorted(authors_statistics.values(), reverse=True)
-            if advertisement_count == next_greatest_advertisement_count
+            author for author, attentor_count in authors_statistics.items()
+            for next_greatest_attentor_count in sorted(authors_statistics.values(), reverse=True)
+            if attentor_count == next_greatest_attentor_count
         ][:max_objects]
         for i in range(len(authors_rating)):
             authors_rating[i].rating_number = i + 1
         return authors_rating
 
 
-class Advertisement(Post):
-    SINGLE_ROOT_URL = 'advertisements/advertisement-'
+class Attentor(Post):
+    SINGLE_ROOT_URL = 'attentors/attentor-'
 
     author = models.ForeignKey(Author)
     # TODO add here field is_actual
 
     def collect_content_images(self):
-        return AdvertisementContentImage.objects.filter(advertisement=self)
+        return AttentorContentImage.objects.filter(attentor=self)
 
 
-class AdvertisementContentImage(PostContentImage):
-    UPLOAD_TO = 'advertisement'
-    advertisement = models.ForeignKey(Advertisement)
+class AttentorContentImage(PostContentImage):
+    UPLOAD_TO = 'attentor'
+    attentor = models.ForeignKey(Attentor)
 
     def __str__(self):
-        return super().__str__() + ' in ' + self.advertisement.title
+        return super().__str__() + ' in ' + self.attentor.title
