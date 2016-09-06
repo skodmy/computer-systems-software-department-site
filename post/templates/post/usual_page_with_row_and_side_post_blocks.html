@@ -12,8 +12,8 @@
             <div class="row side-post valign-wrapper">
                 <div class="col s3">
                     <img src="
-                        {% if post.image %}
-                            {{ post.image.url }}
+                        {% if post.front_image %}
+                            {{ post.front_image.url }}
                         {% else %}
                             {% static 'department/images/no-thumb.png' %}
                         {% endif %}"
