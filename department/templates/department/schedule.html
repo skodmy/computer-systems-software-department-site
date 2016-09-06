@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block head-title-content %}Розклад занять{% endblock %}
+{% block head-title-content %}Розклад{% endblock %}
 
 {% block xhead-extra-links %}
     <link href="{% static 'department/css/for-studs-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -10,16 +10,21 @@
 
 {% block container_1_row_col_s12_m8_1_row_focus_on %}
     <div class="col s12 contacts-header">
-        <h4>Розклад занять</h4>
+        <h4>Розклад</h4>
         <div id="advertisements-start" class="divider simple-blue"></div>
     </div>
     <div class="col s12">
+        <p>
+            Дана сторінка містить по 1-му календарю для кожного курсу, що відображає розклад занять, екзаменів, консультацій.
+            Також наявний календар, в якому відображаються загальні кафедральні та університетські події.
+        </p>
         <ul class="tabs">
             <li class="tab col s3 active" ><a href="#1c_cal">1 курс</a></li>
             <li class="tab col s3"><a href="#2c_cal">2 курс</a></li>
             <li class="tab col s3"><a href="#3c_cal">3 курс</a></li>
             <li class="tab col s3"><a href="#4c_cal">4 курс</a></li>
             <li class="tab col s3"><a href="#5c_cal">5 курс</a></li>
+            <li class="tab col s3"><a href="#kaf_cal">Спільне</a></li>
         </ul>
     </div>
     <div id="1c_cal" class="col s12">

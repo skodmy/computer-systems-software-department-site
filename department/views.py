@@ -87,8 +87,8 @@ def students_rating(request):
                                                  'single-url'))
 
 
-def lessons_schedule(request):
-    return render(request, 'department/lessons_schedule.html',
+def schedule(request):
+    return render(request, 'department/schedule.html',
                   create_row_posts_block_context('Останні новини',
                                                  News.objects.all().order_by('-publication_date_time')[:5],
                                                  'single-url'))
