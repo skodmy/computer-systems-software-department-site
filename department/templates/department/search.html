@@ -1,0 +1,129 @@
+{% extends 'department/usual_page_with_search_and_pagination.html' %}
+
+{% load staticfiles %}
+
+{% block head-title-content %} Пошук | Кафедра ПЗКС{% endblock %}
+
+{% block slider %}{% endblock %}
+
+{% block xhead-extra-links %}
+  <link href="{% static 'department/css/search.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+{% endblock %}
+
+{% block container_1 %}
+    <div class="row">
+        <div class="col s12 m8">
+            <div class="row">
+                <div class="col s12">
+                    <!-- SEARCH FORM -->
+                    <h4>Пошук</h4>
+                    <div class="divider simple-blue"></div>
+                    <div class="search">
+                      <form class="">
+                        <div class="row">
+                          <div class="col s10">
+                            <input class="" type="text" placeholder="Шукати тут..." required/>
+                          </div>
+                          <div class="col s2">
+                            <button class="waves-effect waves-light btn blue-dark" type="submit"><i class="material-icons">search</i></button>
+                          </div>
+                        </div>         
+                      </form>
+                    </div>
+                    <!-- END SEARCH FORM -->
+                    <!-- SEARCH OPTIONS -->
+                    <ul class="search-type-group">
+                        <li><a class="active">По заголовку</a></li>
+                        <li><a class="">По вмісту</a></li>
+                        <li><a class="">По автору</a></li>
+                        <li><a class="">По тегу</a></li>
+                    </ul>
+                    <ul class="sort-type-group">
+                        <li>Відсортовано за:</li>
+                        <li><a class="active">релевантністю</a></li>
+                        <li><a class="">датою</a></li>
+                        <li><a class="">рейтингом публікації</a></li>
+                    </ul>
+                    <div id="advertisements-start" class="divider  simple-blue"></div>
+                </div>
+                <!-- END SEARCH OPTIONS -->
+                <!-- SEARCH RESULT FOR LARGE AND MEDIUM SCREEN -->
+                <div class="col s12 hide-on-small-only">
+                    <!-- SEARCH RESULTS -->
+                    <div class="row news-record">
+                        <div class="col s12 m12 title-container">
+                            <h4 class="news-title"><a href="#">This is title</a></h4>
+                        </div>
+                        <div class="col s12 m12">
+                            <div class="info-panel">
+                                <i class="material-icons">local_offer</i>
+                                    <a href="#">Tag</a>
+                            </div>
+                        </div>
+                        <div class="col s3 m4">
+                            <img src="{% static 'department/images/student.jpg' %}" alt="" class="responsive-img">
+                        </div>
+                        <div class="col s9 m8">To they four in love. Settling you has separate supplied bed. Concluded resembled suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight. Dare he feet my tell busy. Considered imprudence of he friendship boisterous.</div>
+                        <div class="col s12 m12">
+                            <div class="info-block">
+                                <div class="inside-block ">
+                                    <span class="valign-wrapper">
+                                        <i class="material-icons">event</i>
+                                        <a href="#"><span class="valign text">12.05.2024</span></a>
+                                    </span>
+                                </div>
+                                <div class="inside-block ">
+                                    <span class="valign-wrapper">
+                                      <i class="material-icons">visibility</i><span class="valign text">34</span>
+                                    </span>
+                                </div>
+                                <div class="inside-block ">
+                                    <span class="valign-wrapper">
+                                      <i class="material-icons">person</i><a href="#"><span class="valign text">Author</span></a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SEARCH RESULTS -->
+                </div>
+                <!-- SEARCH RESULT FOR SMALL SCREEN -->
+                <div class="col s12 hide-on-med-and-up">
+                    <div class="card news-card">
+                        <div class="card-image">
+                            <img src="{% static 'department/images/student.jpg' %}" alt="{{ news.title }}" title="This is tite" class="responsive-img">
+                            <span class="card-title">This is title</span>
+                        </div>
+                        <div class="card-content">
+                            <p><!-- TODO check here -->
+                                <div class="info-panel">
+                                    <a href="#"><i class="material-icons">access_time</i>14.04.2025</a>
+                                    <a href="#"><i class="material-icons">remove_red_eye</i>55</a>
+                                </div>
+                            <p>To they four in love. Settling you has separate supplied bed. Concluded resembled suspected his resources curiosity joy. Led all cottage met enabled attempt through talking delight. Dare he feet my tell busy. Considered imprudence of he friendship boisterous.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Читати далі</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PAGINATION -->
+                 <div class="col s12 center-align">
+                    <ul class="pagination">
+                        <li class="waves-effect edge">
+                            <a href="#"><i class="material-icons">chevron_left</i></a>
+                        </li>
+                        <li class="waves-effect active">
+                            <a href="#">1</a>
+                        </li>
+                        <li class="waves-effect edge">
+                            <a href="#"><i class="material-icons">chevron_right</i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END PAGINATION -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
