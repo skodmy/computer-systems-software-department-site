@@ -96,3 +96,6 @@ def lessons_schedule(request):
 
 def under_development(request):
     return render(request, 'department/under_development.html')
+
+def search(request):
+    return render(request, 'department/search.html')
