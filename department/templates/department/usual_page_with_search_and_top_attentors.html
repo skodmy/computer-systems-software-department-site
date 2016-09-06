@@ -13,8 +13,8 @@
         <div class="row row-post valign-wrapper">
             <div class="col s3 m4">
                 <img src="
-                    {% if attentor.image %}
-                        {{ attentor.image.url }}
+                    {% if attentor.front_image %}
+                        {{ attentor.front_image.url }}
                     {% else %}
                         {% static 'department/images/no-thumb.png' %}
                     {% endif %}"
