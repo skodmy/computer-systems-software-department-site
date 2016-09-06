@@ -84,6 +84,10 @@ nav ul li.non-hover:hover {
 	color: #042e47;
 }
 
+.single-post-title h4 {
+    color: #042e47;
+}
+
 .right-image {
 	float: right;
 	margin: 10px;
@@ -123,6 +127,7 @@ nav ul li.non-hover:hover {
 }
 
 .info-block {
+	margin-top: 10px;
 	border: 1px solid #159fd8;
 	display: inline-block;
 	color: #909090;

@@ -514,9 +514,9 @@
                                                                                     {% static 'department/images/no-thumb.png' %}
                                                                                 {% endif %}"
                                                                             alt="{{ article.title }}" title="{{ article.title }}" class="responsive-img">
-                                                                            <span class="card-title">{{ article.title }}</span>
                                                                         </div>
                                                                         <div class="card-content">
+                                                                            <div class="card-title"><a href="{{ article.single_url }}">{{ article.title }}</a></div>
                                                                             <p><!-- TODO check here -->
                                                                             <div class="info-panel">
                                                                                 <a href="#"><i class="material-icons">access_time</i>{{ article.publication_date_time }}</a>

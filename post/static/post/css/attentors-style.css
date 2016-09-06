@@ -197,23 +197,23 @@ nav ul li.non-hover:hover {
 	background-color: #03B8E5 !important;
 }
 
-.advertisement-card .card-image .card-title  {
+.attentor-card .card-image .card-title  {
 	width: 100%;
 	color: #063c5e;
 	background: rgba(217, 231, 239, .7);
 	padding: 5px;
 }
 
-.advertisement-card .info-panel {
+.attentor-card .info-panel {
 	padding-top: 10px;
 }
 
-.advertisement-card .card-content .card-title  {
+.attentor-card .card-content .card-title  {
 	color: #063c5e;
 	line-height: normal;
 }
 
-.advertisement-card .card-action a {
+.attentor-card .card-action a {
 	color: #039be5 !important;
 }
 

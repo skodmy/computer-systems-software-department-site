@@ -77,9 +77,10 @@
                             {% static 'department/images/no-thumb.png' %}
                         {% endif %}"
                         alt="{{ post.title }}" title="{{ post.title }}" class="responsive-img">
-                    <span class="card-title">{{ post.title }}</span>
+                    
                 </div>
                 <div class="card-content">
+                    <div class="card-title"><a href="{{ post.single_url }}">{{ post.title }}</a></div>
                     <p><!-- TODO check here -->
                     <div class="info-panel">
                         <a href="#"><i class="material-icons">access_time</i>{{ post.publication_date_time }}</a>

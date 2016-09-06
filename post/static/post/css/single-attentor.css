@@ -80,6 +80,10 @@ nav ul li.non-hover:hover {
 
 /* advertisment css */
 
+.single-post-title h4 {
+    color: #042e47;
+}
+
 .advertisment-header h4 {
 	color: #042e47;
 }
@@ -123,6 +127,7 @@ nav ul li.non-hover:hover {
 }
 
 .info-block {
+	margin-top: 10px;
 	border: 1px solid #159fd8;
 	display: inline-block;
 	color: #909090;
