@@ -17,15 +17,15 @@
                 <div class="col s12 m12">
                     <div class="info-panel">
                         <i class="material-icons">local_offer</i>
-                        {% for tag in post.tag.all %}
+                        {% for tag in post.tags.all %}
                             <a href="#">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
                 </div>
                 <div class="col s3 m4">
                     <img src="
-                        {% if post.image %}
-                            {{ post.image.url }}
+                        {% if post.front_image %}
+                            {{ post.front_image.url }}
                         {% else %}
                             {% static 'department/images/no-thumb.png' %}
                         {% endif %}"
@@ -71,8 +71,8 @@
             <div class="card {{ post_card_class }}">
                 <div class="card-image">
                     <img src="
-                        {% if post.image %}
-                            {{ post.image.url }}
+                        {% if post.front_image %}
+                            {{ post.front_image.url }}
                         {% else %}
                             {% static 'department/images/no-thumb.png' %}
                         {% endif %}"
