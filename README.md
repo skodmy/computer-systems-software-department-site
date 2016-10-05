@@ -56,7 +56,7 @@ Later: add all requiered info about versioning in this project.
 * [**Ivan Ukrainets**](https://bitbucket.org/projero/) - *Front-end head developer*
 * [**Dmitriy Skochinskiy**](https://bitbucket.org/SkochinskiyDmitro/) - *Back-end head developer*
 * [**Natalie Kotushko**](https://bitbucket.org/projero/) - *Head Designer*
-* [**Alex Orlowskyy**](https://bitbucket.org/Neshko/) - *Product Owner, Project Manager, Deployer*
+* [**Alex Orlovskyi**](https://bitbucket.org/Neshko/) - *Product Owner, Project Manager, Deployer*
 
 
 ## Contribution guidelines ##
@@ -83,5 +83,5 @@ We want to highlight next good developers for their thoughts, advices and so on:
 
 For any questions you may contact us:
 
-* rpgooyea@gmail.com - repo owner.
+* orlovskyi.alex@gmail.com - repo owner.
 * xxx
