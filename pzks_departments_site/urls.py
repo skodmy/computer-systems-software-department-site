@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^post/', include('post.urls')),
     url(r'^partner/', include('partner.urls')),
     url(r'^technology/', include('technology.urls')),
+    url(r'^students-rating/', include('students.urls', namespace='students')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # this too

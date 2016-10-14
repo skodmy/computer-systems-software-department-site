@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'department',
     'partner',
     'technology',
-    'post'
+    'post',
+    'students',
+    'ckeditor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -133,3 +135,8 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+CSS_URL = os.path.join(STATIC_URL, 'css/')
+IMG_URL = os.path.join(STATIC_URL, 'img/')
+LIB_URL = os.path.join(STATIC_URL, 'lib/')
+JS_URL = os.path.join(STATIC_URL, 'js/')

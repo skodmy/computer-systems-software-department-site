@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . views import index, ajax_login, manual_logout, contacts, applicant_in_general, under_development, \
-    about_specialization, academic_subjects, useful_links, students_rating, schedule
+    about_specialization, academic_subjects, useful_links, schedule
 
 urlpatterns = [
     url(r'^$', index),  # if something wrong with urls then don't forget to check this
@@ -11,7 +11,6 @@ urlpatterns = [
     url(r'^about-specialization/$', about_specialization),
     url(r'^academic-subjects/$', academic_subjects),
     url(r'^useful-links/$', useful_links),
-    url(r'^students-rating/$', students_rating),
     url(r'^schedule/$', schedule),
     url(r'^under-development/$', under_development),
 ]

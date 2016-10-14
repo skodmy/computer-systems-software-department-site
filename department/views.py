@@ -80,11 +80,11 @@ def useful_links(request):
                                                  'single-url'))
 
 
-def students_rating(request):
-    return render(request, 'department/students_rating.html',
-                  create_row_posts_block_context('Останні новини',
-                                                 News.objects.all().order_by('-publication_date_time')[:5],
-                                                 'single-url'))
+# def students_rating(request):
+#     return render(request, 'department/students_rating.html',
+#                   create_row_posts_block_context('Останні новини',
+#                                                  News.objects.all().order_by('-publication_date_time')[:5],
+#                                                  'single-url'))
 
 
 def schedule(request):
