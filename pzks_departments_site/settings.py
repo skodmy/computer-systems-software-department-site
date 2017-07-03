@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from ipaddress import IPv4Network
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +26,13 @@ SECRET_KEY = 'fu*oij+81ff+vnbcg7j_i&p69-n8^lxmx06bc=chx_)7s(19#r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# the next constant and allowed hosts list must be used only during development process
+# it broadcasts your site inside your local wireless network with command (env)python manage.py runserver 0.0.0.0:8000
+# to access site from your other devices you need to type in browser's navigation bar your machine's local ip
+# in that Wi-Fi network on which development server is running
+# replace with your wireless network address if it is different than this
+IP_V4_NETWORK_ADDRESS = '192.168.1.0/24'
+ALLOWED_HOSTS = ['0.0.0.0', *[str(host) for host in IPv4Network(IP_V4_NETWORK_ADDRESS).hosts()][1:]]
 
 # Application definition
 
