@@ -23,9 +23,11 @@ Later we`ll display:
 
 ## Installing
 
-A step by step series of examples that tell you have to get a development env running.
-
-Later. Also add some checkings "Does system works?".
+1.Download and set up python (v3.5 or greater) and git on your workstation;
+2.Clone or download project from a repository;
+3.Create a virtual environment with a command: "python -m venv 'path/to/env/folder'";
+4.Activate that virtual environment and use it's pip to install needed dependencies;
+5.[Optional] Configure your IDE for supporting that virtual environment.
 
 ## Running the tests
 
