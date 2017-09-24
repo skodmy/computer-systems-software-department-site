@@ -32,7 +32,7 @@ DEBUG = True
 # in that Wi-Fi network on which development server is running
 # replace with your wireless network address if it is different than this
 IP_V4_NETWORK_ADDRESS = '192.168.1.0/24'
-ALLOWED_HOSTS = ['0.0.0.0', *[str(host) for host in IPv4Network(IP_V4_NETWORK_ADDRESS).hosts()][1:]]
+ALLOWED_HOSTS = ['0.0.0.0', *[str(host) for host in IPv4Network(IP_V4_NETWORK_ADDRESS).hosts()][1:], '127.0.0.1']
 
 # Application definition
 

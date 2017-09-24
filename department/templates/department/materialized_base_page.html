@@ -21,15 +21,16 @@
     <link rel="shortcut icon" href="{%  static 'images/favicon.ico' %}">
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{% static 'materialize/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
     {% block head-extra-links %}
     {% endblock %}
 {% endblock %}
 
 {% block body-scripts %}
     <!--  Scripts-->
-    <script src="{% static 'jquery/jquery-2.2.1.min.js' %}"></script>
-    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+{#    <script src="{% static 'jquery/jquery-2.2.1.min.js' %}"></script>#}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
     {% block body-extra-scripts %}
     {% endblock %}
 {% endblock %}
