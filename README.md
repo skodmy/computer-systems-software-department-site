@@ -29,6 +29,8 @@ Later we`ll display:
 4. Activate that virtual environment and use it's pip to install needed dependencies;
 5. [Optional] Configure your IDE for supporting that virtual environment.
 
+## TEST
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
